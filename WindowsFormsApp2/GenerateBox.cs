@@ -59,6 +59,20 @@ namespace WindowsFormsApp2
                 i++;
 
 
+                SqlCommand maxID = new SqlCommand();
+                maxID.Connection = sqlconn;
+                maxID.CommandText = "SELECT max(id) as maxID from dbo.paint_box";
+
+                SqlDataReader rdr = maxID.ExecuteReader();
+               
+
+                while (rdr.Read())
+                {
+                    Document labelPrint = new Document(Convert.ToInt32(rdr["maxID"]));
+                    labelPrint.PrintBoxLabel();
+                }
+
+                rdr.Close();
                 sqlconn.Close();
             }
 
