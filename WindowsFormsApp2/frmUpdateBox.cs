@@ -45,8 +45,8 @@ namespace WindowsFormsApp2
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int n;
-            bool isNumeric = int.TryParse(txtActualKgs.Text, out n);
+            double n;
+            bool isNumeric = double.TryParse(txtActualKgs.Text, out n);
             if (isNumeric == true)
             {
 
@@ -57,33 +57,33 @@ namespace WindowsFormsApp2
                 try
                 {
                     //if the quantity value is 0 do nothing
-                    if (string.IsNullOrWhiteSpace(txtActualKgs.Text))
+                    if (string.IsNullOrWhiteSpace(n.ToString()))
                     {
 
                     }
                     //NEW BOX IS OPENED AND FINISHED IN ONE GO
-                    else if ((kgsRemaining == kgsWhenNew) && Convert.ToDouble(txtActualKgs.Text) == 0)
+                    else if (kgsRemaining == kgsWhenNew && n == 0)
                     {
                         sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain, date_opened = @dateOpened,date_empty = @dateEmpty WHERE id = @boxID";
-                        sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
+                        sqlcmd.Parameters.AddWithValue("@kgsRemain", n);
                         sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
                         sqlcmd.Parameters.AddWithValue("@dateOpened", DateTime.Now);
                         sqlcmd.Parameters.AddWithValue("@dateEmpty", DateTime.Now);
                     }
                     //NEW BOX IS OPENED AND NOT FINISH
-                    else if ((kgsRemaining == kgsWhenNew) && kgsRemaining > Convert.ToDouble(txtActualKgs.Text))
+                    else if ((kgsRemaining == kgsWhenNew) && kgsRemaining > n)
                     {
                         sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain, date_opened = @dateOpened WHERE id = @boxID";
-                        sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
+                        sqlcmd.Parameters.AddWithValue("@kgsRemain", n);
                         sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
                         sqlcmd.Parameters.AddWithValue("@dateOpened", DateTime.Now);
                     }
                     //BOX THAT IS ALREADY OPENED IS NOW FINISHED
-                    else if (Convert.ToDouble(txtActualKgs.Text) == 0)
+                    else if (n == 0)
                     {
 
                         sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain, date_empty = @dateEmpty WHERE id = @boxID";
-                        sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
+                        sqlcmd.Parameters.AddWithValue("@kgsRemain", n);
                         sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
                         sqlcmd.Parameters.AddWithValue("@dateEmpty", DateTime.Now);
                     }
@@ -91,7 +91,7 @@ namespace WindowsFormsApp2
                     else
                     {
                         sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain WHERE id = @boxID";
-                        sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
+                        sqlcmd.Parameters.AddWithValue("@kgsRemain", n);
                         sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
                     }
 
@@ -109,7 +109,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                MessageBox.Show("Please enter a whole number value!", "Enter whole number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a numeric value!", "Enter Numeric Value", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
