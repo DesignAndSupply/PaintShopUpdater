@@ -832,5 +832,7 @@ namespace WindowsFormsApp2
             frmStockBalance frmSB = new frmStockBalance();
             frmSB.ShowDialog();
         }
+
+       
     }
 }

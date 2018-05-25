@@ -183,6 +183,12 @@
     <Compile Include="frmPaintBoxes.Designer.cs">
       <DependentUpon>frmPaintBoxes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSelectUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectUser.Designer.cs">
+      <DependentUpon>frmSelectUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStockBalance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPaintBoxes.resx">
       <DependentUpon>frmPaintBoxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectUser.resx">
+      <DependentUpon>frmSelectUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockBalance.resx">
       <DependentUpon>frmStockBalance.cs</DependentUpon>

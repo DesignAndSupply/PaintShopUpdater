@@ -96,12 +96,12 @@
             this.staffSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repaintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.balanceStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thisDoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.looseItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtQuantitySame = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.balanceStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -710,23 +710,30 @@
             // staffSetupToolStripMenuItem
             // 
             this.staffSetupToolStripMenuItem.Name = "staffSetupToolStripMenuItem";
-            this.staffSetupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.staffSetupToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.staffSetupToolStripMenuItem.Text = "Staff Setup";
             this.staffSetupToolStripMenuItem.Click += new System.EventHandler(this.staffSetupToolStripMenuItem_Click);
             // 
             // repaintsToolStripMenuItem
             // 
             this.repaintsToolStripMenuItem.Name = "repaintsToolStripMenuItem";
-            this.repaintsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.repaintsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.repaintsToolStripMenuItem.Text = "Repaints";
             this.repaintsToolStripMenuItem.Click += new System.EventHandler(this.repaintsToolStripMenuItem_Click);
             // 
             // reportingToolStripMenuItem
             // 
             this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
-            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.reportingToolStripMenuItem.Text = "Reporting";
             this.reportingToolStripMenuItem.Click += new System.EventHandler(this.reportingToolStripMenuItem_Click);
+            // 
+            // balanceStockToolStripMenuItem
+            // 
+            this.balanceStockToolStripMenuItem.Name = "balanceStockToolStripMenuItem";
+            this.balanceStockToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.balanceStockToolStripMenuItem.Text = "Balance Stock";
+            this.balanceStockToolStripMenuItem.Click += new System.EventHandler(this.balanceStockToolStripMenuItem_Click);
             // 
             // thisDoorToolStripMenuItem
             // 
@@ -767,13 +774,6 @@
             this.label9.Size = new System.Drawing.Size(79, 13);
             this.label9.TabIndex = 91;
             this.label9.Text = "Quantity Same:";
-            // 
-            // balanceStockToolStripMenuItem
-            // 
-            this.balanceStockToolStripMenuItem.Name = "balanceStockToolStripMenuItem";
-            this.balanceStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.balanceStockToolStripMenuItem.Text = "Balance Stock";
-            this.balanceStockToolStripMenuItem.Click += new System.EventHandler(this.balanceStockToolStripMenuItem_Click);
             // 
             // Form1
             // 
