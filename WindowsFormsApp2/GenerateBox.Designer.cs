@@ -141,6 +141,7 @@
             this.Name = "GenerateBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GenerateBox";
+            this.Load += new System.EventHandler(this.GenerateBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

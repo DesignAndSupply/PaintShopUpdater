@@ -45,62 +45,73 @@ namespace WindowsFormsApp2
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlconn = new SqlConnection(SqlStatements.ConnectionString);
-            SqlCommand sqlcmd = new SqlCommand();
-            sqlconn.Open();
-            sqlcmd.Connection = sqlconn;
-            try
+            int n;
+            bool isNumeric = int.TryParse(txtActualKgs.Text, out n);
+            if (isNumeric == true)
             {
-                //if the quantity value is 0 do nothing
-                if (string.IsNullOrWhiteSpace(txtActualKgs.Text))
+
+                SqlConnection sqlconn = new SqlConnection(SqlStatements.ConnectionString);
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlconn.Open();
+                sqlcmd.Connection = sqlconn;
+                try
                 {
+                    //if the quantity value is 0 do nothing
+                    if (string.IsNullOrWhiteSpace(txtActualKgs.Text))
+                    {
+
+                    }
+                    //NEW BOX IS OPENED AND FINISHED IN ONE GO
+                    else if ((kgsRemaining == kgsWhenNew) && Convert.ToDouble(txtActualKgs.Text) == 0)
+                    {
+                        sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain, date_opened = @dateOpened,date_empty = @dateEmpty WHERE id = @boxID";
+                        sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
+                        sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
+                        sqlcmd.Parameters.AddWithValue("@dateOpened", DateTime.Now);
+                        sqlcmd.Parameters.AddWithValue("@dateEmpty", DateTime.Now);
+                    }
+                    //NEW BOX IS OPENED AND NOT FINISH
+                    else if ((kgsRemaining == kgsWhenNew) && kgsRemaining > Convert.ToDouble(txtActualKgs.Text))
+                    {
+                        sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain, date_opened = @dateOpened WHERE id = @boxID";
+                        sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
+                        sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
+                        sqlcmd.Parameters.AddWithValue("@dateOpened", DateTime.Now);
+                    }
+                    //BOX THAT IS ALREADY OPENED IS NOW FINISHED
+                    else if (Convert.ToDouble(txtActualKgs.Text) == 0)
+                    {
+
+                        sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain, date_empty = @dateEmpty WHERE id = @boxID";
+                        sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
+                        sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
+                        sqlcmd.Parameters.AddWithValue("@dateEmpty", DateTime.Now);
+                    }
+                    //BOX THAT IS ALREADY OPENED IS JUST UPDATED
+                    else
+                    {
+                        sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain WHERE id = @boxID";
+                        sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
+                        sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
+                    }
+
+                    sqlcmd.ExecuteNonQuery();
+                    sqlconn.Close();
+
+                    this.Close();
+
 
                 }
-                //NEW BOX IS OPENED AND FINISHED IN ONE GO
-                else if ((kgsRemaining == kgsWhenNew) && Convert.ToDouble(txtActualKgs.Text) == 0)
+                catch
                 {
-                    sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain, date_opened = @dateOpened,date_empty = @dateEmpty WHERE id = @boxID";
-                    sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
-                    sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
-                    sqlcmd.Parameters.AddWithValue("@dateOpened", DateTime.Now);
-                    sqlcmd.Parameters.AddWithValue("@dateEmpty", DateTime.Now);
+                    MessageBox.Show("Please ensure you have entered a kgs remaining value. If this error persists call IT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //NEW BOX IS OPENED AND NOT FINISH
-                else if ((kgsRemaining == kgsWhenNew) && kgsRemaining > Convert.ToDouble(txtActualKgs.Text))
-                {
-                    sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain, date_opened = @dateOpened WHERE id = @boxID";
-                    sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
-                    sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
-                    sqlcmd.Parameters.AddWithValue("@dateOpened", DateTime.Now);
-                }
-                //BOX THAT IS ALREADY OPENED IS NOW FINISHED
-                else if (Convert.ToDouble(txtActualKgs.Text) == 0)
-                {
-
-                    sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain, date_empty = @dateEmpty WHERE id = @boxID";
-                    sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
-                    sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
-                    sqlcmd.Parameters.AddWithValue("@dateEmpty", DateTime.Now);
-                }
-                //BOX THAT IS ALREADY OPENED IS JUST UPDATED
-                else
-                {
-                    sqlcmd.CommandText = "UPDATE dbo.paint_box SET kgs_remain = @kgsRemain WHERE id = @boxID";
-                    sqlcmd.Parameters.AddWithValue("@kgsRemain", txtActualKgs.Text);
-                    sqlcmd.Parameters.AddWithValue("@boxID", boxNumber);
-                }
-
-                sqlcmd.ExecuteNonQuery();
-                sqlconn.Close();
-
-                this.Close();
-
-
             }
-            catch
+            else
             {
-                MessageBox.Show("Please ensure you have entered a kgs remaining value. If this error persists call IT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a whole number value!", "Enter whole number", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
     }
