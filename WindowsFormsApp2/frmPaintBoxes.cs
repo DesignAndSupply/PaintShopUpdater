@@ -139,7 +139,7 @@ namespace WindowsFormsApp2
             //FIRES IF THE PRINT LABEL BUTTON IS CLICKED
             if (e.ColumnIndex == dgvBoxList.Columns["Print Label"].Index && e.RowIndex >= 0)
             {
-                Document docs = new Document(box, paintInfo, DateTime.Now, kgsWhenNew);
+                Document docs = new Document(box);
                 docs.PrintBoxLabel();
             }
 

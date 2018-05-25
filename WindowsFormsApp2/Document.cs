@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GemBox.Document;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp2
 {
@@ -15,12 +16,33 @@ namespace WindowsFormsApp2
         public DateTime delDate { get; set; }
         public double kgsWhenFull { get; set; }
 
-        public Document(int _boxID, string _colour, DateTime _dateDel, double _kgsWhenFull)
+        public Document(int _boxID)
         {
             boxID = _boxID;
-            colour = _colour;
-            delDate = _dateDel;
-            kgsWhenFull = _kgsWhenFull;
+            getBoxDetails(_boxID);
+        }
+
+        private void getBoxDetails(int boxID)
+        {
+            SqlConnection sqlconn = new SqlConnection(SqlStatements.ConnectionString);
+            sqlconn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = sqlconn;
+
+            cmd.CommandText = "Select * From c_view_paint_box_list where [Box ID]=@boxID";
+            cmd.Parameters.AddWithValue("@boxID", boxID);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                colour = rdr["Colour"].ToString();
+                delDate = Convert.ToDateTime(rdr["Date Delivered"]);
+                kgsWhenFull = Convert.ToDouble(rdr["Kgs When New"]);
+            }
+
+            rdr.Close();
+            
         }
 
         public void PrintBoxLabel()
