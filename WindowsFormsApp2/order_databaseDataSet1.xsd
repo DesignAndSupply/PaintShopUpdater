@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="order_databaseDataSet1" targetNamespace="http://tempuri.org/order_databaseDataSet1.xsd" xmlns:mstns="http://tempuri.org/order_databaseDataSet1.xsd" xmlns="http://tempuri.org/order_databaseDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="order_databaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="order_databaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsApp2.Properties.Settings.GlobalReference.Default.order_databaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_painting_sectionsTableAdapter" GeneratorDataComponentClassName="c_view_painting_sectionsTableAdapter" Name="c_view_painting_sections" UserDataComponentName="c_view_painting_sectionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_painting_sections" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, Section, Staff1, Staff2, Staff3, dateComplete, op_order FROM dbo.c_view_painting_sections</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="Section" DataSetColumn="Section" />
+              <Mapping SourceColumn="Staff1" DataSetColumn="Staff1" />
+              <Mapping SourceColumn="Staff2" DataSetColumn="Staff2" />
+              <Mapping SourceColumn="Staff3" DataSetColumn="Staff3" />
+              <Mapping SourceColumn="dateComplete" DataSetColumn="dateComplete" />
+              <Mapping SourceColumn="op_order" DataSetColumn="op_order" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_painting_sections" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, Section, Staff1, Staff2, Staff3, dateComplete, op_order FROM dbo.c_view_painting_sections WHERE id = 96000</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_paint_on_doorTableAdapter" GeneratorDataComponentClassName="c_view_paint_on_doorTableAdapter" Name="c_view_paint_on_door" UserDataComponentName="c_view_paint_on_doorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_paint_on_door" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM dbo.c_view_paint_on_door</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="door_id" DataSetColumn="door_id" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="finish" DataSetColumn="finish" />
+              <Mapping SourceColumn="NAME" DataSetColumn="NAME" />
+              <Mapping SourceColumn="powder_kgs" DataSetColumn="powder_kgs" />
+              <Mapping SourceColumn="wet" DataSetColumn="wet" />
+              <Mapping SourceColumn="free_issue" DataSetColumn="free_issue" />
+              <Mapping SourceColumn="unallocated" DataSetColumn="unallocated" />
+              <Mapping SourceColumn="side_selection" DataSetColumn="side_selection" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_repaint_listTableAdapter" GeneratorDataComponentClassName="c_view_repaint_listTableAdapter" Name="c_view_repaint_list" UserDataComponentName="c_view_repaint_listTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_repaint_list" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM dbo.c_view_repaint_list</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Repaint ID" DataSetColumn="Repaint ID" />
+              <Mapping SourceColumn="Date Logged" DataSetColumn="Date Logged" />
+              <Mapping SourceColumn="Date Repainted" DataSetColumn="Date Repainted" />
+              <Mapping SourceColumn="Paint Colour" DataSetColumn="Paint Colour" />
+              <Mapping SourceColumn="Supplier" DataSetColumn="Supplier" />
+              <Mapping SourceColumn="Finish" DataSetColumn="Finish" />
+              <Mapping SourceColumn="Kgs Used" DataSetColumn="Kgs Used" />
+              <Mapping SourceColumn="Persons Responsible" DataSetColumn="Persons Responsible" />
+              <Mapping SourceColumn="Reason" DataSetColumn="Reason" />
+              <Mapping SourceColumn="Complete" DataSetColumn="Complete" />
+              <Mapping SourceColumn="Logged from" DataSetColumn="Logged from" />
+              <Mapping SourceColumn="finish" DataSetColumn="finish" />
+              <Mapping SourceColumn="door_id" DataSetColumn="door_id" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_repaint_list" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Complete, [Date Logged], [Date Repainted], [Kgs Used], [Logged from], [Paint Colour], [Persons Responsible], Reason, [Repaint ID], Supplier, door_id, finish FROM c_view_repaint_list ORDER BY [Repaint ID] DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_repaint_list" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Complete, [Date Logged], [Date Repainted], [Kgs Used], [Logged from], [Paint Colour], [Persons Responsible], Reason, [Repaint ID], Supplier, door_id, finish FROM c_view_repaint_list ORDER BY [Repaint ID] DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_repaint_list" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Complete, [Date Logged], [Date Repainted], [Kgs Used], [Logged from], [Paint Colour], [Persons Responsible], Reason, [Repaint ID], Supplier, door_id, finish FROM c_view_repaint_list ORDER BY [Repaint ID] DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_repaints_outstandingTableAdapter" GeneratorDataComponentClassName="c_view_repaints_outstandingTableAdapter" Name="c_view_repaints_outstanding" UserDataComponentName="c_view_repaints_outstandingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_repaints_outstanding" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM dbo.c_view_repaints_outstanding</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RepaintID" DataSetColumn="RepaintID" />
+              <Mapping SourceColumn="DateLogged" DataSetColumn="DateLogged" />
+              <Mapping SourceColumn="DateRepaint" DataSetColumn="DateRepaint" />
+              <Mapping SourceColumn="PaintColour" DataSetColumn="PaintColour" />
+              <Mapping SourceColumn="Supplier" DataSetColumn="Supplier" />
+              <Mapping SourceColumn="finish" DataSetColumn="finish" />
+              <Mapping SourceColumn="Kgs" DataSetColumn="Kgs" />
+              <Mapping SourceColumn="Responsible" DataSetColumn="Responsible" />
+              <Mapping SourceColumn="Reason" DataSetColumn="Reason" />
+              <Mapping SourceColumn="Complete" DataSetColumn="Complete" />
+              <Mapping SourceColumn="LoggedFrom" DataSetColumn="LoggedFrom" />
+              <Mapping SourceColumn="door_id" DataSetColumn="door_id" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_repaints_outstanding" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Complete, DateLogged, DateRepaint, Kgs, LoggedFrom, PaintColour, Reason, RepaintID, Responsible, Supplier, door_id, finish FROM c_view_repaints_outstanding</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_daily_repaintsTableAdapter" GeneratorDataComponentClassName="c_view_daily_repaintsTableAdapter" Name="c_view_daily_repaints" UserDataComponentName="c_view_daily_repaintsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_daily_repaints" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM dbo.c_view_daily_repaints</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="door_id" DataSetColumn="door_id" />
+              <Mapping SourceColumn="RepaintID" DataSetColumn="RepaintID" />
+              <Mapping SourceColumn="DatePainted" DataSetColumn="DatePainted" />
+              <Mapping SourceColumn="DateLogged" DataSetColumn="DateLogged" />
+              <Mapping SourceColumn="PaintColour" DataSetColumn="PaintColour" />
+              <Mapping SourceColumn="Supplier" DataSetColumn="Supplier" />
+              <Mapping SourceColumn="finish" DataSetColumn="finish" />
+              <Mapping SourceColumn="Kgs" DataSetColumn="Kgs" />
+              <Mapping SourceColumn="Responsible" DataSetColumn="Responsible" />
+              <Mapping SourceColumn="Reason" DataSetColumn="Reason" />
+              <Mapping SourceColumn="LoggedFrom" DataSetColumn="LoggedFrom" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_get_paint_idTableAdapter" GeneratorDataComponentClassName="c_view_get_paint_idTableAdapter" Name="c_view_get_paint_id" UserDataComponentName="c_view_get_paint_idTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_get_paint_id" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM c_view_get_paint_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="door_id" DataSetColumn="door_id" />
+              <Mapping SourceColumn="paint_id" DataSetColumn="paint_id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_late_paintingTableAdapter" GeneratorDataComponentClassName="c_view_late_paintingTableAdapter" Name="c_view_late_painting" UserDataComponentName="c_view_late_paintingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_late_painting" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM c_view_late_painting</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="quantity_same" DataSetColumn="quantity_same" />
+              <Mapping SourceColumn="door_type_description" DataSetColumn="door_type_description" />
+              <Mapping SourceColumn="complete_paint" DataSetColumn="complete_paint" />
+              <Mapping SourceColumn="date_paint" DataSetColumn="date_paint" />
+              <Mapping SourceColumn="status_id" DataSetColumn="status_id" />
+              <Mapping SourceColumn="finish_description" DataSetColumn="finish_description" />
+              <Mapping SourceColumn="painting_note" DataSetColumn="painting_note" />
+              <Mapping SourceColumn="NAME" DataSetColumn="NAME" />
+              <Mapping SourceColumn="priority_status_paint" DataSetColumn="priority_status_paint" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="supplier_name" DataSetColumn="supplier_name" />
+              <Mapping SourceColumn="finish" DataSetColumn="finish" />
+              <Mapping SourceColumn="powder_kgs" DataSetColumn="powder_kgs" />
+              <Mapping SourceColumn="wet" DataSetColumn="wet" />
+              <Mapping SourceColumn="free_issue" DataSetColumn="free_issue" />
+              <Mapping SourceColumn="side_selection" DataSetColumn="side_selection" />
+              <Mapping SourceColumn="door_id" DataSetColumn="door_id" />
+              <Mapping SourceColumn="p_desc" DataSetColumn="p_desc" />
+              <Mapping SourceColumn="p_finish" DataSetColumn="p_finish" />
+              <Mapping SourceColumn="p_sup" DataSetColumn="p_sup" />
+              <Mapping SourceColumn="p_powder" DataSetColumn="p_powder" />
+              <Mapping SourceColumn="p_wet" DataSetColumn="p_wet" />
+              <Mapping SourceColumn="p_free_issue" DataSetColumn="p_free_issue" />
+              <Mapping SourceColumn="p_side_selection" DataSetColumn="p_side_selection" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_door_production_progressTableAdapter" GeneratorDataComponentClassName="c_view_door_production_progressTableAdapter" Name="c_view_door_production_progress" UserDataComponentName="c_view_door_production_progressTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_door_production_progress" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from c_view_door_production_progress</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="date_op" DataSetColumn="date_op" />
+              <Mapping SourceColumn="date_op_complete" DataSetColumn="date_op_complete" />
+              <Mapping SourceColumn="op_order" DataSetColumn="op_order" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vibration_toolsTableAdapter" GeneratorDataComponentClassName="vibration_toolsTableAdapter" Name="vibration_tools" UserDataComponentName="vibration_toolsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.vibration_tools" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[vibration_tools] WHERE (([id] = @Original_id) AND ((@IsNull_description = 1 AND [description] IS NULL) OR ([description] = @Original_description)) AND ((@IsNull_exposure_points_ph = 1 AND [exposure_points_ph] IS NULL) OR ([exposure_points_ph] = @Original_exposure_points_ph)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_description" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="description" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_description" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_exposure_points_ph" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="exposure_points_ph" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_exposure_points_ph" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="exposure_points_ph" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[vibration_tools] ([description], [exposure_points_ph]) VALUES (@description, @exposure_points_ph);
+SELECT id, description, exposure_points_ph FROM vibration_tools WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@description" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@exposure_points_ph" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="exposure_points_ph" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select * from dbo.vibration_tools</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[vibration_tools] SET [description] = @description, [exposure_points_ph] = @exposure_points_ph WHERE (([id] = @Original_id) AND ((@IsNull_description = 1 AND [description] IS NULL) OR ([description] = @Original_description)) AND ((@IsNull_exposure_points_ph = 1 AND [exposure_points_ph] IS NULL) OR ([exposure_points_ph] = @Original_exposure_points_ph)));
+SELECT id, description, exposure_points_ph FROM vibration_tools WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@description" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@exposure_points_ph" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="exposure_points_ph" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_description" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="description" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_description" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_exposure_points_ph" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="exposure_points_ph" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_exposure_points_ph" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="exposure_points_ph" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="order_database.dbo.vibration_tools" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="exposure_points_ph" DataSetColumn="exposure_points_ph" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_paint_stockTableAdapter" GeneratorDataComponentClassName="c_view_paint_stockTableAdapter" Name="c_view_paint_stock" UserDataComponentName="c_view_paint_stockTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.SelectPaintStock" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SelectPaintStock</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="stock_code" DataSetColumn="stock_code" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="finish" DataSetColumn="finish" />
+              <Mapping SourceColumn="NAME" DataSetColumn="NAME" />
+              <Mapping SourceColumn="amount_in_stock" DataSetColumn="amount_in_stock" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_paint_stock" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        stock_code, description, finish, NAME, amount_in_stock
+FROM            c_view_paint_stock
+WHERE        (description LIKE '%@Colour%')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="order_databaseDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="order_databaseDataSet1" msprop:Generator_UserDSName="order_databaseDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="c_view_painting_sections" msprop:Generator_TableClassName="c_view_painting_sectionsDataTable" msprop:Generator_TableVarName="tablec_view_painting_sections" msprop:Generator_RowChangedName="c_view_painting_sectionsRowChanged" msprop:Generator_TablePropName="c_view_painting_sections" msprop:Generator_RowDeletingName="c_view_painting_sectionsRowDeleting" msprop:Generator_RowChangingName="c_view_painting_sectionsRowChanging" msprop:Generator_RowEvHandlerName="c_view_painting_sectionsRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_painting_sectionsRowDeleted" msprop:Generator_RowClassName="c_view_painting_sectionsRow" msprop:Generator_UserTableName="c_view_painting_sections" msprop:Generator_RowEvArgName="c_view_painting_sectionsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="Section" msprop:Generator_ColumnVarNameInTable="columnSection" msprop:Generator_ColumnPropNameInRow="Section" msprop:Generator_ColumnPropNameInTable="SectionColumn" msprop:Generator_UserColumnName="Section">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Staff1" msprop:Generator_ColumnVarNameInTable="columnStaff1" msprop:Generator_ColumnPropNameInRow="Staff1" msprop:Generator_ColumnPropNameInTable="Staff1Column" msprop:Generator_UserColumnName="Staff1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="41" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Staff2" msprop:Generator_ColumnVarNameInTable="columnStaff2" msprop:Generator_ColumnPropNameInRow="Staff2" msprop:Generator_ColumnPropNameInTable="Staff2Column" msprop:Generator_UserColumnName="Staff2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="41" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Staff3" msprop:Generator_ColumnVarNameInTable="columnStaff3" msprop:Generator_ColumnPropNameInRow="Staff3" msprop:Generator_ColumnPropNameInTable="Staff3Column" msprop:Generator_UserColumnName="Staff3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="41" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dateComplete" msprop:Generator_ColumnVarNameInTable="columndateComplete" msprop:Generator_ColumnPropNameInRow="dateComplete" msprop:Generator_ColumnPropNameInTable="dateCompleteColumn" msprop:Generator_UserColumnName="dateComplete" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="op_order" msprop:Generator_ColumnVarNameInTable="columnop_order" msprop:Generator_ColumnPropNameInRow="op_order" msprop:Generator_ColumnPropNameInTable="op_orderColumn" msprop:Generator_UserColumnName="op_order" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_paint_on_door" msprop:Generator_TableClassName="c_view_paint_on_doorDataTable" msprop:Generator_TableVarName="tablec_view_paint_on_door" msprop:Generator_RowChangedName="c_view_paint_on_doorRowChanged" msprop:Generator_TablePropName="c_view_paint_on_door" msprop:Generator_RowDeletingName="c_view_paint_on_doorRowDeleting" msprop:Generator_RowChangingName="c_view_paint_on_doorRowChanging" msprop:Generator_RowEvHandlerName="c_view_paint_on_doorRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_paint_on_doorRowDeleted" msprop:Generator_RowClassName="c_view_paint_on_doorRow" msprop:Generator_UserTableName="c_view_paint_on_door" msprop:Generator_RowEvArgName="c_view_paint_on_doorRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="door_id" msprop:Generator_ColumnVarNameInTable="columndoor_id" msprop:Generator_ColumnPropNameInRow="door_id" msprop:Generator_ColumnPropNameInTable="door_idColumn" msprop:Generator_UserColumnName="door_id" type="xs:int" minOccurs="0" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="finish" msprop:Generator_ColumnVarNameInTable="columnfinish" msprop:Generator_ColumnPropNameInRow="finish" msprop:Generator_ColumnPropNameInTable="finishColumn" msprop:Generator_UserColumnName="finish" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="powder_kgs" msprop:Generator_ColumnVarNameInTable="columnpowder_kgs" msprop:Generator_ColumnPropNameInRow="powder_kgs" msprop:Generator_ColumnPropNameInTable="powder_kgsColumn" msprop:Generator_UserColumnName="powder_kgs" type="xs:double" minOccurs="0" />
+              <xs:element name="wet" msprop:Generator_ColumnVarNameInTable="columnwet" msprop:Generator_ColumnPropNameInRow="wet" msprop:Generator_ColumnPropNameInTable="wetColumn" msprop:Generator_UserColumnName="wet" type="xs:short" minOccurs="0" />
+              <xs:element name="free_issue" msprop:Generator_ColumnVarNameInTable="columnfree_issue" msprop:Generator_ColumnPropNameInRow="free_issue" msprop:Generator_ColumnPropNameInTable="free_issueColumn" msprop:Generator_UserColumnName="free_issue" type="xs:short" minOccurs="0" />
+              <xs:element name="unallocated" msprop:Generator_ColumnVarNameInTable="columnunallocated" msprop:Generator_ColumnPropNameInRow="unallocated" msprop:Generator_ColumnPropNameInTable="unallocatedColumn" msprop:Generator_UserColumnName="unallocated" type="xs:short" minOccurs="0" />
+              <xs:element name="side_selection" msprop:Generator_ColumnVarNameInTable="columnside_selection" msprop:Generator_ColumnPropNameInRow="side_selection" msprop:Generator_ColumnPropNameInTable="side_selectionColumn" msprop:Generator_UserColumnName="side_selection" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_repaint_list" msprop:Generator_TableClassName="c_view_repaint_listDataTable" msprop:Generator_TableVarName="tablec_view_repaint_list" msprop:Generator_TablePropName="c_view_repaint_list" msprop:Generator_RowDeletingName="c_view_repaint_listRowDeleting" msprop:Generator_RowChangingName="c_view_repaint_listRowChanging" msprop:Generator_RowEvHandlerName="c_view_repaint_listRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_repaint_listRowDeleted" msprop:Generator_UserTableName="c_view_repaint_list" msprop:Generator_RowChangedName="c_view_repaint_listRowChanged" msprop:Generator_RowEvArgName="c_view_repaint_listRowChangeEvent" msprop:Generator_RowClassName="c_view_repaint_listRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Repaint_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnRepaint_ID" msprop:Generator_ColumnPropNameInRow="Repaint_ID" msprop:Generator_ColumnPropNameInTable="Repaint_IDColumn" msprop:Generator_UserColumnName="Repaint ID" type="xs:int" />
+              <xs:element name="Date_x0020_Logged" msprop:Generator_ColumnVarNameInTable="columnDate_Logged" msprop:Generator_ColumnPropNameInRow="Date_Logged" msprop:Generator_ColumnPropNameInTable="Date_LoggedColumn" msprop:Generator_UserColumnName="Date Logged" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Date_x0020_Repainted" msprop:Generator_ColumnVarNameInTable="columnDate_Repainted" msprop:Generator_ColumnPropNameInRow="Date_Repainted" msprop:Generator_ColumnPropNameInTable="Date_RepaintedColumn" msprop:Generator_UserColumnName="Date Repainted" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Paint_x0020_Colour" msprop:Generator_ColumnVarNameInTable="columnPaint_Colour" msprop:Generator_ColumnPropNameInRow="Paint_Colour" msprop:Generator_ColumnPropNameInTable="Paint_ColourColumn" msprop:Generator_UserColumnName="Paint Colour" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Supplier" msprop:Generator_ColumnVarNameInTable="columnSupplier" msprop:Generator_ColumnPropNameInRow="Supplier" msprop:Generator_ColumnPropNameInTable="SupplierColumn" msprop:Generator_UserColumnName="Supplier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Finish" msprop:Generator_ColumnVarNameInTable="columnFinish" msprop:Generator_ColumnPropNameInRow="Finish" msprop:Generator_ColumnPropNameInTable="FinishColumn" msprop:Generator_UserColumnName="Finish" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kgs_x0020_Used" msprop:Generator_ColumnVarNameInTable="columnKgs_Used" msprop:Generator_ColumnPropNameInRow="Kgs_Used" msprop:Generator_ColumnPropNameInTable="Kgs_UsedColumn" msprop:Generator_UserColumnName="Kgs Used" type="xs:double" minOccurs="0" />
+              <xs:element name="Persons_x0020_Responsible" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPersons_Responsible" msprop:Generator_ColumnPropNameInRow="Persons_Responsible" msprop:Generator_ColumnPropNameInTable="Persons_ResponsibleColumn" msprop:Generator_UserColumnName="Persons Responsible" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="41" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Reason" msprop:Generator_ColumnVarNameInTable="columnReason" msprop:Generator_ColumnPropNameInRow="Reason" msprop:Generator_ColumnPropNameInTable="ReasonColumn" msprop:Generator_UserColumnName="Reason" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="155" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Complete" msprop:Generator_ColumnVarNameInTable="columnComplete" msprop:Generator_ColumnPropNameInRow="Complete" msprop:Generator_ColumnPropNameInTable="CompleteColumn" msprop:Generator_UserColumnName="Complete" type="xs:short" minOccurs="0" />
+              <xs:element name="Logged_x0020_from" msprop:Generator_ColumnVarNameInTable="columnLogged_from" msprop:Generator_ColumnPropNameInRow="Logged_from" msprop:Generator_ColumnPropNameInTable="Logged_fromColumn" msprop:Generator_UserColumnName="Logged from" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="finish" msprop:Generator_ColumnVarNameInTable="columnfinish" msprop:Generator_ColumnPropNameInRow="finish" msprop:Generator_ColumnPropNameInTable="finishColumn" msprop:Generator_UserColumnName="finish" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="door_id" msprop:Generator_ColumnVarNameInTable="columndoor_id" msprop:Generator_ColumnPropNameInRow="door_id" msprop:Generator_ColumnPropNameInTable="door_idColumn" msprop:Generator_UserColumnName="door_id" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_repaints_outstanding" msprop:Generator_TableClassName="c_view_repaints_outstandingDataTable" msprop:Generator_TableVarName="tablec_view_repaints_outstanding" msprop:Generator_TablePropName="c_view_repaints_outstanding" msprop:Generator_RowDeletingName="c_view_repaints_outstandingRowDeleting" msprop:Generator_RowChangingName="c_view_repaints_outstandingRowChanging" msprop:Generator_RowEvHandlerName="c_view_repaints_outstandingRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_repaints_outstandingRowDeleted" msprop:Generator_UserTableName="c_view_repaints_outstanding" msprop:Generator_RowChangedName="c_view_repaints_outstandingRowChanged" msprop:Generator_RowEvArgName="c_view_repaints_outstandingRowChangeEvent" msprop:Generator_RowClassName="c_view_repaints_outstandingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RepaintID" msprop:Generator_ColumnVarNameInTable="columnRepaintID" msprop:Generator_ColumnPropNameInRow="RepaintID" msprop:Generator_ColumnPropNameInTable="RepaintIDColumn" msprop:Generator_UserColumnName="RepaintID" type="xs:int" />
+              <xs:element name="DateLogged" msprop:Generator_ColumnVarNameInTable="columnDateLogged" msprop:Generator_ColumnPropNameInRow="DateLogged" msprop:Generator_ColumnPropNameInTable="DateLoggedColumn" msprop:Generator_UserColumnName="DateLogged" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateRepaint" msprop:Generator_ColumnVarNameInTable="columnDateRepaint" msprop:Generator_ColumnPropNameInRow="DateRepaint" msprop:Generator_ColumnPropNameInTable="DateRepaintColumn" msprop:Generator_UserColumnName="DateRepaint" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PaintColour" msprop:Generator_ColumnVarNameInTable="columnPaintColour" msprop:Generator_ColumnPropNameInRow="PaintColour" msprop:Generator_ColumnPropNameInTable="PaintColourColumn" msprop:Generator_UserColumnName="PaintColour" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Supplier" msprop:Generator_ColumnVarNameInTable="columnSupplier" msprop:Generator_ColumnPropNameInRow="Supplier" msprop:Generator_ColumnPropNameInTable="SupplierColumn" msprop:Generator_UserColumnName="Supplier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="finish" msprop:Generator_ColumnVarNameInTable="columnfinish" msprop:Generator_ColumnPropNameInRow="finish" msprop:Generator_ColumnPropNameInTable="finishColumn" msprop:Generator_UserColumnName="finish" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kgs" msprop:Generator_ColumnVarNameInTable="columnKgs" msprop:Generator_ColumnPropNameInRow="Kgs" msprop:Generator_ColumnPropNameInTable="KgsColumn" msprop:Generator_UserColumnName="Kgs" type="xs:double" minOccurs="0" />
+              <xs:element name="Responsible" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnResponsible" msprop:Generator_ColumnPropNameInRow="Responsible" msprop:Generator_ColumnPropNameInTable="ResponsibleColumn" msprop:Generator_UserColumnName="Responsible" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="41" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Reason" msprop:Generator_ColumnVarNameInTable="columnReason" msprop:Generator_ColumnPropNameInRow="Reason" msprop:Generator_ColumnPropNameInTable="ReasonColumn" msprop:Generator_UserColumnName="Reason" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="155" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Complete" msprop:Generator_ColumnVarNameInTable="columnComplete" msprop:Generator_ColumnPropNameInRow="Complete" msprop:Generator_ColumnPropNameInTable="CompleteColumn" msprop:Generator_UserColumnName="Complete" type="xs:short" minOccurs="0" />
+              <xs:element name="LoggedFrom" msprop:Generator_ColumnVarNameInTable="columnLoggedFrom" msprop:Generator_ColumnPropNameInRow="LoggedFrom" msprop:Generator_ColumnPropNameInTable="LoggedFromColumn" msprop:Generator_UserColumnName="LoggedFrom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="door_id" msprop:Generator_ColumnVarNameInTable="columndoor_id" msprop:Generator_ColumnPropNameInRow="door_id" msprop:Generator_ColumnPropNameInTable="door_idColumn" msprop:Generator_UserColumnName="door_id" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_daily_repaints" msprop:Generator_TableClassName="c_view_daily_repaintsDataTable" msprop:Generator_TableVarName="tablec_view_daily_repaints" msprop:Generator_RowChangedName="c_view_daily_repaintsRowChanged" msprop:Generator_TablePropName="c_view_daily_repaints" msprop:Generator_RowDeletingName="c_view_daily_repaintsRowDeleting" msprop:Generator_RowChangingName="c_view_daily_repaintsRowChanging" msprop:Generator_RowEvHandlerName="c_view_daily_repaintsRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_daily_repaintsRowDeleted" msprop:Generator_RowClassName="c_view_daily_repaintsRow" msprop:Generator_UserTableName="c_view_daily_repaints" msprop:Generator_RowEvArgName="c_view_daily_repaintsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="door_id" msprop:Generator_ColumnVarNameInTable="columndoor_id" msprop:Generator_ColumnPropNameInRow="door_id" msprop:Generator_ColumnPropNameInTable="door_idColumn" msprop:Generator_UserColumnName="door_id" type="xs:int" minOccurs="0" />
+              <xs:element name="RepaintID" msprop:Generator_ColumnVarNameInTable="columnRepaintID" msprop:Generator_ColumnPropNameInRow="RepaintID" msprop:Generator_ColumnPropNameInTable="RepaintIDColumn" msprop:Generator_UserColumnName="RepaintID" type="xs:int" />
+              <xs:element name="DatePainted" msprop:Generator_ColumnVarNameInTable="columnDatePainted" msprop:Generator_ColumnPropNameInRow="DatePainted" msprop:Generator_ColumnPropNameInTable="DatePaintedColumn" msprop:Generator_UserColumnName="DatePainted" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateLogged" msprop:Generator_ColumnVarNameInTable="columnDateLogged" msprop:Generator_ColumnPropNameInRow="DateLogged" msprop:Generator_ColumnPropNameInTable="DateLoggedColumn" msprop:Generator_UserColumnName="DateLogged" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PaintColour" msprop:Generator_ColumnVarNameInTable="columnPaintColour" msprop:Generator_ColumnPropNameInRow="PaintColour" msprop:Generator_ColumnPropNameInTable="PaintColourColumn" msprop:Generator_UserColumnName="PaintColour" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Supplier" msprop:Generator_ColumnVarNameInTable="columnSupplier" msprop:Generator_ColumnPropNameInRow="Supplier" msprop:Generator_ColumnPropNameInTable="SupplierColumn" msprop:Generator_UserColumnName="Supplier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="finish" msprop:Generator_ColumnVarNameInTable="columnfinish" msprop:Generator_ColumnPropNameInRow="finish" msprop:Generator_ColumnPropNameInTable="finishColumn" msprop:Generator_UserColumnName="finish" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kgs" msprop:Generator_ColumnVarNameInTable="columnKgs" msprop:Generator_ColumnPropNameInRow="Kgs" msprop:Generator_ColumnPropNameInTable="KgsColumn" msprop:Generator_UserColumnName="Kgs" type="xs:double" minOccurs="0" />
+              <xs:element name="Responsible" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnResponsible" msprop:Generator_ColumnPropNameInRow="Responsible" msprop:Generator_ColumnPropNameInTable="ResponsibleColumn" msprop:Generator_UserColumnName="Responsible" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="41" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Reason" msprop:Generator_ColumnVarNameInTable="columnReason" msprop:Generator_ColumnPropNameInRow="Reason" msprop:Generator_ColumnPropNameInTable="ReasonColumn" msprop:Generator_UserColumnName="Reason" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="155" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LoggedFrom" msprop:Generator_ColumnVarNameInTable="columnLoggedFrom" msprop:Generator_ColumnPropNameInRow="LoggedFrom" msprop:Generator_ColumnPropNameInTable="LoggedFromColumn" msprop:Generator_UserColumnName="LoggedFrom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_get_paint_id" msprop:Generator_TableClassName="c_view_get_paint_idDataTable" msprop:Generator_TableVarName="tablec_view_get_paint_id" msprop:Generator_TablePropName="c_view_get_paint_id" msprop:Generator_RowDeletingName="c_view_get_paint_idRowDeleting" msprop:Generator_RowChangingName="c_view_get_paint_idRowChanging" msprop:Generator_RowEvHandlerName="c_view_get_paint_idRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_get_paint_idRowDeleted" msprop:Generator_UserTableName="c_view_get_paint_id" msprop:Generator_RowChangedName="c_view_get_paint_idRowChanged" msprop:Generator_RowEvArgName="c_view_get_paint_idRowChangeEvent" msprop:Generator_RowClassName="c_view_get_paint_idRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="door_id" msprop:Generator_ColumnVarNameInTable="columndoor_id" msprop:Generator_ColumnPropNameInRow="door_id" msprop:Generator_ColumnPropNameInTable="door_idColumn" msprop:Generator_UserColumnName="door_id" type="xs:int" minOccurs="0" />
+              <xs:element name="paint_id" msprop:Generator_ColumnVarNameInTable="columnpaint_id" msprop:Generator_ColumnPropNameInRow="paint_id" msprop:Generator_ColumnPropNameInTable="paint_idColumn" msprop:Generator_UserColumnName="paint_id" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_late_painting" msprop:Generator_TableClassName="c_view_late_paintingDataTable" msprop:Generator_TableVarName="tablec_view_late_painting" msprop:Generator_TablePropName="c_view_late_painting" msprop:Generator_RowDeletingName="c_view_late_paintingRowDeleting" msprop:Generator_RowChangingName="c_view_late_paintingRowChanging" msprop:Generator_RowEvHandlerName="c_view_late_paintingRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_late_paintingRowDeleted" msprop:Generator_UserTableName="c_view_late_painting" msprop:Generator_RowChangedName="c_view_late_paintingRowChanged" msprop:Generator_RowEvArgName="c_view_late_paintingRowChangeEvent" msprop:Generator_RowClassName="c_view_late_paintingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="quantity_same" msprop:Generator_ColumnVarNameInTable="columnquantity_same" msprop:Generator_ColumnPropNameInRow="quantity_same" msprop:Generator_ColumnPropNameInTable="quantity_sameColumn" msprop:Generator_UserColumnName="quantity_same" type="xs:int" minOccurs="0" />
+              <xs:element name="door_type_description" msprop:Generator_ColumnVarNameInTable="columndoor_type_description" msprop:Generator_ColumnPropNameInRow="door_type_description" msprop:Generator_ColumnPropNameInTable="door_type_descriptionColumn" msprop:Generator_UserColumnName="door_type_description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="complete_paint" msprop:Generator_ColumnVarNameInTable="columncomplete_paint" msprop:Generator_ColumnPropNameInRow="complete_paint" msprop:Generator_ColumnPropNameInTable="complete_paintColumn" msprop:Generator_UserColumnName="complete_paint" type="xs:boolean" minOccurs="0" />
+              <xs:element name="date_paint" msprop:Generator_ColumnVarNameInTable="columndate_paint" msprop:Generator_ColumnPropNameInRow="date_paint" msprop:Generator_ColumnPropNameInTable="date_paintColumn" msprop:Generator_UserColumnName="date_paint" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="status_id" msprop:Generator_ColumnVarNameInTable="columnstatus_id" msprop:Generator_ColumnPropNameInRow="status_id" msprop:Generator_ColumnPropNameInTable="status_idColumn" msprop:Generator_UserColumnName="status_id" type="xs:int" minOccurs="0" />
+              <xs:element name="finish_description" msprop:Generator_ColumnVarNameInTable="columnfinish_description" msprop:Generator_ColumnPropNameInRow="finish_description" msprop:Generator_ColumnPropNameInTable="finish_descriptionColumn" msprop:Generator_UserColumnName="finish_description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="painting_note" msprop:Generator_ColumnVarNameInTable="columnpainting_note" msprop:Generator_ColumnPropNameInRow="painting_note" msprop:Generator_ColumnPropNameInTable="painting_noteColumn" msprop:Generator_UserColumnName="painting_note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="priority_status_paint" msprop:Generator_ColumnVarNameInTable="columnpriority_status_paint" msprop:Generator_ColumnPropNameInRow="priority_status_paint" msprop:Generator_ColumnPropNameInTable="priority_status_paintColumn" msprop:Generator_UserColumnName="priority_status_paint" type="xs:short" minOccurs="0" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="supplier_name" msprop:Generator_ColumnVarNameInTable="columnsupplier_name" msprop:Generator_ColumnPropNameInRow="supplier_name" msprop:Generator_ColumnPropNameInTable="supplier_nameColumn" msprop:Generator_UserColumnName="supplier_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="finish" msprop:Generator_ColumnVarNameInTable="columnfinish" msprop:Generator_ColumnPropNameInRow="finish" msprop:Generator_ColumnPropNameInTable="finishColumn" msprop:Generator_UserColumnName="finish" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="powder_kgs" msprop:Generator_ColumnVarNameInTable="columnpowder_kgs" msprop:Generator_ColumnPropNameInRow="powder_kgs" msprop:Generator_ColumnPropNameInTable="powder_kgsColumn" msprop:Generator_UserColumnName="powder_kgs" type="xs:double" minOccurs="0" />
+              <xs:element name="wet" msprop:Generator_ColumnVarNameInTable="columnwet" msprop:Generator_ColumnPropNameInRow="wet" msprop:Generator_ColumnPropNameInTable="wetColumn" msprop:Generator_UserColumnName="wet" type="xs:short" minOccurs="0" />
+              <xs:element name="free_issue" msprop:Generator_ColumnVarNameInTable="columnfree_issue" msprop:Generator_ColumnPropNameInRow="free_issue" msprop:Generator_ColumnPropNameInTable="free_issueColumn" msprop:Generator_UserColumnName="free_issue" type="xs:short" minOccurs="0" />
+              <xs:element name="side_selection" msprop:Generator_ColumnVarNameInTable="columnside_selection" msprop:Generator_ColumnPropNameInRow="side_selection" msprop:Generator_ColumnPropNameInTable="side_selectionColumn" msprop:Generator_UserColumnName="side_selection" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="door_id" msprop:Generator_ColumnVarNameInTable="columndoor_id" msprop:Generator_ColumnPropNameInRow="door_id" msprop:Generator_ColumnPropNameInTable="door_idColumn" msprop:Generator_UserColumnName="door_id" type="xs:int" minOccurs="0" />
+              <xs:element name="p_desc" msprop:Generator_ColumnVarNameInTable="columnp_desc" msprop:Generator_ColumnPropNameInRow="p_desc" msprop:Generator_ColumnPropNameInTable="p_descColumn" msprop:Generator_UserColumnName="p_desc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="p_finish" msprop:Generator_ColumnVarNameInTable="columnp_finish" msprop:Generator_ColumnPropNameInRow="p_finish" msprop:Generator_ColumnPropNameInTable="p_finishColumn" msprop:Generator_UserColumnName="p_finish" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="p_sup" msprop:Generator_ColumnVarNameInTable="columnp_sup" msprop:Generator_ColumnPropNameInRow="p_sup" msprop:Generator_ColumnPropNameInTable="p_supColumn" msprop:Generator_UserColumnName="p_sup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="p_powder" msprop:Generator_ColumnVarNameInTable="columnp_powder" msprop:Generator_ColumnPropNameInRow="p_powder" msprop:Generator_ColumnPropNameInTable="p_powderColumn" msprop:Generator_UserColumnName="p_powder" type="xs:double" minOccurs="0" />
+              <xs:element name="p_wet" msprop:Generator_ColumnVarNameInTable="columnp_wet" msprop:Generator_ColumnPropNameInRow="p_wet" msprop:Generator_ColumnPropNameInTable="p_wetColumn" msprop:Generator_UserColumnName="p_wet" type="xs:short" minOccurs="0" />
+              <xs:element name="p_free_issue" msprop:Generator_ColumnVarNameInTable="columnp_free_issue" msprop:Generator_ColumnPropNameInRow="p_free_issue" msprop:Generator_ColumnPropNameInTable="p_free_issueColumn" msprop:Generator_UserColumnName="p_free_issue" type="xs:short" minOccurs="0" />
+              <xs:element name="p_side_selection" msprop:Generator_ColumnVarNameInTable="columnp_side_selection" msprop:Generator_ColumnPropNameInRow="p_side_selection" msprop:Generator_ColumnPropNameInTable="p_side_selectionColumn" msprop:Generator_UserColumnName="p_side_selection" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_door_production_progress" msprop:Generator_TableClassName="c_view_door_production_progressDataTable" msprop:Generator_TableVarName="tablec_view_door_production_progress" msprop:Generator_RowChangedName="c_view_door_production_progressRowChanged" msprop:Generator_TablePropName="c_view_door_production_progress" msprop:Generator_RowDeletingName="c_view_door_production_progressRowDeleting" msprop:Generator_RowChangingName="c_view_door_production_progressRowChanging" msprop:Generator_RowEvHandlerName="c_view_door_production_progressRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_door_production_progressRowDeleted" msprop:Generator_RowClassName="c_view_door_production_progressRow" msprop:Generator_UserTableName="c_view_door_production_progress" msprop:Generator_RowEvArgName="c_view_door_production_progressRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="date_op" msprop:Generator_ColumnVarNameInTable="columndate_op" msprop:Generator_ColumnPropNameInRow="date_op" msprop:Generator_ColumnPropNameInTable="date_opColumn" msprop:Generator_UserColumnName="date_op" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date_op_complete" msprop:Generator_ColumnVarNameInTable="columndate_op_complete" msprop:Generator_ColumnPropNameInRow="date_op_complete" msprop:Generator_ColumnPropNameInTable="date_op_completeColumn" msprop:Generator_UserColumnName="date_op_complete" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="op_order" msprop:Generator_ColumnVarNameInTable="columnop_order" msprop:Generator_ColumnPropNameInRow="op_order" msprop:Generator_ColumnPropNameInTable="op_orderColumn" msprop:Generator_UserColumnName="op_order" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vibration_tools" msprop:Generator_TableClassName="vibration_toolsDataTable" msprop:Generator_TableVarName="tablevibration_tools" msprop:Generator_TablePropName="vibration_tools" msprop:Generator_RowDeletingName="vibration_toolsRowDeleting" msprop:Generator_RowChangingName="vibration_toolsRowChanging" msprop:Generator_RowEvHandlerName="vibration_toolsRowChangeEventHandler" msprop:Generator_RowDeletedName="vibration_toolsRowDeleted" msprop:Generator_UserTableName="vibration_tools" msprop:Generator_RowChangedName="vibration_toolsRowChanged" msprop:Generator_RowEvArgName="vibration_toolsRowChangeEvent" msprop:Generator_RowClassName="vibration_toolsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="exposure_points_ph" msprop:Generator_ColumnVarNameInTable="columnexposure_points_ph" msprop:Generator_ColumnPropNameInRow="exposure_points_ph" msprop:Generator_ColumnPropNameInTable="exposure_points_phColumn" msprop:Generator_UserColumnName="exposure_points_ph" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_paint_stock" msprop:Generator_TableClassName="c_view_paint_stockDataTable" msprop:Generator_TableVarName="tablec_view_paint_stock" msprop:Generator_RowChangedName="c_view_paint_stockRowChanged" msprop:Generator_TablePropName="c_view_paint_stock" msprop:Generator_RowDeletingName="c_view_paint_stockRowDeleting" msprop:Generator_RowChangingName="c_view_paint_stockRowChanging" msprop:Generator_RowEvHandlerName="c_view_paint_stockRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_paint_stockRowDeleted" msprop:Generator_RowClassName="c_view_paint_stockRow" msprop:Generator_UserTableName="c_view_paint_stock" msprop:Generator_RowEvArgName="c_view_paint_stockRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="stock_code" msprop:Generator_ColumnVarNameInTable="columnstock_code" msprop:Generator_ColumnPropNameInRow="stock_code" msprop:Generator_ColumnPropNameInTable="stock_codeColumn" msprop:Generator_UserColumnName="stock_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="finish" msprop:Generator_ColumnVarNameInTable="columnfinish" msprop:Generator_ColumnPropNameInRow="finish" msprop:Generator_ColumnPropNameInTable="finishColumn" msprop:Generator_UserColumnName="finish" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="amount_in_stock" msprop:Generator_ColumnVarNameInTable="columnamount_in_stock" msprop:Generator_ColumnPropNameInRow="amount_in_stock" msprop:Generator_ColumnPropNameInTable="amount_in_stockColumn" msprop:Generator_UserColumnName="amount_in_stock" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:c_view_repaint_list" />
+      <xs:field xpath="mstns:Repaint_x0020_ID" />
+    </xs:unique>
+    <xs:unique name="c_view_repaints_outstanding_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:c_view_repaints_outstanding" />
+      <xs:field xpath="mstns:RepaintID" />
+    </xs:unique>
+    <xs:unique name="c_view_daily_repaints_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:c_view_daily_repaints" />
+      <xs:field xpath="mstns:RepaintID" />
+    </xs:unique>
+    <xs:unique name="c_view_get_paint_id_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:c_view_get_paint_id" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="c_view_late_painting_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:c_view_late_painting" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="vibration_tools_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vibration_tools" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="c_view_late_painting_c_view_paint_on_door" msdata:parent="c_view_late_painting" msdata:child="c_view_paint_on_door" msdata:parentkey="id" msdata:childkey="door_id" msprop:Generator_UserChildTable="c_view_paint_on_door" msprop:Generator_ChildPropName="Getc_view_paint_on_doorRows" msprop:Generator_UserRelationName="c_view_late_painting_c_view_paint_on_door" msprop:Generator_ParentPropName="c_view_late_paintingRow" msprop:Generator_RelationVarName="relationc_view_late_painting_c_view_paint_on_door" msprop:Generator_UserParentTable="c_view_late_painting" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
