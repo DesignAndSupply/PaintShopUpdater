@@ -148,6 +148,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticatedUser.cs" />
     <Compile Include="CellCheck.cs" />
     <Compile Include="CompleteRepaint.cs">
       <SubType>Form</SubType>
