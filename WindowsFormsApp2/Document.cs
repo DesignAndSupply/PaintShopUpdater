@@ -50,7 +50,7 @@ namespace WindowsFormsApp2
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             DocumentModel document = DocumentModel.Load(@"\\designsvr1\apps\Design and Supply CSharp\Documents\PaintShop\BoxLabel.docx");
 
-            //string pathToResources = "Resources";
+           
 
             document.Bookmarks["BOXID"].GetContent(false).LoadText(boxID.ToString());
             document.Bookmarks["COLOUR"].GetContent(false).LoadText(colour);

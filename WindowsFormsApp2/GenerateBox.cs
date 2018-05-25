@@ -67,7 +67,7 @@ namespace WindowsFormsApp2
                     sqlcmd.ExecuteNonQuery();
                     i++;
 
-
+                    //GETS THE MAX ID FROM THE TABLE TO PRINT OUT THE LABEL
                     SqlCommand maxID = new SqlCommand();
                     maxID.Connection = sqlconn;
                     maxID.CommandText = "SELECT max(id) as maxID from dbo.paint_box";
@@ -79,10 +79,19 @@ namespace WindowsFormsApp2
                     {
                         Document labelPrint = new Document(Convert.ToInt32(rdr["maxID"]));
                         labelPrint.PrintBoxLabel();
+
+                        //inserts a record into the log
+                        Logging log = new Logging(Convert.ToInt32(rdr["maxID"]),"In", o ,1);
+                        log.upDateLog();
+
+
                     }
 
                     rdr.Close();
                     sqlconn.Close();
+
+
+
                 }
 
 

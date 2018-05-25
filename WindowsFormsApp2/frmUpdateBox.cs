@@ -56,7 +56,7 @@ namespace WindowsFormsApp2
                 sqlcmd.Connection = sqlconn;
                 try
                 {
-                    //if the quantity value is 0 do nothing
+                   // if the quantity value is 0 do nothing
                     if (string.IsNullOrWhiteSpace(n.ToString()))
                     {
 
@@ -97,6 +97,10 @@ namespace WindowsFormsApp2
 
                     sqlcmd.ExecuteNonQuery();
                     sqlconn.Close();
+
+                    //inserts a record into the log
+                    Logging log = new Logging(boxNumber, "Out",n, 1);
+                    log.upDateLog();
 
                     this.Close();
 

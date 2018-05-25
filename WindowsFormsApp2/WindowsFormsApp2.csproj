@@ -206,6 +206,7 @@
     <Compile Include="GenerateBox.Designer.cs">
       <DependentUpon>GenerateBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logging.cs" />
     <Compile Include="NewRepaint.cs">
       <SubType>Form</SubType>
     </Compile>
