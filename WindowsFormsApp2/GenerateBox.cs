@@ -78,7 +78,7 @@ namespace WindowsFormsApp2
 
 
 
-            //MessageBox.Show("New boxes successfully Generated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("New boxes successfully Generated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
 
         }
