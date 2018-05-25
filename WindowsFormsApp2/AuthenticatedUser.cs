@@ -9,10 +9,8 @@ namespace WindowsFormsApp2
 {
     class AuthenticatedUser
     {
-        private string _fullName;
+        
         public static string uFullName { get; set; }
-
-
         public static int uID { get; set; }
 
         public AuthenticatedUser(int userId)
