@@ -16,21 +16,18 @@ namespace WindowsFormsApp2
         int sc = 0;
         string desc = "";
 
-
-
-
         public frmStockBalance()
         {
             InitializeComponent();
             dgvPaintList.CellClick += dgvPaintList_CellClick;
-            frmSelectUser frmsu = new frmSelectUser();
-            frmsu.ShowDialog();
+            //frmSelectUser frmsu = new frmSelectUser();
+            //frmsu.ShowDialog();
+
         }
 
         private void frmStockBalance_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'order_databaseDataSet1.c_view_paint_stock' table. You can move, or remove it, as needed.
-
 
         }
 
