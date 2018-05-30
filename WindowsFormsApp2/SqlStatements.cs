@@ -20,7 +20,7 @@ namespace WindowsFormsApp2
         public const  string ConnectionString = "user id=sa;" +
                                "password=Dodid1;Network Address=192.168.0.150\\sqlexpress;" +
                                "Trusted_Connection=no;" +
-                               "database=order_database; " +
+                               "database=order_database_test; " +
                                "connection timeout=30";
 
         public const string ConnectionStringUser = "user id=sa;" +
@@ -33,6 +33,42 @@ namespace WindowsFormsApp2
         DateTime time = DateTime.Now;
         string format = "yyyy-MM-dd HH:mm:ss";
         //string formatDate = "yyyy-MM-dd";
+
+
+        public void timeStamp100()
+        {
+            var UpdateDate = DateTime.Now.ToString("yyyy-MM-dd 00:00:00.000");
+
+            SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString);
+            conn.Open();
+
+            SqlCommand readcmd = new SqlCommand();
+            readcmd.Connection = conn;
+            readcmd.CommandText = "SELECT time_100_percent_paint, actual_hours_paint, goal_hours_paint from dbo.daily_department_goal WHERE date_goal = @date";
+            readcmd.Parameters.AddWithValue("@date", UpdateDate);
+
+            SqlDataReader rdr = readcmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                if (string.IsNullOrWhiteSpace(rdr["time_100_percent_paint"].ToString()))
+                {
+                    if ((Convert.ToDouble(rdr["actual_hours_paint"]) / Convert.ToDouble(rdr["goal_hours_paint"])) >= 1)
+                    {
+
+                        SqlCommand writecmd = new SqlCommand();
+                        writecmd.Connection = conn;
+                        writecmd.CommandText = "UPDATE dbo.daily_department_goal SET time_100_percent_paint = @now WHERE date_goal = @date";
+                        writecmd.Parameters.AddWithValue("@now", DateTime.Now);
+                        writecmd.Parameters.AddWithValue("@date", UpdateDate);
+                    }
+                }
+            }
+
+            conn.Close();
+
+        }
+
 
         public void UpdatePaintStock(int stockCode, float deductionAmount)
         {

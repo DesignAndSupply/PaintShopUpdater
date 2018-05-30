@@ -15,7 +15,7 @@ namespace WindowsFormsApp2
         {
             int SplitTimes;
 
-            if (MessageBox.Show("Do you wish to allocate this time to a specific person?", "Time Split", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Do you wish to allocate the time in " + op + " to a specific person?", "Time Split", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 SplitTimes = 1;
                 

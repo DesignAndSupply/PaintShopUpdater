@@ -37,7 +37,7 @@ namespace WindowsFormsApp2
 
         public string FinishID
         {
-            get { return txtFinish.Text;}
+            get { return txtFinish.Text; }
             set { txtFinish.Text = value; }
         }
 
@@ -45,11 +45,11 @@ namespace WindowsFormsApp2
         {
         }
 
-       private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
-        
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (this.ValidateChildren(ValidationConstraints.Enabled))
@@ -96,7 +96,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Door number is required before searching", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            
+
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace WindowsFormsApp2
                     //POWDER COATING AND TWO TONE FRAME/LEAF + TWO TONE COASTAL GRADE 
                     case 7:
                     case 11:
-                    
+
                         cmdOp.Items.Add("Up");
                         cmdOp.Items.Add("Wash/Wipe");
                         cmdOp.Items.Add("Etch");
@@ -208,10 +208,134 @@ namespace WindowsFormsApp2
 
             }
             catch { }
-            
+
         }
 
+        private void updateAll(string oper)
+        {
+                Operations op = new Operations();
+                SqlStatements sqlUpdate = new SqlStatements();
 
+                Boolean checkGrid = GridCheck(oper);
+
+                //NEEDS TO CHECK CELL VALUE
+                if (checkGrid == false)
+                {
+                    //MessageBox.Show("This operation has already been completed!", "Already Complete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    //WORK OUT THE TIME SPLIT
+                    TimeSplit ts = new TimeSplit();
+                    int SplitTime = ts.GetTimeSplit(oper);
+                    int staff_no1 = 0;
+                    int staff_no2 = 0;
+                    int staff_no3 = 0;
+                    int menIn = 0;
+                    int staffDynamic;
+                    int finishType = Int32.Parse(this.txtFinishID.Text);
+
+                    var allStaff = ts.GetAllInDept(oper);
+
+
+                    staff_no1 = allStaff.Item1;
+                    staff_no2 = allStaff.Item2;
+                    staff_no3 = allStaff.Item3;
+
+                    //Works out the amount of men in the department
+
+                    if (staff_no3 == 195)
+                    {
+                        if (staff_no2 == 195)
+                        {
+                            menIn = 1;
+                        }
+                        else
+                        {
+                            menIn = 2;
+                        }
+                    }
+                    else
+                    {
+                        menIn = 3;
+                    }
+
+
+
+                    staffDynamic = 0;
+                    for (int i = 1; i <= menIn; ++i)
+                    {
+
+                        switch (i)
+                        {
+                            case 1:
+                               staffDynamic = staff_no1;
+                               break;
+                            case 2:
+                                staffDynamic = staff_no2;
+                                break;
+                            case 3:
+                                staffDynamic = staff_no3;
+                                break;
+                        }
+
+                        sqlUpdate.InsertPartCompletion(Int32.Parse(txtSearch.Text), oper, op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), oper, finishType, menIn), staffDynamic, i);
+
+                        }
+
+                 
+
+                    //UPDATE DailyGoals
+                    sqlUpdate.UpdateDailyGoals(op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), oper, finishType));
+
+                    switch (oper)
+                    {
+                        case "Up":
+                            //UPDATE DOOR
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Up", finishType) / int.Parse(txtQuantitySame.Text), "up", staff_no1, staff_no2, staff_no3);
+                            break;
+                        case "Wash/Wipe":
+                            //UPDATE DOOR
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Wash/Wipe", finishType) / int.Parse(txtQuantitySame.Text), "ww", staff_no1, staff_no2, staff_no3);
+                            break;
+                        case "Etch":
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Etch", finishType) / int.Parse(txtQuantitySame.Text), "etch", staff_no1, staff_no2, staff_no3);
+                            break;
+                        case "Sand":
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Sand", finishType) / int.Parse(txtQuantitySame.Text), "sand", staff_no1, staff_no2, staff_no3);
+                            break;
+                        case "Powder Prime":
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Powder Prime", finishType) / int.Parse(txtQuantitySame.Text), "pp", staff_no1, staff_no2, staff_no3);
+                            break;
+                        case "Powder Coat":
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Powder Coat", finishType) / int.Parse(txtQuantitySame.Text), "pc", staff_no1, staff_no2, staff_no3);
+                            break;
+                        case "Oven":
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Oven", finishType) / int.Parse(txtQuantitySame.Text), "oven", staff_no1, staff_no2, staff_no3);
+                            break;
+                        case "Wet Prep":
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Wet Prep", finishType) / int.Parse(txtQuantitySame.Text), "wp", staff_no1, staff_no2, staff_no3);
+                            break;
+                        case "Wet Paint":
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Wet Paint", finishType) / int.Parse(txtQuantitySame.Text), "wet", staff_no1, staff_no2, staff_no3);
+                            break;
+                        case "Oven 2":
+                            sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Oven 2", finishType) / int.Parse(txtQuantitySame.Text), "oven1", staff_no1, staff_no2, staff_no3);
+                            break;
+                        default:
+                            MessageBox.Show("No operation has been selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
+
+                SqlStatements sqlCheck100 = new SqlStatements();
+                sqlCheck100.timeStamp100();
+                //REFRESH THE DATAGRID
+                RefreshMainGrid();
+           
+                }
+        }
+    
 
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -351,6 +475,10 @@ namespace WindowsFormsApp2
                     }
 
                     //btnSearch_Click(sender,e);
+
+                    SqlStatements sqlCheck100 = new SqlStatements();
+                    sqlCheck100.timeStamp100();
+
 
                     //REFRESH THE DATAGRID
                     RefreshMainGrid();
@@ -524,6 +652,13 @@ namespace WindowsFormsApp2
             {
                 if (MessageBox.Show("Are you sure you have completed all the operation on this door number?", "Sure", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+
+                    foreach (object o in cmdOp.Items)
+                    {
+                        updateAll(o.ToString());
+                    }
+
+
                     //NEEDS TO MARK THE DOOR AS COMPLETE
                     SqlStatements sqlUpdate = new SqlStatements();
 
@@ -531,6 +666,8 @@ namespace WindowsFormsApp2
 
                     fli.ShowDialog();
 
+
+                    
 
                     sqlUpdate.CompleteDoor(Int32.Parse(txtSearch.Text), -1);
                     RefreshDoorData();
@@ -833,6 +970,13 @@ namespace WindowsFormsApp2
             frmSB.ShowDialog();
         }
 
-       
+        private void button4_Click(object sender, EventArgs e)
+        {
+            foreach (object o in cmdOp.Items)
+            {
+                updateAll(o.ToString());
+            }
+            
+        }
     }
 }
