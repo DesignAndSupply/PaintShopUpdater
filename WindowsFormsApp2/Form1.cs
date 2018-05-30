@@ -330,6 +330,7 @@ namespace WindowsFormsApp2
 
                 SqlStatements sqlCheck100 = new SqlStatements();
                 sqlCheck100.timeStamp100();
+
                 //REFRESH THE DATAGRID
                 RefreshMainGrid();
            
@@ -650,8 +651,6 @@ namespace WindowsFormsApp2
 
             if (isNumeric == true)
             {
-                if (MessageBox.Show("Are you sure you have completed all the operation on this door number?", "Sure", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
 
                     foreach (object o in cmdOp.Items)
                     {
@@ -671,11 +670,7 @@ namespace WindowsFormsApp2
 
                     sqlUpdate.CompleteDoor(Int32.Parse(txtSearch.Text), -1);
                     RefreshDoorData();
-                }
-                else
-                {
-                    MessageBox.Show("Door has not been marked as complete!", "No action taken", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+               
             }
         }
 

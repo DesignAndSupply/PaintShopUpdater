@@ -44,7 +44,7 @@ namespace WindowsFormsApp2
 
             SqlCommand readcmd = new SqlCommand();
             readcmd.Connection = conn;
-            readcmd.CommandText = "SELECT time_100_percent_paint, actual_hours_paint, goal_hours_paint from dbo.daily_department_goal WHERE date_goal = @date";
+            readcmd.CommandText = "SELECT time_100_percent_paint, actual_hours, goal_hours from dbo.daily_department_goal WHERE date_goal = @date";
             readcmd.Parameters.AddWithValue("@date", UpdateDate);
 
             SqlDataReader rdr = readcmd.ExecuteReader();
@@ -53,7 +53,7 @@ namespace WindowsFormsApp2
             {
                 if (string.IsNullOrWhiteSpace(rdr["time_100_percent_paint"].ToString()))
                 {
-                    if ((Convert.ToDouble(rdr["actual_hours_paint"]) / Convert.ToDouble(rdr["goal_hours_paint"])) >= 1)
+                    if ((Convert.ToDouble(rdr["actual_hours"]) / Convert.ToDouble(rdr["goal_hours"])) >= 1)
                     {
 
                         SqlCommand writecmd = new SqlCommand();
