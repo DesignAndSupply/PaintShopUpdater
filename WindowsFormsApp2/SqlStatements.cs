@@ -14,8 +14,6 @@ namespace WindowsFormsApp2
     class SqlStatements
 
     {
-       
-
 
         public const  string ConnectionString = "user id=sa;" +
                                "password=Dodid1;Network Address=192.168.0.150\\sqlexpress;" +
@@ -32,7 +30,7 @@ namespace WindowsFormsApp2
 
         DateTime time = DateTime.Now;
         string format = "yyyy-MM-dd HH:mm:ss";
-        //string formatDate = "yyyy-MM-dd";
+      
 
 
         public void timeStamp100()
@@ -313,6 +311,15 @@ namespace WindowsFormsApp2
             myConnection.Open();
             string sb;
 
+            if (op_short == "up")
+            {
+                sb = string.Format("UPDATE dbo.door SET up_complete_paint = -1 WHERE id={0}", door_id);
+                SqlCommand myCommand = new SqlCommand(sb.ToString(), myConnection);
+                myCommand.ExecuteNonQuery();
+            }
+
+
+
             if (op_short == "oven")
             { 
             sb = string.Format("UPDATE dbo.door SET {2}_complete_by_id = null,{2}_complete_by_id2 = null,{2}_complete_by_id3 = null, {2}_complete_date2 =null, time_remaining_paint = time_remaining_paint + {0} WHERE id={1}", time_remaining, door_id, op_short);
@@ -321,8 +328,8 @@ namespace WindowsFormsApp2
             {
             sb = string.Format("UPDATE dbo.door SET {2}_complete_by_id = null,{2}_complete_by_id2 = null,{2}_complete_by_id3 = null, {2}_complete_date =null, time_remaining_paint = time_remaining_paint + {0} WHERE id={1}", time_remaining, door_id, op_short);
             }
-            SqlCommand myCommand = new SqlCommand(sb.ToString(), myConnection);
-            myCommand.ExecuteNonQuery();
+            SqlCommand myCommand1 = new SqlCommand(sb.ToString(), myConnection);
+            myCommand1.ExecuteNonQuery();
 
         }
 
