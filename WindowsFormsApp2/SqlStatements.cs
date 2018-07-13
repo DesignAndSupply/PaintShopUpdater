@@ -313,7 +313,7 @@ namespace WindowsFormsApp2
 
             if (op_short == "up")
             {
-                sb = string.Format("UPDATE dbo.door SET up_complete_paint = -1 WHERE id={0}", door_id);
+                sb = string.Format("UPDATE dbo.door SET up_complete_paint = 0 WHERE id={0}", door_id);
                 SqlCommand myCommand = new SqlCommand(sb.ToString(), myConnection);
                 myCommand.ExecuteNonQuery();
             }

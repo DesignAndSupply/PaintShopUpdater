@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Diagnostics;
 
 namespace WindowsFormsApp2
 {
@@ -294,6 +295,8 @@ namespace WindowsFormsApp2
                         case "Up":
                             //UPDATE DOOR
                             sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Up", finishType) / int.Parse(txtQuantitySame.Text), "up", staff_no1, staff_no2, staff_no3);
+                        //Opens the palletizer to take the jobs off the pallet
+                        palletize();
                             break;
                         case "Wash/Wipe":
                             //UPDATE DOOR
@@ -441,6 +444,12 @@ namespace WindowsFormsApp2
                         case "Up":
                             //UPDATE DOOR
                             sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Up", finishType) / int.Parse(txtQuantitySame.Text), "up", staff_no1, staff_no2, staff_no3);
+
+                            //Opens the palletizer to take the jobs off the pallet
+                            palletize();
+
+
+
                             break;
                         case "Wash/Wipe":
                             //UPDATE DOOR
@@ -491,6 +500,19 @@ namespace WindowsFormsApp2
             }
 
         }
+
+
+        private void palletize()
+        {
+            Process p = new Process();
+            ProcessStartInfo psi = new ProcessStartInfo();
+         
+            psi.FileName = @"C:\Users\" + Environment.UserName + @"\source\repos\Palletizer\Palletizer\bin\Debug\Palletizer.exe";
+            psi.Arguments = "Paint " + txtSearch.Text;
+            p.StartInfo = psi;
+            p.Start();
+        }
+
         private void RefreshProgressGrid()
         {
             //UPDATES OPERATIONS DATAGRID
@@ -973,5 +995,7 @@ namespace WindowsFormsApp2
             }
             
         }
+
+        
     }
 }
