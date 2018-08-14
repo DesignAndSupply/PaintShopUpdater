@@ -296,7 +296,7 @@ namespace WindowsFormsApp2
                             //UPDATE DOOR
                             sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Up", finishType) / int.Parse(txtQuantitySame.Text), "up", staff_no1, staff_no2, staff_no3);
                         //Opens the palletizer to take the jobs off the pallet
-                        palletize();
+                        //palletize(true);
                             break;
                         case "Wash/Wipe":
                             //UPDATE DOOR
@@ -446,7 +446,7 @@ namespace WindowsFormsApp2
                             sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Up", finishType) / int.Parse(txtQuantitySame.Text), "up", staff_no1, staff_no2, staff_no3);
 
                             //Opens the palletizer to take the jobs off the pallet
-                            palletize();
+                           // palletize(true);
 
 
 
@@ -502,13 +502,22 @@ namespace WindowsFormsApp2
         }
 
 
-        private void palletize()
+        private void palletize(bool useArgs)
         {
             Process p = new Process();
             ProcessStartInfo psi = new ProcessStartInfo();
          
             psi.FileName = @"C:\Users\" + Environment.UserName + @"\source\repos\Palletizer\Palletizer\bin\Debug\Palletizer.exe";
-            psi.Arguments = "Paint " + txtSearch.Text;
+
+            if (useArgs == false)
+            {
+
+            }
+            else
+            {
+                psi.Arguments = "Paint " + txtSearch.Text;
+            }
+           
             p.StartInfo = psi;
             p.Start();
         }
@@ -996,6 +1005,9 @@ namespace WindowsFormsApp2
             
         }
 
-        
+        private void palletizerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            palletize(false);
+        }
     }
 }

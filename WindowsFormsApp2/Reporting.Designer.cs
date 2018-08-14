@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.c_view_late_paintingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.order_databaseDataSet1 = new WindowsFormsApp2.order_databaseDataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDailyRepaints = new System.Windows.Forms.Button();
             this.btnLates = new System.Windows.Forms.Button();
+            this.btnPaintNext = new System.Windows.Forms.Button();
             this.c_view_daily_repaintsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.c_view_repaints_outstandingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.c_view_repaint_listBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,11 +44,14 @@
             this.c_view_repaints_outstandingTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_repaints_outstandingTableAdapter();
             this.c_view_daily_repaintsTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_daily_repaintsTableAdapter();
             this.c_view_late_paintingTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_late_paintingTableAdapter();
+            this.view_paint_nextTableAdapter1 = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.view_paint_nextTableAdapter();
+            this.paintNextBS = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.c_view_late_paintingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.c_view_daily_repaintsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.c_view_repaints_outstandingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.c_view_repaint_listBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paintNextBS)).BeginInit();
             this.SuspendLayout();
             // 
             // c_view_late_paintingBindingSource
@@ -62,16 +66,17 @@
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "LoadPainting";
-            reportDataSource2.Value = this.c_view_late_paintingBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "LoadPainting";
+            reportDataSource1.Value = this.c_view_late_paintingBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp2.LoadPainting.rdlc";
             this.reportViewer1.LocalReport.ReportPath = "";
             this.reportViewer1.Location = new System.Drawing.Point(12, 48);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1204, 578);
+            this.reportViewer1.Size = new System.Drawing.Size(1356, 578);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.Reporting_Load);
             // 
             // button1
             // 
@@ -102,6 +107,16 @@
             this.btnLates.Text = "Current Load";
             this.btnLates.UseVisualStyleBackColor = true;
             this.btnLates.Click += new System.EventHandler(this.btnLates_Click);
+            // 
+            // btnPaintNext
+            // 
+            this.btnPaintNext.Location = new System.Drawing.Point(438, 17);
+            this.btnPaintNext.Name = "btnPaintNext";
+            this.btnPaintNext.Size = new System.Drawing.Size(136, 25);
+            this.btnPaintNext.TabIndex = 4;
+            this.btnPaintNext.Text = "Paint Next";
+            this.btnPaintNext.UseVisualStyleBackColor = true;
+            this.btnPaintNext.Click += new System.EventHandler(this.btnPaintNext_Click);
             // 
             // c_view_daily_repaintsBindingSource
             // 
@@ -134,11 +149,21 @@
             // 
             this.c_view_late_paintingTableAdapter.ClearBeforeFill = true;
             // 
+            // view_paint_nextTableAdapter1
+            // 
+            this.view_paint_nextTableAdapter1.ClearBeforeFill = true;
+            // 
+            // paintNextBS
+            // 
+            this.paintNextBS.DataMember = "view_paint_next";
+            this.paintNextBS.DataSource = this.order_databaseDataSet1;
+            // 
             // Reporting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 654);
+            this.ClientSize = new System.Drawing.Size(1380, 654);
+            this.Controls.Add(this.btnPaintNext);
             this.Controls.Add(this.btnLates);
             this.Controls.Add(this.btnDailyRepaints);
             this.Controls.Add(this.button1);
@@ -154,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.c_view_daily_repaintsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.c_view_repaints_outstandingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.c_view_repaint_listBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paintNextBS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,5 +199,8 @@
         private System.Windows.Forms.Button btnLates;
         private System.Windows.Forms.BindingSource c_view_late_paintingBindingSource;
         private order_databaseDataSet1TableAdapters.c_view_late_paintingTableAdapter c_view_late_paintingTableAdapter;
+        private System.Windows.Forms.Button btnPaintNext;
+        private order_databaseDataSet1TableAdapters.view_paint_nextTableAdapter view_paint_nextTableAdapter1;
+        private System.Windows.Forms.BindingSource paintNextBS;
     }
 }

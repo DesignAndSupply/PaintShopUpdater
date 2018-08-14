@@ -343,6 +343,57 @@ WHERE        (description LIKE '%@Colour%')</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_paint_nextTableAdapter" GeneratorDataComponentClassName="view_paint_nextTableAdapter" Name="view_paint_next" UserDataComponentName="view_paint_nextTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.view_paint_next" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from view_paint_next</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="NAME" DataSetColumn="NAME" />
+              <Mapping SourceColumn="door_type_description" DataSetColumn="door_type_description" />
+              <Mapping SourceColumn="date_paint" DataSetColumn="date_paint" />
+              <Mapping SourceColumn="complete_paint" DataSetColumn="complete_paint" />
+              <Mapping SourceColumn="quantity_same" DataSetColumn="quantity_same" />
+              <Mapping SourceColumn="infill_description" DataSetColumn="infill_description" />
+              <Mapping SourceColumn="date_completion" DataSetColumn="date_completion" />
+              <Mapping SourceColumn="up_complete_date" DataSetColumn="up_complete_date" />
+              <Mapping SourceColumn="comp_buff" DataSetColumn="comp_buff" />
+              <Mapping SourceColumn="complete_stores" DataSetColumn="complete_stores" />
+              <Mapping SourceColumn="status_id" DataSetColumn="status_id" />
+              <Mapping SourceColumn="test_identifier" DataSetColumn="test_identifier" />
+              <Mapping SourceColumn="painting_note" DataSetColumn="painting_note" />
+              <Mapping SourceColumn="urgent" DataSetColumn="urgent" />
+              <Mapping SourceColumn="finish_description" DataSetColumn="finish_description" />
+              <Mapping SourceColumn="paint_string" DataSetColumn="paint_string" />
+              <Mapping SourceColumn="add_string" DataSetColumn="add_string" />
+              <Mapping SourceColumn="buff_staff_allocation" DataSetColumn="buff_staff_allocation" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_buff_loose_items_concatTableAdapter" GeneratorDataComponentClassName="c_view_buff_loose_items_concatTableAdapter" Name="c_view_buff_loose_items_concat" UserDataComponentName="c_view_buff_loose_items_concatTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_buff_loose_items_concat" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM c_view_buff_loose_items_concat</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="door_id" DataSetColumn="door_id" />
+              <Mapping SourceColumn="add_string" DataSetColumn="add_string" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -767,6 +818,99 @@ WHERE        (description LIKE '%@Colour%')</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="view_paint_next" msprop:Generator_TableClassName="view_paint_nextDataTable" msprop:Generator_TableVarName="tableview_paint_next" msprop:Generator_RowChangedName="view_paint_nextRowChanged" msprop:Generator_TablePropName="view_paint_next" msprop:Generator_RowDeletingName="view_paint_nextRowDeleting" msprop:Generator_RowChangingName="view_paint_nextRowChanging" msprop:Generator_RowEvHandlerName="view_paint_nextRowChangeEventHandler" msprop:Generator_RowDeletedName="view_paint_nextRowDeleted" msprop:Generator_RowClassName="view_paint_nextRow" msprop:Generator_UserTableName="view_paint_next" msprop:Generator_RowEvArgName="view_paint_nextRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="door_type_description" msprop:Generator_ColumnVarNameInTable="columndoor_type_description" msprop:Generator_ColumnPropNameInRow="door_type_description" msprop:Generator_ColumnPropNameInTable="door_type_descriptionColumn" msprop:Generator_UserColumnName="door_type_description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date_paint" msprop:Generator_ColumnVarNameInTable="columndate_paint" msprop:Generator_ColumnPropNameInRow="date_paint" msprop:Generator_ColumnPropNameInTable="date_paintColumn" msprop:Generator_UserColumnName="date_paint" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="complete_paint" msprop:Generator_ColumnVarNameInTable="columncomplete_paint" msprop:Generator_ColumnPropNameInRow="complete_paint" msprop:Generator_ColumnPropNameInTable="complete_paintColumn" msprop:Generator_UserColumnName="complete_paint" type="xs:boolean" minOccurs="0" />
+              <xs:element name="quantity_same" msprop:Generator_ColumnVarNameInTable="columnquantity_same" msprop:Generator_ColumnPropNameInRow="quantity_same" msprop:Generator_ColumnPropNameInTable="quantity_sameColumn" msprop:Generator_UserColumnName="quantity_same" type="xs:int" minOccurs="0" />
+              <xs:element name="infill_description" msprop:Generator_ColumnVarNameInTable="columninfill_description" msprop:Generator_ColumnPropNameInRow="infill_description" msprop:Generator_ColumnPropNameInTable="infill_descriptionColumn" msprop:Generator_UserColumnName="infill_description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date_completion" msprop:Generator_ColumnVarNameInTable="columndate_completion" msprop:Generator_ColumnPropNameInRow="date_completion" msprop:Generator_ColumnPropNameInTable="date_completionColumn" msprop:Generator_UserColumnName="date_completion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="up_complete_date" msprop:Generator_ColumnVarNameInTable="columnup_complete_date" msprop:Generator_ColumnPropNameInRow="up_complete_date" msprop:Generator_ColumnPropNameInTable="up_complete_dateColumn" msprop:Generator_UserColumnName="up_complete_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="comp_buff" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncomp_buff" msprop:Generator_ColumnPropNameInRow="comp_buff" msprop:Generator_ColumnPropNameInTable="comp_buffColumn" msprop:Generator_UserColumnName="comp_buff" type="xs:boolean" minOccurs="0" />
+              <xs:element name="complete_stores" msprop:Generator_ColumnVarNameInTable="columncomplete_stores" msprop:Generator_ColumnPropNameInRow="complete_stores" msprop:Generator_ColumnPropNameInTable="complete_storesColumn" msprop:Generator_UserColumnName="complete_stores" type="xs:short" minOccurs="0" />
+              <xs:element name="status_id" msprop:Generator_ColumnVarNameInTable="columnstatus_id" msprop:Generator_ColumnPropNameInRow="status_id" msprop:Generator_ColumnPropNameInTable="status_idColumn" msprop:Generator_UserColumnName="status_id" type="xs:int" minOccurs="0" />
+              <xs:element name="test_identifier" msprop:Generator_ColumnVarNameInTable="columntest_identifier" msprop:Generator_ColumnPropNameInRow="test_identifier" msprop:Generator_ColumnPropNameInTable="test_identifierColumn" msprop:Generator_UserColumnName="test_identifier" type="xs:short" minOccurs="0" />
+              <xs:element name="painting_note" msprop:Generator_ColumnVarNameInTable="columnpainting_note" msprop:Generator_ColumnPropNameInRow="painting_note" msprop:Generator_ColumnPropNameInTable="painting_noteColumn" msprop:Generator_UserColumnName="painting_note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="urgent" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnurgent" msprop:Generator_ColumnPropNameInRow="urgent" msprop:Generator_ColumnPropNameInTable="urgentColumn" msprop:Generator_UserColumnName="urgent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="finish_description" msprop:Generator_ColumnVarNameInTable="columnfinish_description" msprop:Generator_ColumnPropNameInRow="finish_description" msprop:Generator_ColumnPropNameInTable="finish_descriptionColumn" msprop:Generator_UserColumnName="finish_description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="paint_string" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpaint_string" msprop:Generator_ColumnPropNameInRow="paint_string" msprop:Generator_ColumnPropNameInTable="paint_stringColumn" msprop:Generator_UserColumnName="paint_string" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="add_string" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnadd_string" msprop:Generator_ColumnPropNameInRow="add_string" msprop:Generator_ColumnPropNameInTable="add_stringColumn" msprop:Generator_UserColumnName="add_string" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="buff_staff_allocation" msprop:Generator_ColumnVarNameInTable="columnbuff_staff_allocation" msprop:Generator_ColumnPropNameInRow="buff_staff_allocation" msprop:Generator_ColumnPropNameInTable="buff_staff_allocationColumn" msprop:Generator_UserColumnName="buff_staff_allocation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_buff_loose_items_concat" msprop:Generator_TableClassName="c_view_buff_loose_items_concatDataTable" msprop:Generator_TableVarName="tablec_view_buff_loose_items_concat" msprop:Generator_TablePropName="c_view_buff_loose_items_concat" msprop:Generator_RowDeletingName="c_view_buff_loose_items_concatRowDeleting" msprop:Generator_RowChangingName="c_view_buff_loose_items_concatRowChanging" msprop:Generator_RowEvHandlerName="c_view_buff_loose_items_concatRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_buff_loose_items_concatRowDeleted" msprop:Generator_UserTableName="c_view_buff_loose_items_concat" msprop:Generator_RowChangedName="c_view_buff_loose_items_concatRowChanged" msprop:Generator_RowEvArgName="c_view_buff_loose_items_concatRowChangeEvent" msprop:Generator_RowClassName="c_view_buff_loose_items_concatRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="door_id" msprop:Generator_ColumnVarNameInTable="columndoor_id" msprop:Generator_ColumnPropNameInRow="door_id" msprop:Generator_ColumnPropNameInTable="door_idColumn" msprop:Generator_UserColumnName="door_id" type="xs:int" minOccurs="0" />
+              <xs:element name="add_string" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnadd_string" msprop:Generator_ColumnPropNameInRow="add_string" msprop:Generator_ColumnPropNameInTable="add_stringColumn" msprop:Generator_UserColumnName="add_string" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -791,6 +935,10 @@ WHERE        (description LIKE '%@Colour%')</CommandText>
     </xs:unique>
     <xs:unique name="vibration_tools_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vibration_tools" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="view_paint_next_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:view_paint_next" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>

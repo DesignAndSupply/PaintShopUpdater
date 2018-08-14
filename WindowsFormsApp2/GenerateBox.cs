@@ -26,10 +26,11 @@ namespace WindowsFormsApp2
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             int i = 0;
-
             int n;
             int m;
             double o;
+
+
             bool isNumericQty = int.TryParse(txtBoxQuantity.Text, out n);
             bool isNumericNew = int.TryParse(txtNewKgs.Text, out m);
             bool isNumericCurrent = double.TryParse(txtCurrentKGs.Text, out o);

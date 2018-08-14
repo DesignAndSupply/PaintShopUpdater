@@ -102,6 +102,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtQuantitySame = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.palletizerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -702,7 +703,8 @@
             this.staffSetupToolStripMenuItem,
             this.repaintsToolStripMenuItem,
             this.reportingToolStripMenuItem,
-            this.balanceStockToolStripMenuItem});
+            this.balanceStockToolStripMenuItem,
+            this.palletizerToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -774,6 +776,13 @@
             this.label9.Size = new System.Drawing.Size(79, 13);
             this.label9.TabIndex = 91;
             this.label9.Text = "Quantity Same:";
+            // 
+            // palletizerToolStripMenuItem
+            // 
+            this.palletizerToolStripMenuItem.Name = "palletizerToolStripMenuItem";
+            this.palletizerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.palletizerToolStripMenuItem.Text = "Palletizer";
+            this.palletizerToolStripMenuItem.Click += new System.EventHandler(this.palletizerToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -916,6 +925,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtQuantitySame;
         private System.Windows.Forms.ToolStripMenuItem balanceStockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem palletizerToolStripMenuItem;
     }
 }
 

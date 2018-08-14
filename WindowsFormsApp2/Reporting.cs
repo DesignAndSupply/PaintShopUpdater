@@ -13,6 +13,8 @@ namespace WindowsFormsApp2
 {
     public partial class Reporting : Form
     {
+        
+
         public Reporting()
         {
             InitializeComponent();
@@ -25,8 +27,8 @@ namespace WindowsFormsApp2
            order_databaseDataSet1.EnforceConstraints = false;
            this.c_view_late_paintingTableAdapter.Fill(this.order_databaseDataSet1.c_view_late_painting);
 
-               
-            
+            this.view_paint_nextTableAdapter1.Fill(this.order_databaseDataSet1.view_paint_next);
+
             // TODO: This line of code loads data into the 'order_databaseDataSet1.c_view_daily_repaints' table. You can move, or remove it, as needed.
             this.c_view_daily_repaintsTableAdapter.Fill(this.order_databaseDataSet1.c_view_daily_repaints);
             // TODO: This line of code loads data into the 'order_databaseDataSet1.c_view_repaints_outstanding' table. You can move, or remove it, as needed.
@@ -35,11 +37,6 @@ namespace WindowsFormsApp2
             this.c_view_repaint_listTableAdapter.Fill(this.order_databaseDataSet1.c_view_repaint_list);
 
             this.reportViewer1.RefreshReport();
-
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
 
         }
 
@@ -80,5 +77,18 @@ namespace WindowsFormsApp2
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp2.LoadPainting.rdlc";
             this.reportViewer1.RefreshReport();
         }
+
+        private void btnPaintNext_Click(object sender, EventArgs e)
+        {
+            reportViewer1.Reset();
+            ReportDataSource RDC = new ReportDataSource();
+            RDC.Name = "PaintNextDS";
+            RDC.Value = this.paintNextBS;
+            this.reportViewer1.LocalReport.DataSources.Add(RDC);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp2.rptPaintNextList.rdlc";
+            this.reportViewer1.RefreshReport();
+        }
+
+       
     }
 }
