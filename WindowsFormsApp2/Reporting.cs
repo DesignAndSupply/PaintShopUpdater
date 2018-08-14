@@ -37,6 +37,7 @@ namespace WindowsFormsApp2
             this.c_view_repaint_listTableAdapter.Fill(this.order_databaseDataSet1.c_view_repaint_list);
 
             this.reportViewer1.RefreshReport();
+            paintNext();
 
         }
 
@@ -80,6 +81,11 @@ namespace WindowsFormsApp2
 
         private void btnPaintNext_Click(object sender, EventArgs e)
         {
+            paintNext();
+        }
+
+        private void paintNext()
+        {
             reportViewer1.Reset();
             ReportDataSource RDC = new ReportDataSource();
             RDC.Name = "PaintNextDS";
@@ -88,6 +94,7 @@ namespace WindowsFormsApp2
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp2.rptPaintNextList.rdlc";
             this.reportViewer1.RefreshReport();
         }
+    
 
        
     }

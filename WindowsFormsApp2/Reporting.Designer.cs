@@ -100,6 +100,7 @@
             // 
             // btnLates
             // 
+            this.btnLates.Enabled = false;
             this.btnLates.Location = new System.Drawing.Point(296, 17);
             this.btnLates.Name = "btnLates";
             this.btnLates.Size = new System.Drawing.Size(136, 25);

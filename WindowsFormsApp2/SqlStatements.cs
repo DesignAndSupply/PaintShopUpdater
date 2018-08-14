@@ -115,9 +115,10 @@ namespace WindowsFormsApp2
             SqlConnection myConnection = new SqlConnection(ConnectionString);
             myConnection.Open();
             string sb;
-            sb = string.Format("UPDATE dbo.door set painting_note = @paintingNote WHERE id = @id;");
+            sb = string.Format("UPDATE dbo.door set painting_note = @paintingNote , note_amended_painting = @now WHERE id = @id;");
             SqlCommand sqlCmd = new SqlCommand(sb, myConnection);
             sqlCmd.Parameters.AddWithValue("@paintingNote", paintingNote);
+            sqlCmd.Parameters.AddWithValue("@now", DateTime.Now);
             sqlCmd.Parameters.AddWithValue("@id", doorId);
             sqlCmd.ExecuteNonQuery();
 
