@@ -446,8 +446,8 @@ namespace WindowsFormsApp2
                             sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Up", finishType) / int.Parse(txtQuantitySame.Text), "up", staff_no1, staff_no2, staff_no3);
 
                             //Opens the palletizer to take the jobs off the pallet
-                           // palletize(true);
-
+                            palletize(true);
+                            //
 
 
                             break;
@@ -507,7 +507,7 @@ namespace WindowsFormsApp2
             Process p = new Process();
             ProcessStartInfo psi = new ProcessStartInfo();
          
-            psi.FileName = @"C:\Users\" + Environment.UserName + @"\source\repos\Palletizer\Palletizer\bin\Debug\Palletizer.exe";
+            psi.FileName = @"C:\Users\PaintingUpdate\Desktop\PalletizerFiles\Palletizer.exe";
 
             if (useArgs == false)
             {
@@ -515,7 +515,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                psi.Arguments = "Paint " + txtSearch.Text;
+                psi.Arguments = txtSearch.Text;
             }
            
             p.StartInfo = psi;
@@ -576,6 +576,19 @@ namespace WindowsFormsApp2
                 txtPaintingStatus.Text = dtDoorData.Rows[0]["paint_status"].ToString();
                 txtPaintingNote.Text = dtDoorData.Rows[0]["painting_note"].ToString();
                 txtQuantitySame.Text = dtDoorData.Rows[0]["quantity_same"].ToString();
+
+
+                var isProblem = dtDoorData.Rows[0]["paint_note_is_problem"].Equals(DBNull.Value) ? 0 : Convert.ToInt32(dtDoorData.Rows[0]["paint_note_is_problem"]);
+
+                if (isProblem == -1)
+                {
+                chkIsProblem.Checked = true;
+                }
+           
+                else
+                {
+                    chkIsProblem.Checked = false;
+                }
                 colourStatus();
             }
             catch
@@ -889,8 +902,18 @@ namespace WindowsFormsApp2
             
             try
             {
+                int problemVal;
+                if (chkIsProblem.Checked == true)
+                {
+                    problemVal = -1;
+                }
+                else
+                {
+                    problemVal = 0;
+                }
+
                 SqlStatements sqlUpdateNote = new SqlStatements();
-                sqlUpdateNote.SaveNote(int.Parse(txtSearch.Text), this.txtPaintingNote.Text);
+                sqlUpdateNote.SaveNote(int.Parse(txtSearch.Text), this.txtPaintingNote.Text,problemVal);
                 MessageBox.Show("Note saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception )
