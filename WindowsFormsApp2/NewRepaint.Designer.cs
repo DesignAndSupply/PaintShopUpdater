@@ -415,10 +415,12 @@
             // rdoNo
             // 
             this.rdoNo.AutoSize = true;
+            this.rdoNo.Checked = true;
             this.rdoNo.Location = new System.Drawing.Point(13, 61);
             this.rdoNo.Name = "rdoNo";
             this.rdoNo.Size = new System.Drawing.Size(39, 17);
             this.rdoNo.TabIndex = 1;
+            this.rdoNo.TabStop = true;
             this.rdoNo.Text = "No";
             this.rdoNo.UseVisualStyleBackColor = true;
             this.rdoNo.CheckedChanged += new System.EventHandler(this.rdoNo_CheckedChanged);
@@ -426,12 +428,11 @@
             // rdoYes
             // 
             this.rdoYes.AutoSize = true;
-            this.rdoYes.Checked = true;
+            this.rdoYes.Enabled = false;
             this.rdoYes.Location = new System.Drawing.Point(13, 28);
             this.rdoYes.Name = "rdoYes";
             this.rdoYes.Size = new System.Drawing.Size(43, 17);
             this.rdoYes.TabIndex = 0;
-            this.rdoYes.TabStop = true;
             this.rdoYes.Text = "Yes";
             this.rdoYes.UseVisualStyleBackColor = true;
             this.rdoYes.CheckedChanged += new System.EventHandler(this.rdoYes_CheckedChanged);

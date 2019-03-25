@@ -51,12 +51,12 @@
             this.vibrationtoolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.order_databaseDataSet1 = new WindowsFormsApp2.order_databaseDataSet1();
             this.cmbSandBy = new System.Windows.Forms.ComboBox();
+            this.SandingStaffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblMins = new System.Windows.Forms.Label();
             this.txtMins = new System.Windows.Forms.TextBox();
             this.rdoNo = new System.Windows.Forms.RadioButton();
             this.rdoYes = new System.Windows.Forms.RadioButton();
             this.vibration_toolsTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.vibration_toolsTableAdapter();
-            this.SandingStaffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingstaffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_infoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -250,6 +250,11 @@
             this.cmbSandBy.TabIndex = 14;
             this.cmbSandBy.ValueMember = "id";
             // 
+            // SandingStaffBindingSource
+            // 
+            this.SandingStaffBindingSource.DataMember = "c_view_painting_staff";
+            this.SandingStaffBindingSource.DataSource = this.user_infoDataSet;
+            // 
             // lblMins
             // 
             this.lblMins.AutoSize = true;
@@ -270,10 +275,12 @@
             // rdoNo
             // 
             this.rdoNo.AutoSize = true;
+            this.rdoNo.Checked = true;
             this.rdoNo.Location = new System.Drawing.Point(13, 61);
             this.rdoNo.Name = "rdoNo";
             this.rdoNo.Size = new System.Drawing.Size(39, 17);
             this.rdoNo.TabIndex = 1;
+            this.rdoNo.TabStop = true;
             this.rdoNo.Text = "No";
             this.rdoNo.UseVisualStyleBackColor = true;
             this.rdoNo.CheckedChanged += new System.EventHandler(this.rdoNo_CheckedChanged);
@@ -281,12 +288,11 @@
             // rdoYes
             // 
             this.rdoYes.AutoSize = true;
-            this.rdoYes.Checked = true;
+            this.rdoYes.Enabled = false;
             this.rdoYes.Location = new System.Drawing.Point(13, 28);
             this.rdoYes.Name = "rdoYes";
             this.rdoYes.Size = new System.Drawing.Size(43, 17);
             this.rdoYes.TabIndex = 0;
-            this.rdoYes.TabStop = true;
             this.rdoYes.Text = "Yes";
             this.rdoYes.UseVisualStyleBackColor = true;
             this.rdoYes.CheckedChanged += new System.EventHandler(this.rdoYes_CheckedChanged);
@@ -294,11 +300,6 @@
             // vibration_toolsTableAdapter
             // 
             this.vibration_toolsTableAdapter.ClearBeforeFill = true;
-            // 
-            // SandingStaffBindingSource
-            // 
-            this.SandingStaffBindingSource.DataMember = "c_view_painting_staff";
-            this.SandingStaffBindingSource.DataSource = this.user_infoDataSet;
             // 
             // CompleteRepaint
             // 

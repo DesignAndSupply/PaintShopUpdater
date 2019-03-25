@@ -445,9 +445,8 @@ namespace WindowsFormsApp2
                             //UPDATE DOOR
                             sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Up", finishType) / int.Parse(txtQuantitySame.Text), "up", staff_no1, staff_no2, staff_no3);
 
-                            //Opens the palletizer to take the jobs off the pallet
-                            palletize(true);
-                            //
+                            frmTrolleyOrTrack frmtot = new frmTrolleyOrTrack(Int32.Parse(txtSearch.Text));
+                            frmtot.ShowDialog();
 
 
                             break;

@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>48</ApplicationRevision>
+    <ApplicationRevision>50</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -54,10 +54,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>56D2988540EAB451A2F8A690B7EA5686A796EF45</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>1374AEB2CDA573DCFDBC28D40177FC77BF428449</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>WindowsFormsApp2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>WindowsFormsApp2_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -161,6 +161,7 @@
       <DependentUpon>CompleteRepaint.cs</DependentUpon>
     </Compile>
     <Compile Include="Document.cs" />
+    <Compile Include="Door.cs" />
     <Compile Include="dsl_kpiDataSet.cs">
       <DependentUpon>dsl_kpiDataSet.xsd</DependentUpon>
     </Compile>
@@ -204,6 +205,12 @@
     </Compile>
     <Compile Include="frmTimeAllocation.Designer.cs">
       <DependentUpon>frmTimeAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrolleyOrTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrolleyOrTrack.Designer.cs">
+      <DependentUpon>frmTrolleyOrTrack.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUpdateBox.cs">
       <SubType>Form</SubType>
@@ -289,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimeAllocation.resx">
       <DependentUpon>frmTimeAllocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrolleyOrTrack.resx">
+      <DependentUpon>frmTrolleyOrTrack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdateBox.resx">
       <DependentUpon>frmUpdateBox.cs</DependentUpon>
@@ -377,6 +387,7 @@
     <None Include="user_infoDataSet.xss">
       <DependentUpon>user_infoDataSet.xsd</DependentUpon>
     </None>
+    <None Include="WindowsFormsApp2_1_TemporaryKey.pfx" />
     <None Include="WindowsFormsApp2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

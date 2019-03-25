@@ -22,6 +22,7 @@ namespace WindowsFormsApp2
             txtKgs.Validating += new CancelEventHandler(textBox_Validating);
             txtReason.Validating += new CancelEventHandler(textBox_Validating);
             txtMins.Validating += new CancelEventHandler(textBox_Validating);
+            HideSanding();
         }
 
         private void NewRepaint_Load(object sender, EventArgs e)

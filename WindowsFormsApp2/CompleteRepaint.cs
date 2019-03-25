@@ -23,7 +23,9 @@ namespace WindowsFormsApp2
             
             cmbRepaintBy.Validating += new CancelEventHandler(cmbRepaintBy_Validating);
             txtKgs.Validating += new CancelEventHandler(txtKgs_Validating);
-            
+            HideSanding();
+
+
         }
 
         private void CompleteRepaint_Load(object sender, EventArgs e)
