@@ -104,6 +104,7 @@
             this.txtQuantitySame = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chkIsProblem = new System.Windows.Forms.CheckBox();
+            this.requiredPaintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -705,7 +706,8 @@
             this.repaintsToolStripMenuItem,
             this.reportingToolStripMenuItem,
             this.balanceStockToolStripMenuItem,
-            this.palletizerToolStripMenuItem});
+            this.palletizerToolStripMenuItem,
+            this.requiredPaintsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -713,35 +715,35 @@
             // staffSetupToolStripMenuItem
             // 
             this.staffSetupToolStripMenuItem.Name = "staffSetupToolStripMenuItem";
-            this.staffSetupToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.staffSetupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.staffSetupToolStripMenuItem.Text = "Staff Setup";
             this.staffSetupToolStripMenuItem.Click += new System.EventHandler(this.staffSetupToolStripMenuItem_Click);
             // 
             // repaintsToolStripMenuItem
             // 
             this.repaintsToolStripMenuItem.Name = "repaintsToolStripMenuItem";
-            this.repaintsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.repaintsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.repaintsToolStripMenuItem.Text = "Repaints";
             this.repaintsToolStripMenuItem.Click += new System.EventHandler(this.repaintsToolStripMenuItem_Click);
             // 
             // reportingToolStripMenuItem
             // 
             this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
-            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reportingToolStripMenuItem.Text = "Reporting";
             this.reportingToolStripMenuItem.Click += new System.EventHandler(this.reportingToolStripMenuItem_Click);
             // 
             // balanceStockToolStripMenuItem
             // 
             this.balanceStockToolStripMenuItem.Name = "balanceStockToolStripMenuItem";
-            this.balanceStockToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.balanceStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.balanceStockToolStripMenuItem.Text = "Balance Stock";
             this.balanceStockToolStripMenuItem.Click += new System.EventHandler(this.balanceStockToolStripMenuItem_Click);
             // 
             // palletizerToolStripMenuItem
             // 
             this.palletizerToolStripMenuItem.Name = "palletizerToolStripMenuItem";
-            this.palletizerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.palletizerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.palletizerToolStripMenuItem.Text = "Palletizer";
             this.palletizerToolStripMenuItem.Click += new System.EventHandler(this.palletizerToolStripMenuItem_Click);
             // 
@@ -795,6 +797,13 @@
             this.chkIsProblem.TabIndex = 92;
             this.chkIsProblem.Text = "Flag note as problem";
             this.chkIsProblem.UseVisualStyleBackColor = true;
+            // 
+            // requiredPaintsToolStripMenuItem
+            // 
+            this.requiredPaintsToolStripMenuItem.Name = "requiredPaintsToolStripMenuItem";
+            this.requiredPaintsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.requiredPaintsToolStripMenuItem.Text = "Required Paints";
+            this.requiredPaintsToolStripMenuItem.Click += new System.EventHandler(this.requiredPaintsToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -940,6 +949,7 @@
         private System.Windows.Forms.ToolStripMenuItem balanceStockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem palletizerToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkIsProblem;
+        private System.Windows.Forms.ToolStripMenuItem requiredPaintsToolStripMenuItem;
     }
 }
 

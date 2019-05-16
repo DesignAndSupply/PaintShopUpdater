@@ -52,14 +52,15 @@
             // 
             // txtBoxID
             // 
-            this.txtBoxID.Location = new System.Drawing.Point(60, 126);
+            this.txtBoxID.Location = new System.Drawing.Point(60, 333);
             this.txtBoxID.Name = "txtBoxID";
             this.txtBoxID.Size = new System.Drawing.Size(124, 20);
             this.txtBoxID.TabIndex = 5;
+            this.txtBoxID.Visible = false;
             // 
             // txtColour
             // 
-            this.txtColour.Location = new System.Drawing.Point(60, 217);
+            this.txtColour.Location = new System.Drawing.Point(62, 120);
             this.txtColour.Name = "txtColour";
             this.txtColour.Size = new System.Drawing.Size(124, 20);
             this.txtColour.TabIndex = 6;
@@ -68,16 +69,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 129);
+            this.label1.Location = new System.Drawing.Point(12, 336);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Box ID:";
+            this.label1.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 220);
+            this.label2.Location = new System.Drawing.Point(14, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 8;
@@ -102,7 +104,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(109, 243);
+            this.btnSearch.Location = new System.Drawing.Point(111, 146);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 10;
@@ -112,12 +114,13 @@
             // 
             // btnSearchBox
             // 
-            this.btnSearchBox.Location = new System.Drawing.Point(109, 152);
+            this.btnSearchBox.Location = new System.Drawing.Point(109, 359);
             this.btnSearchBox.Name = "btnSearchBox";
             this.btnSearchBox.Size = new System.Drawing.Size(75, 23);
             this.btnSearchBox.TabIndex = 11;
             this.btnSearchBox.Text = "Search";
             this.btnSearchBox.UseVisualStyleBackColor = true;
+            this.btnSearchBox.Visible = false;
             this.btnSearchBox.Click += new System.EventHandler(this.btnSearchBox_Click);
             // 
             // frmStockBalance

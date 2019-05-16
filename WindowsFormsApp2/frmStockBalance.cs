@@ -61,16 +61,18 @@ namespace WindowsFormsApp2
 
                 //add selection button
 
-                DataGridViewButtonColumn selectButton = new DataGridViewButtonColumn();
-                selectButton.Text = "View Boxes";
-                selectButton.Name = "View Boxes";
-                selectButton.UseColumnTextForButtonValue = true;
-                int columnIndex = 5;
+                //COMMENTED OUT BECAUSE THE BOX IDEA NEVER WENT LIVE
 
-                if (dgvPaintList.Columns["View Boxes"] == null)
-                {
-                    dgvPaintList.Columns.Insert(columnIndex, selectButton);
-                }
+                //DataGridViewButtonColumn selectButton = new DataGridViewButtonColumn();
+                //selectButton.Text = "View Boxes";
+                //selectButton.Name = "View Boxes";
+                //selectButton.UseColumnTextForButtonValue = true;
+                //int columnIndex = 5;
+
+                //if (dgvPaintList.Columns["View Boxes"] == null)
+                //{
+                //    dgvPaintList.Columns.Insert(columnIndex, selectButton);
+                //}
 
 
 

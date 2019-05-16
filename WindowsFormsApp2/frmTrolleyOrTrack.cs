@@ -40,6 +40,7 @@ namespace WindowsFormsApp2
         {
 
             string placementMessage;
+            string placementIdentifier;
 
             Door d = new Door(_doorID);
             d.getPacknote();
@@ -49,23 +50,32 @@ namespace WindowsFormsApp2
             if(placement == "trolley")
             {
                 placementMessage = d._packnote + " ||  DOOR ON TROLLEY  || ";
+                placementIdentifier = "Trolley";
             }
             else
             {
                 placementMessage = d._packnote + " ||  DOOR ON TRACK SYSTEM  || ";
+                placementIdentifier = "Track";
+            }
+
+            using (SqlConnection con = new SqlConnection(SqlStatements.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("usp_trolley_or_track ", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@doorID", SqlDbType.VarChar).Value = _doorID;
+                    cmd.Parameters.Add("@note", SqlDbType.VarChar).Value = placementMessage;
+                    cmd.Parameters.Add("@identifier", SqlDbType.VarChar).Value = placementIdentifier;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
             }
 
 
 
-            SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString);
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE DBO.DOOR SET packing_note = @packNote where id=@doorID",conn);
-            cmd.Parameters.AddWithValue("@packNote", placementMessage);
-            cmd.Parameters.AddWithValue("@doorId", _doorID);
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
+         
             this.Close();
 
         }

@@ -1031,5 +1031,11 @@ namespace WindowsFormsApp2
         {
             palletize(false);
         }
+
+        private void requiredPaintsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPaintRequirement pr = new frmPaintRequirement();
+            pr.Show();
+        }
     }
 }

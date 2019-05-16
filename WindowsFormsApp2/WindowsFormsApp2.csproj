@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>50</ApplicationRevision>
+    <ApplicationRevision>54</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -188,6 +188,12 @@
     <Compile Include="frmPaintBoxes.Designer.cs">
       <DependentUpon>frmPaintBoxes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPaintRequirement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaintRequirement.Designer.cs">
+      <DependentUpon>frmPaintRequirement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelectUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPaintBoxes.resx">
       <DependentUpon>frmPaintBoxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaintRequirement.resx">
+      <DependentUpon>frmPaintRequirement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelectUser.resx">
       <DependentUpon>frmSelectUser.cs</DependentUpon>
