@@ -48,7 +48,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.17708cm</Width>
+              <Width>0.93896cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.4548cm</Width>
@@ -69,7 +69,7 @@
               <Width>1.89146cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.06105cm</Width>
+              <Width>3.49182cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.9973cm</Width>
@@ -78,10 +78,10 @@
               <Width>2.94979cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.70625cm</Width>
+              <Width>1.49458cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.73271cm</Width>
+              <Width>1.28292cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.25646cm</Width>
@@ -545,7 +545,7 @@ Stores</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=if(Fields!complete_stores.Value = -1 , "S","")</Value>
+                              <Value>=if(Fields!complete_stores.Value = -1,"S","")</Value>
                               <Style>
                                 <FontFamily>Calibri Light</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1121,7 +1121,7 @@ Stores</Value>
         <DataSetName>PaintNextDS</DataSetName>
         <Top>1.00859cm</Top>
         <Height>2.27625cm</Height>
-        <Width>26.71856cm</Width>
+        <Width>25.24974cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1163,7 +1163,7 @@ Stores</Value>
     <Height>3.59042cm</Height>
     <Style />
   </Body>
-  <Width>28.04148cm</Width>
+  <Width>25.47502cm</Width>
   <Page>
     <PageHeight>21cm</PageHeight>
     <PageWidth>29.7cm</PageWidth>
