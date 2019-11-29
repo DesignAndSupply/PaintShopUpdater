@@ -61,9 +61,6 @@ namespace WindowsFormsApp2
 
                 //INSERTS NEW RECORDS INTO DBO DOOR PART COMPLETION LOG
 
-
-
-
                 var sb = string.Format("INSERT into dbo.repaints(sanding_exposure_points,paint_id, paint_kg_used, painter_name, department, door_id, repaint_checker_note,repaint_by, repaint_time,logged_by_id,repaint_complete,date_logged,repaint_from_dept,sanding_time,sanded_by_id) VALUES " +
                                        "(@sandingExposurePoints,@paint_id,@paint_kg_used,@painter_name,@department,@door_id,@reason,@repaint_by,@repaint_time,@logged_by,@complete,@date_logged,@repaint_from_dept,@sandingTime,@sandedById)");
 
@@ -136,8 +133,6 @@ namespace WindowsFormsApp2
                     while (reader.Read())
                     {
                         int paint_id = (Int32)reader[0];
-
-
                         return paint_id;
                     }
 

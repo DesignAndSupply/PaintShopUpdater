@@ -32,22 +32,27 @@ namespace WindowsFormsApp2
                 case "Office":
                     cmd.CommandText = "SELECT b.user_id FROM dbo.door a inner join dbo.door_container b on a.order_id = b.order_id where a.id =@doorID";
                     _departmentOut = 8;
+
                     break;
                 case "Welding":
                     cmd.CommandText = "SELECT staff_id FROM dbo.door_allocation where door_id = @doorID and department = 'Welding'";
                     _departmentOut = 3;
+
                     break;
                 case "Dressing":
                     cmd.CommandText = "SELECT staff_id FROM dbo.door_allocation where door_id = @doorID and department = 'Dressing'";
                     _departmentOut = 4;
+
                     break;
                 case "Painting":
-                    cmd.CommandText = "SELECT staff_id FROM dbo.door_allocation where door_id = @doorID and department = 'Painting'";
+                    cmd.CommandText = "select top 1 staff_id from dbo.door_part_completion_log where op = 'Painting' and part = 'Powder Coat' and door_id = @doorID";
                     _departmentOut = 5;
+
                     break;
                 case "Packing":
                     cmd.CommandText = "SELECT staff_id FROM dbo.door_allocation where door_id = @doorID and department = 'Packing'";
                     _departmentOut = 6;
+
                     break;
 
             }
