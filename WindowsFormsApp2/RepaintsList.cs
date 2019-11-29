@@ -24,9 +24,6 @@ namespace WindowsFormsApp2
         int doorID;
         int paintID;
 
-       
-        
-
 
 
         private void RepaintsList_Load(object sender, EventArgs e)

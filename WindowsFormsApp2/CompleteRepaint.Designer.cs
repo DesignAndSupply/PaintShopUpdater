@@ -57,6 +57,10 @@
             this.rdoNo = new System.Windows.Forms.RadioButton();
             this.rdoYes = new System.Windows.Forms.RadioButton();
             this.vibration_toolsTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.vibration_toolsTableAdapter();
+            this.txtReason = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbDepartmentResponsible = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingstaffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_infoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -71,7 +75,7 @@
             this.cmbRepaintBy.DataSource = this.cviewpaintingstaffBindingSource;
             this.cmbRepaintBy.DisplayMember = "fullname";
             this.cmbRepaintBy.FormattingEnabled = true;
-            this.cmbRepaintBy.Location = new System.Drawing.Point(111, 108);
+            this.cmbRepaintBy.Location = new System.Drawing.Point(148, 108);
             this.cmbRepaintBy.Name = "cmbRepaintBy";
             this.cmbRepaintBy.Size = new System.Drawing.Size(210, 21);
             this.cmbRepaintBy.TabIndex = 8;
@@ -108,7 +112,7 @@
             // 
             // txtKgs
             // 
-            this.txtKgs.Location = new System.Drawing.Point(111, 136);
+            this.txtKgs.Location = new System.Drawing.Point(148, 136);
             this.txtKgs.Name = "txtKgs";
             this.txtKgs.Size = new System.Drawing.Size(72, 20);
             this.txtKgs.TabIndex = 11;
@@ -116,18 +120,19 @@
             // 
             // btnComplete
             // 
-            this.btnComplete.Location = new System.Drawing.Point(396, 340);
+            this.btnComplete.Location = new System.Drawing.Point(396, 505);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(75, 23);
             this.btnComplete.TabIndex = 12;
             this.btnComplete.Text = "Complete";
             this.btnComplete.UseVisualStyleBackColor = true;
             this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
+            this.btnComplete.Validating += new System.ComponentModel.CancelEventHandler(this.BtnComplete_Validating);
             // 
             // txtDoorID
             // 
             this.txtDoorID.Enabled = false;
-            this.txtDoorID.Location = new System.Drawing.Point(111, 23);
+            this.txtDoorID.Location = new System.Drawing.Point(148, 23);
             this.txtDoorID.Name = "txtDoorID";
             this.txtDoorID.Size = new System.Drawing.Size(72, 20);
             this.txtDoorID.TabIndex = 13;
@@ -135,7 +140,7 @@
             // txtPaintID
             // 
             this.txtPaintID.Enabled = false;
-            this.txtPaintID.Location = new System.Drawing.Point(111, 49);
+            this.txtPaintID.Location = new System.Drawing.Point(148, 49);
             this.txtPaintID.Name = "txtPaintID";
             this.txtPaintID.Size = new System.Drawing.Size(72, 20);
             this.txtPaintID.TabIndex = 14;
@@ -143,7 +148,7 @@
             // txtRepaintID
             // 
             this.txtRepaintID.Enabled = false;
-            this.txtRepaintID.Location = new System.Drawing.Point(111, 75);
+            this.txtRepaintID.Location = new System.Drawing.Point(148, 75);
             this.txtRepaintID.Name = "txtRepaintID";
             this.txtRepaintID.Size = new System.Drawing.Size(72, 20);
             this.txtRepaintID.TabIndex = 15;
@@ -193,7 +198,7 @@
             this.grpSand.Controls.Add(this.txtMins);
             this.grpSand.Controls.Add(this.rdoNo);
             this.grpSand.Controls.Add(this.rdoYes);
-            this.grpSand.Location = new System.Drawing.Point(15, 174);
+            this.grpSand.Location = new System.Drawing.Point(15, 339);
             this.grpSand.Name = "grpSand";
             this.grpSand.Size = new System.Drawing.Size(456, 160);
             this.grpSand.TabIndex = 19;
@@ -301,11 +306,57 @@
             // 
             this.vibration_toolsTableAdapter.ClearBeforeFill = true;
             // 
+            // txtReason
+            // 
+            this.txtReason.Location = new System.Drawing.Point(148, 166);
+            this.txtReason.Multiline = true;
+            this.txtReason.Name = "txtReason";
+            this.txtReason.Size = new System.Drawing.Size(344, 126);
+            this.txtReason.TabIndex = 20;
+            this.txtReason.Validating += new System.ComponentModel.CancelEventHandler(this.TxtReason_Validating);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 166);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Reason for repaint:";
+            // 
+            // cmbDepartmentResponsible
+            // 
+            this.cmbDepartmentResponsible.FormattingEnabled = true;
+            this.cmbDepartmentResponsible.Items.AddRange(new object[] {
+            "Office",
+            "Welding",
+            "Dressing",
+            "Painting",
+            "Packing"});
+            this.cmbDepartmentResponsible.Location = new System.Drawing.Point(148, 299);
+            this.cmbDepartmentResponsible.Name = "cmbDepartmentResponsible";
+            this.cmbDepartmentResponsible.Size = new System.Drawing.Size(172, 21);
+            this.cmbDepartmentResponsible.TabIndex = 22;
+            this.cmbDepartmentResponsible.Validating += new System.ComponentModel.CancelEventHandler(this.CmbDepartmentResponsible_Validating);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 302);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Department Responsible";
+            // 
             // CompleteRepaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 373);
+            this.ClientSize = new System.Drawing.Size(507, 541);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cmbDepartmentResponsible);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtReason);
             this.Controls.Add(this.grpSand);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -366,5 +417,9 @@
         private System.Windows.Forms.BindingSource vibrationtoolsBindingSource;
         private order_databaseDataSet1TableAdapters.vibration_toolsTableAdapter vibration_toolsTableAdapter;
         private System.Windows.Forms.BindingSource SandingStaffBindingSource;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtReason;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbDepartmentResponsible;
     }
 }

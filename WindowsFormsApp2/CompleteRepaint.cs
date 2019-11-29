@@ -36,8 +36,6 @@ namespace WindowsFormsApp2
             this.c_view_painting_staffTableAdapter.Fill(this.user_infoDataSet.c_view_painting_staff);
 
 
-
-
         }
 
         private void btnComplete_Click(object sender, EventArgs e)
@@ -45,36 +43,37 @@ namespace WindowsFormsApp2
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
 
+                Allocation a = new Allocation(cmbDepartmentResponsible.Text, Convert.ToInt32(txtDoorID.Text));
+
                 //UPDATE REPAINT INFORMATION
                 SqlConnection myConnection = new SqlConnection(SqlStatements.ConnectionString);
                 myConnection.Open();
-                var sb = string.Format("UPDATE dbo.repaints set sanding_exposure_points = @sandingExposurePoints, sanding_time= @sandingTime,sanded_by_id = @sandedById, repaint_by= @repaint_by,paint_kg_used = @paint_kg_used, repaint_complete = @complete, date_painted = @date_painted WHERE id=@repaint_id");
+                var sb = string.Format("UPDATE dbo.repaints set painter_name = @responsibleStaff, [department] = @responsibleDept, repaint_checker_note = @reason, sanding_exposure_points = @sandingExposurePoints, sanding_time= @sandingTime,sanded_by_id = @sandedById, repaint_by= @repaint_by,paint_kg_used = @paint_kg_used, repaint_complete = @complete, date_painted = @date_painted WHERE id=@repaint_id");
                 SqlCommand command = new SqlCommand(sb, myConnection);
                 command.Parameters.AddWithValue("@repaint_id", this.txtRepaintID.Text);
                 command.Parameters.AddWithValue("@paint_kg_used", this.txtKgs.Text);
                 command.Parameters.AddWithValue("@date_painted", DateTime.Now);
                 command.Parameters.AddWithValue("@repaint_by", this.cmbRepaintBy.SelectedValue);
                 command.Parameters.AddWithValue("@complete", -1);
+                command.Parameters.AddWithValue("@reason", this.txtReason.Text);
+                command.Parameters.AddWithValue("@responsibleStaff", a._allocatedTo);
+                command.Parameters.AddWithValue("@responsibleDept", a._departmentOut);
 
-                if(rdoYes.Checked == true)
+                if (rdoYes.Checked == true)
                 {
                     command.Parameters.AddWithValue("@sandingTime", this.txtMins.Text);
                     command.Parameters.AddWithValue("@sandedById", this.cmbSandBy.SelectedValue);
-                   
                     command.Parameters.AddWithValue("@sandingExposurePoints", (Convert.ToDouble(this.txtMins.Text) / 60) * Convert.ToDouble(this.cmbTool.SelectedValue));
                 }
                 else
                 {
                     command.Parameters.AddWithValue("@sandingTime", DBNull.Value);
                     command.Parameters.AddWithValue("@sandedById", DBNull.Value);
-                    
                     command.Parameters.AddWithValue("@sandingExposurePoints", DBNull.Value);
                 }
                 
 
                 command.ExecuteNonQuery();
-
-
 
                 //UPDATE STOCK
                 SqlStatements sql = new SqlStatements();
@@ -87,6 +86,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("All fields must be filled in before completing the repaint!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
 
         private void cmbRepaintBy_Validating(object sender, CancelEventArgs e)
         {
@@ -152,6 +152,43 @@ namespace WindowsFormsApp2
         private void rdoNo_CheckedChanged(object sender, EventArgs e)
         {
             HideSanding();
+        }
+
+        private void BtnComplete_Validating(object sender, CancelEventArgs e)
+        {
+           
+        }
+
+        private void TxtReason_Validating(object sender, CancelEventArgs e)
+        {
+            var tb = (TextBox)sender;
+            if (string.IsNullOrWhiteSpace(tb.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(tb, "Reason for repaint field is mandatory");
+
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(tb, string.Empty);
+            }
+        }
+
+        private void CmbDepartmentResponsible_Validating(object sender, CancelEventArgs e)
+        {
+            var tb = (ComboBox)sender;
+            if (string.IsNullOrWhiteSpace(tb.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(tb, "Department responsible is required");
+
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(tb, string.Empty);
+            }
         }
     }
 }
