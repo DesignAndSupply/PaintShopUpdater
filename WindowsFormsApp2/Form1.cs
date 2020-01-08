@@ -1037,5 +1037,16 @@ namespace WindowsFormsApp2
             frmPaintRequirement pr = new frmPaintRequirement();
             pr.Show();
         }
+
+        private void stockTakeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ryucxd_Click(object sender, EventArgs e)
+        {
+            frmStockTake ST = new frmStockTake();
+            ST.Show();
+        }
     }
 }

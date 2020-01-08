@@ -98,13 +98,15 @@
             this.reportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.palletizerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.requiredPaintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thisDoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.looseItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtQuantitySame = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chkIsProblem = new System.Windows.Forms.CheckBox();
-            this.requiredPaintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockTakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_ryucxd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -175,7 +177,7 @@
             this.dataGridView1.DataSource = this.cviewpaintingsectionsBindingSource;
             this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 424);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 457);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(964, 279);
             this.dataGridView1.TabIndex = 59;
@@ -266,7 +268,7 @@
             "Wet Prep",
             "Wet Paint",
             "Oven 2"});
-            this.cmdOp.Location = new System.Drawing.Point(732, 377);
+            this.cmdOp.Location = new System.Drawing.Point(732, 410);
             this.cmdOp.Name = "cmdOp";
             this.cmdOp.Size = new System.Drawing.Size(163, 21);
             this.cmdOp.TabIndex = 61;
@@ -275,7 +277,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(901, 375);
+            this.btnUpdate.Location = new System.Drawing.Point(901, 408);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 62;
@@ -333,7 +335,7 @@
             this.sideselectionDataGridViewTextBoxColumn});
             this.dgPaintToDoor.DataSource = this.cviewpaintondoorBindingSource;
             this.dgPaintToDoor.Enabled = false;
-            this.dgPaintToDoor.Location = new System.Drawing.Point(12, 299);
+            this.dgPaintToDoor.Location = new System.Drawing.Point(12, 316);
             this.dgPaintToDoor.Name = "dgPaintToDoor";
             this.dgPaintToDoor.ReadOnly = true;
             this.dgPaintToDoor.Size = new System.Drawing.Size(964, 90);
@@ -417,7 +419,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 280);
+            this.label1.Location = new System.Drawing.Point(12, 297);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 65;
@@ -427,7 +429,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 405);
+            this.label2.Location = new System.Drawing.Point(12, 438);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 66;
@@ -516,7 +518,7 @@
             // btnRemove
             // 
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemove.Location = new System.Drawing.Point(901, 400);
+            this.btnRemove.Location = new System.Drawing.Point(901, 433);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 75;
@@ -528,7 +530,7 @@
             // 
             this.btnCompleteDoor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompleteDoor.ForeColor = System.Drawing.Color.Green;
-            this.btnCompleteDoor.Location = new System.Drawing.Point(827, 709);
+            this.btnCompleteDoor.Location = new System.Drawing.Point(827, 742);
             this.btnCompleteDoor.Name = "btnCompleteDoor";
             this.btnCompleteDoor.Size = new System.Drawing.Size(146, 23);
             this.btnCompleteDoor.TabIndex = 76;
@@ -540,7 +542,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(678, 709);
+            this.button1.Location = new System.Drawing.Point(678, 742);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 23);
             this.button1.TabIndex = 77;
@@ -553,7 +555,7 @@
             this.txtPaintingStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPaintingStatus.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPaintingStatus.Location = new System.Drawing.Point(12, 709);
+            this.txtPaintingStatus.Location = new System.Drawing.Point(12, 742);
             this.txtPaintingStatus.Name = "txtPaintingStatus";
             this.txtPaintingStatus.Size = new System.Drawing.Size(558, 20);
             this.txtPaintingStatus.TabIndex = 78;
@@ -649,7 +651,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(576, 709);
+            this.button3.Location = new System.Drawing.Point(576, 742);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 23);
             this.button3.TabIndex = 86;
@@ -692,7 +694,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolsToolStripMenuItem,
-            this.thisDoorToolStripMenuItem});
+            this.thisDoorToolStripMenuItem,
+            this.stockTakeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(985, 24);
@@ -709,43 +712,50 @@
             this.palletizerToolStripMenuItem,
             this.requiredPaintsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // staffSetupToolStripMenuItem
             // 
             this.staffSetupToolStripMenuItem.Name = "staffSetupToolStripMenuItem";
-            this.staffSetupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.staffSetupToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.staffSetupToolStripMenuItem.Text = "Staff Setup";
             this.staffSetupToolStripMenuItem.Click += new System.EventHandler(this.staffSetupToolStripMenuItem_Click);
             // 
             // repaintsToolStripMenuItem
             // 
             this.repaintsToolStripMenuItem.Name = "repaintsToolStripMenuItem";
-            this.repaintsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.repaintsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.repaintsToolStripMenuItem.Text = "Repaints";
             this.repaintsToolStripMenuItem.Click += new System.EventHandler(this.repaintsToolStripMenuItem_Click);
             // 
             // reportingToolStripMenuItem
             // 
             this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
-            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.reportingToolStripMenuItem.Text = "Reporting";
             this.reportingToolStripMenuItem.Click += new System.EventHandler(this.reportingToolStripMenuItem_Click);
             // 
             // balanceStockToolStripMenuItem
             // 
             this.balanceStockToolStripMenuItem.Name = "balanceStockToolStripMenuItem";
-            this.balanceStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.balanceStockToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.balanceStockToolStripMenuItem.Text = "Balance Stock";
             this.balanceStockToolStripMenuItem.Click += new System.EventHandler(this.balanceStockToolStripMenuItem_Click);
             // 
             // palletizerToolStripMenuItem
             // 
             this.palletizerToolStripMenuItem.Name = "palletizerToolStripMenuItem";
-            this.palletizerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.palletizerToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.palletizerToolStripMenuItem.Text = "Palletizer";
             this.palletizerToolStripMenuItem.Click += new System.EventHandler(this.palletizerToolStripMenuItem_Click);
+            // 
+            // requiredPaintsToolStripMenuItem
+            // 
+            this.requiredPaintsToolStripMenuItem.Name = "requiredPaintsToolStripMenuItem";
+            this.requiredPaintsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.requiredPaintsToolStripMenuItem.Text = "Required Paints";
+            this.requiredPaintsToolStripMenuItem.Click += new System.EventHandler(this.requiredPaintsToolStripMenuItem_Click);
             // 
             // thisDoorToolStripMenuItem
             // 
@@ -798,19 +808,30 @@
             this.chkIsProblem.Text = "Flag note as problem";
             this.chkIsProblem.UseVisualStyleBackColor = true;
             // 
-            // requiredPaintsToolStripMenuItem
+            // stockTakeToolStripMenuItem
             // 
-            this.requiredPaintsToolStripMenuItem.Name = "requiredPaintsToolStripMenuItem";
-            this.requiredPaintsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.requiredPaintsToolStripMenuItem.Text = "Required Paints";
-            this.requiredPaintsToolStripMenuItem.Click += new System.EventHandler(this.requiredPaintsToolStripMenuItem_Click);
+            this.stockTakeToolStripMenuItem.Name = "stockTakeToolStripMenuItem";
+            this.stockTakeToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.stockTakeToolStripMenuItem.Text = "Stock Take";
+            this.stockTakeToolStripMenuItem.Click += new System.EventHandler(this.stockTakeToolStripMenuItem_Click);
+            // 
+            // btn_ryucxd
+            // 
+            this.btn_ryucxd.Location = new System.Drawing.Point(495, 201);
+            this.btn_ryucxd.Name = "btn_ryucxd";
+            this.btn_ryucxd.Size = new System.Drawing.Size(75, 23);
+            this.btn_ryucxd.TabIndex = 93;
+            this.btn_ryucxd.Text = "ryucxd";
+            this.btn_ryucxd.UseVisualStyleBackColor = true;
+            this.btn_ryucxd.Click += new System.EventHandler(this.btn_ryucxd_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(985, 749);
+            this.ClientSize = new System.Drawing.Size(985, 782);
+            this.Controls.Add(this.btn_ryucxd);
             this.Controls.Add(this.chkIsProblem);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtQuantitySame);
@@ -850,6 +871,7 @@
             this.Controls.Add(this.pictureBox1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paint Updater";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -950,6 +972,8 @@
         private System.Windows.Forms.ToolStripMenuItem palletizerToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkIsProblem;
         private System.Windows.Forms.ToolStripMenuItem requiredPaintsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockTakeToolStripMenuItem;
+        private System.Windows.Forms.Button btn_ryucxd;
     }
 }
 
