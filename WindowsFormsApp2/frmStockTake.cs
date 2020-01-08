@@ -95,12 +95,40 @@ namespace WindowsFormsApp2
 
         private void btn_update_Click(object sender, EventArgs e)
         {
+            //wrap void in check for unfilled data
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (string.IsNullOrEmpty(dataGridView1.Rows[row.Index].Cells[3].Value.ToString()))
+                {
+                    //it is null so break out 
+                    MessageBox.Show("One or more stock entires are empty!", "E R R O R !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            //check combo
+            if (combo_user.SelectedItem == null)
+            {
+                MessageBox.Show("Please select your name!", "E R R O R !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string sql = "";
+            int staff_id = 0;
+            //get user ID
+            using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionStringUser))
+            {
+                sql = "SELECT ID FROM DBO.[user] WHERE forename + ' ' + surname = '" + combo_user.SelectedItem + "' ";
+                using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
+                {
+                    CONNECT.Open();
+                    staff_id = (int)cmd.ExecuteScalar();
+                    CONNECT.Close();
+                }
+            }
             using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionString))
             {
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    sql = "UPDATE dbo.paint_rolling_stock_take SET amount_in_stock_post = " + dataGridView1.Rows[i].Cells[3].Value.ToString() + ",Counted_by_id = '" + combo_user.SelectedItem + "',Committed = -1,";
+                    sql = "UPDATE dbo.paint_rolling_stock_take SET amount_in_stock_post = " + dataGridView1.Rows[i].Cells[3].Value.ToString() + ",Counted_by_id = '" + staff_id + "',Committed = -1,";
                     using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
                     {
                         MessageBox.Show(sql);

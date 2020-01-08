@@ -33,6 +33,21 @@ namespace WindowsFormsApp2
 
             txtSearch.Validating += new CancelEventHandler(txtSearch_Validating);
             cmdOp.Validating += new CancelEventHandler(cmdOp_Validating);
+
+            //check if stock take has been commited and if it hasnt then display label
+            string sql = "SELECT TOP 1 commited FROM dbo.paint_rolling_stock_take ORDER BY stock_take_number DESC";
+            int truefalse = 10;
+            using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(sql,CONNECT))
+                {
+                    CONNECT.Open();
+                    truefalse = (int)cmd.ExecuteScalar();
+                    CONNECT.Close();
+                    if (truefalse == 0)
+                        lblStockTake.Visible = true;
+                }
+            }
         }
 
 

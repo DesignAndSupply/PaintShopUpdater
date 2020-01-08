@@ -101,12 +101,13 @@
             this.requiredPaintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thisDoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.looseItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockTakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtQuantitySame = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chkIsProblem = new System.Windows.Forms.CheckBox();
-            this.stockTakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_ryucxd = new System.Windows.Forms.Button();
+            this.lblStockTake = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -772,6 +773,13 @@
             this.looseItemsToolStripMenuItem.Text = "Loose Items";
             this.looseItemsToolStripMenuItem.Click += new System.EventHandler(this.looseItemsToolStripMenuItem_Click);
             // 
+            // stockTakeToolStripMenuItem
+            // 
+            this.stockTakeToolStripMenuItem.Name = "stockTakeToolStripMenuItem";
+            this.stockTakeToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.stockTakeToolStripMenuItem.Text = "Stock Take";
+            this.stockTakeToolStripMenuItem.Click += new System.EventHandler(this.stockTakeToolStripMenuItem_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -808,13 +816,6 @@
             this.chkIsProblem.Text = "Flag note as problem";
             this.chkIsProblem.UseVisualStyleBackColor = true;
             // 
-            // stockTakeToolStripMenuItem
-            // 
-            this.stockTakeToolStripMenuItem.Name = "stockTakeToolStripMenuItem";
-            this.stockTakeToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.stockTakeToolStripMenuItem.Text = "Stock Take";
-            this.stockTakeToolStripMenuItem.Click += new System.EventHandler(this.stockTakeToolStripMenuItem_Click);
-            // 
             // btn_ryucxd
             // 
             this.btn_ryucxd.Location = new System.Drawing.Point(495, 201);
@@ -824,6 +825,18 @@
             this.btn_ryucxd.Text = "ryucxd";
             this.btn_ryucxd.UseVisualStyleBackColor = true;
             this.btn_ryucxd.Click += new System.EventHandler(this.btn_ryucxd_Click);
+            // 
+            // lblStockTake
+            // 
+            this.lblStockTake.AutoSize = true;
+            this.lblStockTake.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStockTake.ForeColor = System.Drawing.Color.Red;
+            this.lblStockTake.Location = new System.Drawing.Point(4, 58);
+            this.lblStockTake.Name = "lblStockTake";
+            this.lblStockTake.Size = new System.Drawing.Size(396, 24);
+            this.lblStockTake.TabIndex = 94;
+            this.lblStockTake.Text = "WEEKLY STOCK TAKE NEEDS ATTENTION";
+            this.lblStockTake.Visible = false;
             // 
             // Form1
             // 
@@ -869,6 +882,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblStockTake);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -974,6 +988,7 @@
         private System.Windows.Forms.ToolStripMenuItem requiredPaintsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockTakeToolStripMenuItem;
         private System.Windows.Forms.Button btn_ryucxd;
+        private System.Windows.Forms.Label lblStockTake;
     }
 }
 
