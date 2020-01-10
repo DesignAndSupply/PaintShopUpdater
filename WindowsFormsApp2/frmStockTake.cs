@@ -128,14 +128,58 @@ namespace WindowsFormsApp2
             {
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    sql = "UPDATE dbo.paint_rolling_stock_take SET amount_in_stock_post = " + dataGridView1.Rows[i].Cells[3].Value.ToString() + ",Counted_by_id = '" + staff_id + "',Committed = -1,";
+                    sql = "UPDATE dbo.paint_rolling_stock_take SET amount_in_stock_post = " + dataGridView1.Rows[i].Cells[3].Value.ToString() + ",Counted_by_id = '" + staff_id + "',[Committed] = -1" +
+                        " WHERE paint_stock_code = " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " AND id = " + dataGridView1.Rows[i].Cells[0].Value.ToString();
                     using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
                     {
-                        MessageBox.Show(sql);
+                        // MessageBox.Show(sql);
+                        CONNECT.Open();
+                        cmd.ExecuteNonQuery();
+                        CONNECT.Close();
+                    }
+                }
+
+                //update dbo.stock with the new values
+                double allocated_paint = 0;
+                
+                double dgvPaint = 0;
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    //get value of the each paint selected THATS currently allocated
+                    sql = "SELECT COALESCE(SUM(powder_kgs),0) as paint_used FROM((dbo.paint_to_door INNER JOIN dbo.door ON dbo.paint_to_door.door_id = dbo.door.id)" +
+                        " LEFT JOIN dbo.paint_finish ON dbo.paint_to_door.finish_id = dbo.paint_finish.id)" +
+                        " LEFT JOIN dbo.SALES_LEDGER ON dbo.door.customer_acc_ref = SALES_LEDGER.ACCOUNT_REF" +
+                        " WHERE(((dbo.door.complete_paint) = 'False') AND((dbo.door.status_id) = 1 Or(dbo.door.status_id) = 2)) AND paint_to_door.paint_id = '" + dataGridView1.Rows[i].Cells[1].Value.ToString() + "'";
+                    using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
+                    {
+                    //    MessageBox.Show(sql);
+                        CONNECT.Open();
+                        
+                        allocated_paint = (double)cmd.ExecuteScalar();
+                        CONNECT.Close();
+                        dgvPaint = Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                        MessageBox.Show("paint_id = " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " - has " + allocated_paint + " allocated to doors and the entered value = " + dataGridView1.Rows[i].Cells[3].Value.ToString());
+                        allocated_paint = allocated_paint + dgvPaint;
+                        MessageBox.Show("new value = " + allocated_paint.ToString());
+                    }
+                    sql = "UPDATE dbo.stock SET amount_in_stock = " + allocated_paint.ToString() + " WHERE stock_code = " + dataGridView1.Rows[i].Cells[1].Value.ToString() ;
+                    using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
+                    {
+                        //now we have the amount thats allocated we add this to the current value
+                        CONNECT.Open();
+                        //cmd.ExecuteNonQuery();
+                        CONNECT.Close();
+                    }
+                    //also add to post because i forgot about that
+                    sql = "update dbo.paint_rolling_stock SET amount_in_stock_post = " + allocated_paint.ToString() + " WHERE id = " + dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
+                    {
+                        CONNECT.Open();
+                       // cmd.ExecuteNonQuery();
+                        CONNECT.Close();
                     }
                 }
             }
-
         }
     }
 }

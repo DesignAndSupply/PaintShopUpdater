@@ -18,6 +18,18 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
+            //check if stock take has been commited and if it hasnt then display label
+            string sql = "SELECT TOP 1 [committed] FROM dbo.paint_rolling_stock_take ORDER BY stock_take_number DESC";
+            using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
+                {
+                    CONNECT.Open();
+                    int truefalse = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (truefalse == 0)
+                        lblStockTake.Visible = true;
+                }
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,20 +46,7 @@ namespace WindowsFormsApp2
             txtSearch.Validating += new CancelEventHandler(txtSearch_Validating);
             cmdOp.Validating += new CancelEventHandler(cmdOp_Validating);
 
-            //check if stock take has been commited and if it hasnt then display label
-            string sql = "SELECT TOP 1 commited FROM dbo.paint_rolling_stock_take ORDER BY stock_take_number DESC";
-            int truefalse = 10;
-            using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand(sql,CONNECT))
-                {
-                    CONNECT.Open();
-                    truefalse = (int)cmd.ExecuteScalar();
-                    CONNECT.Close();
-                    if (truefalse == 0)
-                        lblStockTake.Visible = true;
-                }
-            }
+
         }
 
 
@@ -1055,13 +1054,13 @@ namespace WindowsFormsApp2
 
         private void stockTakeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmStockTake ST = new frmStockTake();
+            ST.Show();
         }
 
         private void btn_ryucxd_Click(object sender, EventArgs e)
         {
-            frmStockTake ST = new frmStockTake();
-            ST.Show();
+            
         }
     }
 }
