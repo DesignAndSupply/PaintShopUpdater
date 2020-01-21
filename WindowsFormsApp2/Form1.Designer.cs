@@ -108,6 +108,7 @@
             this.chkIsProblem = new System.Windows.Forms.CheckBox();
             this.btn_ryucxd = new System.Windows.Forms.Button();
             this.lblStockTake = new System.Windows.Forms.Label();
+            this.storesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -696,7 +697,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolsToolStripMenuItem,
             this.thisDoorToolStripMenuItem,
-            this.stockTakeToolStripMenuItem});
+            this.stockTakeToolStripMenuItem,
+            this.storesListToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(985, 24);
@@ -818,12 +820,14 @@
             // 
             // btn_ryucxd
             // 
+            this.btn_ryucxd.Enabled = false;
             this.btn_ryucxd.Location = new System.Drawing.Point(495, 201);
             this.btn_ryucxd.Name = "btn_ryucxd";
             this.btn_ryucxd.Size = new System.Drawing.Size(75, 23);
             this.btn_ryucxd.TabIndex = 93;
             this.btn_ryucxd.Text = "ryucxd";
             this.btn_ryucxd.UseVisualStyleBackColor = true;
+            this.btn_ryucxd.Visible = false;
             this.btn_ryucxd.Click += new System.EventHandler(this.btn_ryucxd_Click);
             // 
             // lblStockTake
@@ -837,6 +841,13 @@
             this.lblStockTake.TabIndex = 94;
             this.lblStockTake.Text = "WEEKLY STOCK TAKE NEEDS ATTENTION";
             this.lblStockTake.Visible = false;
+            // 
+            // storesListToolStripMenuItem
+            // 
+            this.storesListToolStripMenuItem.Name = "storesListToolStripMenuItem";
+            this.storesListToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.storesListToolStripMenuItem.Text = "Stores List";
+            this.storesListToolStripMenuItem.Click += new System.EventHandler(this.storesListToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -989,6 +1000,7 @@
         private System.Windows.Forms.ToolStripMenuItem stockTakeToolStripMenuItem;
         private System.Windows.Forms.Button btn_ryucxd;
         private System.Windows.Forms.Label lblStockTake;
+        private System.Windows.Forms.ToolStripMenuItem storesListToolStripMenuItem;
     }
 }
 

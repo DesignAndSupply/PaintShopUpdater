@@ -212,6 +212,12 @@
     <Compile Include="frmStockTake.Designer.cs">
       <DependentUpon>frmStockTake.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStores.Designer.cs">
+      <DependentUpon>frmStores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTimeAllocation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockTake.resx">
       <DependentUpon>frmStockTake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStores.resx">
+      <DependentUpon>frmStores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimeAllocation.resx">
       <DependentUpon>frmTimeAllocation.cs</DependentUpon>

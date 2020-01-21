@@ -1062,5 +1062,11 @@ namespace WindowsFormsApp2
         {
             
         }
+
+        private void storesListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStores frm = new frmStores();
+            frm.Show();
+        }
     }
 }
