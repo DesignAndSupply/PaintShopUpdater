@@ -41,8 +41,18 @@ namespace WindowsFormsApp2
                 "AND complete_stores = 0 " +
                 "AND[description] NOT LIKE '%FREE ISSUE PAINT%' " +
                 "AND[description] is not null " +
+                //only have selected customers 
+                " AND (a.customer_acc_ref LIKE '%BOLT4%' " +
+                " OR a.customer_acc_ref LIKE '%CALEDON%' " +
+                "OR a.customer_acc_ref LIKE '%DOVE2%' " +
+                "OR a.customer_acc_ref LIKE '%FAD%'  " +
+                "OR a.customer_acc_ref LIKE '%JODAN%' " +
+                "OR a.customer_acc_ref LIKE '%JOHNRE%' " +
+                "OR a.customer_acc_ref LIKE '%ROTEC%' " +
+                "OR a.customer_acc_ref LIKE '%SUNRAY%'" +
+                " OR a.customer_acc_ref LIKE '%STRONDOR%')" +
                 "GROUP BY b.description,c.finish,d.[NAME] " +
-                "order by qty DESC";
+                "ORDER BY qty DESC";
             MessageBox.Show(sql);
             using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionString))
             {
@@ -97,7 +107,7 @@ namespace WindowsFormsApp2
 
         private void btn_screenshot_Click(object sender, EventArgs e)
         {
-
+            btn_screenshot.Enabled = false;
             var frm = Form.ActiveForm;
             using (var bmp = new Bitmap(frm.Width, frm.Height))
             {
@@ -114,7 +124,7 @@ namespace WindowsFormsApp2
         {
             System.Drawing.Image img = System.Drawing.Image.FromFile(@"c:\temp\screenshot.png");
             Point location = new Point(100,200);
-            e.Graphics.DrawImage(img, e.MarginBounds);
+            e.Graphics.DrawImage(img, location);  //e.MarginBounds for fullscreen (breaks if its a small form)
         }
     }
 }
