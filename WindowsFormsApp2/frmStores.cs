@@ -343,7 +343,22 @@ namespace WindowsFormsApp2
 
 
                 //before closing we need to mark as repaint if it is not there
+                checkDoor(input);
+                if (alreadyPrinted == false)
+                {
+                    //it hasnt been printed yet so lets mark it
+                    using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
+                    {
+                        sql = "INSERT INTO dbo.door_paint_label_printed (door_id,label_printed,label_print_date) VALUES (" + input + ",-1,CAST(GETDATE() as DateTime))";
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                    }
 
+                }
                 this.Close();
             }
             else
