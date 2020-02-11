@@ -31,7 +31,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_screenshot = new System.Windows.Forms.Button();
             this.btnLabel = new System.Windows.Forms.Button();
+            this.hiddenDGV = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hiddenDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -69,6 +71,19 @@
             this.btnLabel.UseVisualStyleBackColor = true;
             this.btnLabel.Click += new System.EventHandler(this.btnLabel_Click);
             // 
+            // hiddenDGV
+            // 
+            this.hiddenDGV.AllowUserToDeleteRows = false;
+            this.hiddenDGV.AllowUserToResizeColumns = false;
+            this.hiddenDGV.AllowUserToResizeRows = false;
+            this.hiddenDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.hiddenDGV.Location = new System.Drawing.Point(286, 30);
+            this.hiddenDGV.Name = "hiddenDGV";
+            this.hiddenDGV.RowHeadersVisible = false;
+            this.hiddenDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.hiddenDGV.Size = new System.Drawing.Size(10, 10);
+            this.hiddenDGV.TabIndex = 3;
+            // 
             // frmStores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -78,6 +93,7 @@
             this.Controls.Add(this.btnLabel);
             this.Controls.Add(this.btn_screenshot);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.hiddenDGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -85,6 +101,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stores List";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hiddenDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -94,5 +111,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_screenshot;
         private System.Windows.Forms.Button btnLabel;
+        private System.Windows.Forms.DataGridView hiddenDGV;
     }
 }

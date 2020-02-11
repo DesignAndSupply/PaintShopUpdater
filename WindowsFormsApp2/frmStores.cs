@@ -131,14 +131,86 @@ namespace WindowsFormsApp2
             e.Graphics.DrawImage(img, location);  //e.MarginBounds for fullscreen (breaks if its a small form)
         }
 
+
+        private void printLabels()
+        {
+            //first we need to grab the data we need and dump it into a random fucking dgv 
+            //same sql as the one on load but thiis bad boy doesnt have a group on it
+            DateTime baseDate = DateTime.Now;
+            var thisWeekStart = baseDate.AddDays(-(int)baseDate.DayOfWeek);
+            var thisWeekEnd = thisWeekStart.AddDays(7).AddSeconds(-1);
+            DateTime start = new DateTime(thisWeekStart.Year, thisWeekStart.Month, thisWeekStart.Day);
+            start = start.AddDays(1).AddSeconds(-1);
+            DateTime end = new DateTime(thisWeekEnd.Year, thisWeekEnd.Month, thisWeekEnd.Day);
+            end = end.AddDays(-1);
+            //MessageBox.Show(start.ToString());
+            //MessageBox.Show(end.ToString());
+            string sql = "select b.[description], a.id from dbo.door a " +
+                " LEFT JOIN dbo.paint_to_door b ON a.id = b.door_id " +
+                " LEFT JOIN dbo.paint_finish c ON b.finish_id = c.id " +
+                " LEFT JOIN dbo.supplier d ON b.supplier_id = d.id " +
+                " where date_paint_complete is null and " +
+                " date_paint is not null and " +
+                " date_paint > '" + start.ToString("yyyy-MM-dd") + "' AND date_paint < '" + end.ToString("yyyy-MM-dd") + "' " +
+                "AND complete_stores = 0 " +
+                "AND[description] NOT LIKE '%FREE ISSUE PAINT%' " +
+                "AND[description] is not null " +
+                //only have selected customers 
+                " AND (a.customer_acc_ref LIKE '%BOLT4%' " +
+                " OR a.customer_acc_ref LIKE '%CALEDON%' " +
+                "OR a.customer_acc_ref LIKE '%DOVE2%' " +
+                "OR a.customer_acc_ref LIKE '%FAD%'  " +
+                "OR a.customer_acc_ref LIKE '%JODAN%' " +
+                "OR a.customer_acc_ref LIKE '%JOHNRE%' " +
+                "OR a.customer_acc_ref LIKE '%ROTEC%' " +
+                "OR a.customer_acc_ref LIKE '%SUNRAY%'" +
+                " OR a.customer_acc_ref LIKE '%STRONDOR%')" +
+                "order by a.id";
+            MessageBox.Show(sql);
+            using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionString))
+            {
+                using (SqlCommand CMD = new SqlCommand(sql, CONNECT))
+                {
+                    DataTable DT = new DataTable();
+                    SqlDataAdapter DA = new SqlDataAdapter(CMD);
+                    CONNECT.Open();
+                    CMD.ExecuteNonQuery();
+                    DA.Fill(DT);
+                    CONNECT.Close();
+                    //add column here if i need to (DT.columns.Add(new DataColumn("header",typeof(double)));
+                    hiddenDGV.DataSource = DT;
+                    //autoSizeForm();
+                    //format();                    
+                }
+            }
+            //now we start printing like a mad man#
+            for (int i = 0; i < hiddenDGV.Rows.Count; i++)
+            {
+                label_test rpt = new label_test();
+                string RAL = hiddenDGV.Rows[i].Cells[0].Value.ToString();
+                string DOOR = hiddenDGV.Rows[i].Cells[1].Value.ToString();
+                rpt.SetParameterValue("RALCOLOUR", RAL);
+                rpt.SetParameterValue("DOORNUMBER", "Door Number: " + DOOR);
+                rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
+
+            }
+        }
+
         private void btnLabel_Click(object sender, EventArgs e)
         {
-            label_test rpt = new label_test();
+            int i = 60;
+            printLabels();
             //PrinterSettings printer = new PrinterSettings;
             //rpt.PrintOptions.PrinterName = @"\\192.168.0.217\ZDesigner GK420d";
             // printer.PrinterName = @"\\192.168.0.217\ZDesigner GK420d";
-            rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
 
+
+
+            //golden code
+            //rpt.SetParameterValue("RALCOLOUR", "test number + " + i.ToString() + "!");
+            //rpt.SetParameterValue("DOORNUMBER", "636363");
+            //rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
+            /////////////////////////////
 
 
             //string printerName = @"\\192.168.0.217\ZDesigner GK420d";
@@ -146,7 +218,7 @@ namespace WindowsFormsApp2
             //System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
             //printerSettings.PrinterName = printerName;
             //rpt.PrintToPrinter(printerSettings, new PageSettings(), false);
-            
+
 
 
 
