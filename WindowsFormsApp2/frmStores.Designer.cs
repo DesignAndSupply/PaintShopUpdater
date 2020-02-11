@@ -32,6 +32,8 @@
             this.btn_screenshot = new System.Windows.Forms.Button();
             this.btnLabel = new System.Windows.Forms.Button();
             this.hiddenDGV = new System.Windows.Forms.DataGridView();
+            this.btnRePrint = new System.Windows.Forms.Button();
+            this.btnDoorSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hiddenDGV)).BeginInit();
             this.SuspendLayout();
@@ -63,26 +65,46 @@
             // 
             // btnLabel
             // 
-            this.btnLabel.Location = new System.Drawing.Point(264, 22);
+            this.btnLabel.Location = new System.Drawing.Point(12, 22);
             this.btnLabel.Name = "btnLabel";
-            this.btnLabel.Size = new System.Drawing.Size(75, 23);
+            this.btnLabel.Size = new System.Drawing.Size(97, 23);
             this.btnLabel.TabIndex = 2;
-            this.btnLabel.Text = "Print Labels";
+            this.btnLabel.Text = "Print ALL Labels";
             this.btnLabel.UseVisualStyleBackColor = true;
             this.btnLabel.Click += new System.EventHandler(this.btnLabel_Click);
             // 
             // hiddenDGV
             // 
+            this.hiddenDGV.AllowUserToAddRows = false;
             this.hiddenDGV.AllowUserToDeleteRows = false;
             this.hiddenDGV.AllowUserToResizeColumns = false;
             this.hiddenDGV.AllowUserToResizeRows = false;
             this.hiddenDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.hiddenDGV.Location = new System.Drawing.Point(286, 30);
+            this.hiddenDGV.Location = new System.Drawing.Point(373, 35);
             this.hiddenDGV.Name = "hiddenDGV";
             this.hiddenDGV.RowHeadersVisible = false;
             this.hiddenDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.hiddenDGV.Size = new System.Drawing.Size(10, 10);
             this.hiddenDGV.TabIndex = 3;
+            // 
+            // btnRePrint
+            // 
+            this.btnRePrint.Location = new System.Drawing.Point(115, 22);
+            this.btnRePrint.Name = "btnRePrint";
+            this.btnRePrint.Size = new System.Drawing.Size(110, 23);
+            this.btnRePrint.TabIndex = 4;
+            this.btnRePrint.Text = "Reprint a label";
+            this.btnRePrint.UseVisualStyleBackColor = true;
+            this.btnRePrint.Click += new System.EventHandler(this.btnRePrint_Click);
+            // 
+            // btnDoorSearch
+            // 
+            this.btnDoorSearch.Location = new System.Drawing.Point(231, 22);
+            this.btnDoorSearch.Name = "btnDoorSearch";
+            this.btnDoorSearch.Size = new System.Drawing.Size(127, 23);
+            this.btnDoorSearch.TabIndex = 5;
+            this.btnDoorSearch.Text = "Search Door Number";
+            this.btnDoorSearch.UseVisualStyleBackColor = true;
             // 
             // frmStores
             // 
@@ -90,6 +112,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(445, 78);
+            this.Controls.Add(this.btnDoorSearch);
+            this.Controls.Add(this.btnRePrint);
             this.Controls.Add(this.btnLabel);
             this.Controls.Add(this.btn_screenshot);
             this.Controls.Add(this.dataGridView1);
@@ -112,5 +136,7 @@
         private System.Windows.Forms.Button btn_screenshot;
         private System.Windows.Forms.Button btnLabel;
         private System.Windows.Forms.DataGridView hiddenDGV;
+        private System.Windows.Forms.Button btnRePrint;
+        private System.Windows.Forms.Button btnDoorSearch;
     }
 }

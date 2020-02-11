@@ -17,6 +17,7 @@ namespace WindowsFormsApp2
     public partial class frmStores : Form
     {
 
+        public bool alreadyPrinted { get; set; }
         public frmStores()
         {
             InitializeComponent();
@@ -145,7 +146,7 @@ namespace WindowsFormsApp2
             end = end.AddDays(-1);
             //MessageBox.Show(start.ToString());
             //MessageBox.Show(end.ToString());
-            string sql = "select b.[description], a.id from dbo.door a " +
+            string sql = "select b.[description], a.id ,(d.[NAME]) as [supplier] , (c.finish) as [finish] from dbo.door a " +
                 " LEFT JOIN dbo.paint_to_door b ON a.id = b.door_id " +
                 " LEFT JOIN dbo.paint_finish c ON b.finish_id = c.id " +
                 " LEFT JOIN dbo.supplier d ON b.supplier_id = d.id " +
@@ -166,7 +167,7 @@ namespace WindowsFormsApp2
                 "OR a.customer_acc_ref LIKE '%SUNRAY%'" +
                 " OR a.customer_acc_ref LIKE '%STRONDOR%')" +
                 "order by a.id";
-            MessageBox.Show(sql);
+            // MessageBox.Show(sql);
             using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionString))
             {
                 using (SqlCommand CMD = new SqlCommand(sql, CONNECT))
@@ -186,13 +187,62 @@ namespace WindowsFormsApp2
             //now we start printing like a mad man#
             for (int i = 0; i < hiddenDGV.Rows.Count; i++)
             {
-                label_test rpt = new label_test();
-                string RAL = hiddenDGV.Rows[i].Cells[0].Value.ToString();
-                string DOOR = hiddenDGV.Rows[i].Cells[1].Value.ToString();
-                rpt.SetParameterValue("RALCOLOUR", RAL);
-                rpt.SetParameterValue("DOORNUMBER", "Door Number: " + DOOR);
-                rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
+                //first check if this door label has been printed 
+                checkDoor(hiddenDGV.Rows[i].Cells[1].Value.ToString());
+                if (alreadyPrinted == false)
+                {
+                    label_test rpt = new label_test();
+                    string RAL = hiddenDGV.Rows[i].Cells[0].Value.ToString();
+                    string DOOR = hiddenDGV.Rows[i].Cells[1].Value.ToString();
+                    string FINISH = hiddenDGV.Rows[i].Cells[3].Value.ToString();
+                    string SUPPLIER = hiddenDGV.Rows[i].Cells[2].Value.ToString();
+                    rpt.SetParameterValue("RALCOLOUR", RAL);
+                    rpt.SetParameterValue("SUPPLIER", "Supplier: " + SUPPLIER);
+                    rpt.SetParameterValue("FINISH", "Finish: " + FINISH);
+                    rpt.SetParameterValue("DOORNUMBER", "Door Number: " + DOOR);
+                    rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
+                    insertINTO(DOOR);
+                    return;
+                }
+                else
+                    continue;
+                //after printing this label add this row to the new table with the repaint set to -1
+                
+            }
+        }
 
+        private void insertINTO(string doorID)
+        {
+            string sql = "INSERT INTO dbo.door_paint_label_printed (door_id,label_printed) VALUES (" + doorID + ",-1)";
+            using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+
+        }
+
+        private void checkDoor(string doorID)
+        {
+            string sql = "SELECT COALESCE(label_printed,0) from dbo.door_paint_label_printed WHERE door_id = " + doorID;
+            using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    conn.Open();
+                    int temp = Convert.ToInt32(cmd.ExecuteScalar());
+                    conn.Close();
+
+                    if (temp == -1)
+                        alreadyPrinted = true;
+                    else
+                        alreadyPrinted = false;
+
+                }
             }
         }
 
@@ -222,6 +272,14 @@ namespace WindowsFormsApp2
 
 
 
+        }
+
+        private void btnRePrint_Click(object sender, EventArgs e)
+        {
+            //here we open a form to look for a label thats been printed already ...
+            frmReprintSearch frm = new frmReprintSearch();
+            frm.ShowDialog();
+                        
         }
     }
 }

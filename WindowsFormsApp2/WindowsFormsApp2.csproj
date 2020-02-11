@@ -197,6 +197,12 @@
     <Compile Include="frmPaintRequirement.Designer.cs">
       <DependentUpon>frmPaintRequirement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReprintSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReprintSearch.Designer.cs">
+      <DependentUpon>frmReprintSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelectUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPaintRequirement.resx">
       <DependentUpon>frmPaintRequirement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReprintSearch.resx">
+      <DependentUpon>frmReprintSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelectUser.resx">
       <DependentUpon>frmSelectUser.cs</DependentUpon>
