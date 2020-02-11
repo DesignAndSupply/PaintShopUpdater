@@ -45,12 +45,12 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(424, 21);
+            this.dataGridView1.Size = new System.Drawing.Size(427, 21);
             this.dataGridView1.TabIndex = 0;
             // 
             // btn_screenshot
             // 
-            this.btn_screenshot.Location = new System.Drawing.Point(361, 22);
+            this.btn_screenshot.Location = new System.Drawing.Point(364, 22);
             this.btn_screenshot.Name = "btn_screenshot";
             this.btn_screenshot.Size = new System.Drawing.Size(75, 23);
             this.btn_screenshot.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(451, 78);
+            this.ClientSize = new System.Drawing.Size(445, 78);
             this.Controls.Add(this.btn_screenshot);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

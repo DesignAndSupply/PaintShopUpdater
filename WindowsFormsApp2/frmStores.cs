@@ -103,6 +103,9 @@ namespace WindowsFormsApp2
             dataGridView1.Columns[1].HeaderText = "Finish";
             dataGridView1.Columns[2].HeaderText = "Supplier";
             dataGridView1.Columns[3].HeaderText = "Quantity";
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void btn_screenshot_Click(object sender, EventArgs e)
