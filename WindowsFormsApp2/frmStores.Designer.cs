@@ -59,7 +59,7 @@
             this.btn_screenshot.Name = "btn_screenshot";
             this.btn_screenshot.Size = new System.Drawing.Size(75, 23);
             this.btn_screenshot.TabIndex = 1;
-            this.btn_screenshot.Text = "Print";
+            this.btn_screenshot.Text = "Print Screen";
             this.btn_screenshot.UseVisualStyleBackColor = true;
             this.btn_screenshot.Click += new System.EventHandler(this.btn_screenshot_Click);
             // 
@@ -105,6 +105,7 @@
             this.btnDoorSearch.TabIndex = 5;
             this.btnDoorSearch.Text = "Search Door Number";
             this.btnDoorSearch.UseVisualStyleBackColor = true;
+            this.btnDoorSearch.Click += new System.EventHandler(this.btnDoorSearch_Click);
             // 
             // frmStores
             // 

@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using CrystalDecisions.CrystalReports.Engine;
+using Microsoft.VisualBasic;
 
 namespace WindowsFormsApp2
 {
@@ -213,7 +214,7 @@ namespace WindowsFormsApp2
 
         private void insertINTO(string doorID)
         {
-            string sql = "INSERT INTO dbo.door_paint_label_printed (door_id,label_printed) VALUES (" + doorID + ",-1)";
+            string sql = "INSERT INTO dbo.door_paint_label_printed (door_id,label_printed,label_print_date) VALUES (" + doorID + ",-1,CAST(GETDATE() as DateTime))"; //check the date time here
             using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -280,6 +281,83 @@ namespace WindowsFormsApp2
             frmReprintSearch frm = new frmReprintSearch();
             frm.ShowDialog();
                         
+        }
+
+        private void btnDoorSearch_Click(object sender, EventArgs e)
+        {
+            //form to search for a door i guess?
+            string input = Microsoft.VisualBasic.Interaction.InputBox("Please enter a door number!", "Door Number", "0", 500, 500);
+            if (IsDigitsOnly(input) == true)
+            {
+                //print labels and stuffs
+                string doorID = "";
+                string RAL = "";
+                string FINISH = "";
+                string SUPPLIER = "";
+                //get the DOOR ID from the lit up dgv
+                doorID = input;
+
+                //test print i guess?
+                string sql = "select b.[description], a.id ,(d.[NAME]) as [supplier] , (c.finish) as [finish] from dbo.door a " +
+                    " LEFT JOIN dbo.paint_to_door b ON a.id = b.door_id " +
+                    " LEFT JOIN dbo.paint_finish c ON b.finish_id = c.id " +
+                    " LEFT JOIN dbo.supplier d ON b.supplier_id = d.id " +
+                    "WHERE  complete_stores = 0 " +
+                    "AND[description] NOT LIKE '%FREE ISSUE PAINT%' " +
+                    "AND[description] is not null " +
+                    //only have selected customers 
+                    " AND (a.customer_acc_ref LIKE '%BOLT4%' " +
+                    " OR a.customer_acc_ref LIKE '%CALEDON%' " +
+                    "OR a.customer_acc_ref LIKE '%DOVE2%' " +
+                    "OR a.customer_acc_ref LIKE '%FAD%'  " +
+                    "OR a.customer_acc_ref LIKE '%JODAN%' " +
+                    "OR a.customer_acc_ref LIKE '%JOHNRE%' " +
+                    "OR a.customer_acc_ref LIKE '%ROTEC%' " +
+                    "OR a.customer_acc_ref LIKE '%SUNRAY%'" +
+                    " OR a.customer_acc_ref LIKE '%STRONDOR%')" +
+                    " AND a.id = " + doorID + " " +
+                    "order by a.id";
+                using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        conn.Open();
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            RAL = Convert.ToString(dr["description"]);
+                            FINISH = Convert.ToString(dr["finish"]);
+                            SUPPLIER = Convert.ToString(dr["supplier"]);
+                        }
+                    }
+                }
+                //first we need to get the values that get printed :)
+                label_test rpt = new label_test();
+
+                rpt.SetParameterValue("RALCOLOUR", RAL);
+                rpt.SetParameterValue("SUPPLIER", "Supplier: " + SUPPLIER);
+                rpt.SetParameterValue("FINISH", "Finish: " + FINISH);
+                rpt.SetParameterValue("DOORNUMBER", "Door Number: " + doorID);
+                rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
+
+
+
+                //before closing we need to mark as repaint if it is not there
+
+                this.Close();
+            }
+            else
+                MessageBox.Show("Please only enter numbers!", "ERROR", MessageBoxButtons.OK);
+        }
+
+        bool IsDigitsOnly (string input)
+        {
+            foreach (char c in input)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+            return true;
         }
     }
 }
