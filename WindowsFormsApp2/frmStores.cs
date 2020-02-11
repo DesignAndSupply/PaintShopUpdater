@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace WindowsFormsApp2
 {
@@ -76,12 +77,12 @@ namespace WindowsFormsApp2
             }
         }
 
-        
+
         private void autoSizeForm()
         {//unlock the dgv autosize and use the new size to capture the size for the form
             Size dgvSize = getSizeDGV();
             this.ClientSize = dgvSize;
-            
+
 
         }
         protected Size getSizeDGV()
@@ -92,7 +93,7 @@ namespace WindowsFormsApp2
 
             Size contentSize = dataGridView1.Size;
             //dataGridView1.AutoSize = false;
-           // dataGridView1.Dock = dock;
+            // dataGridView1.Dock = dock;
             return contentSize;
         }
 
@@ -126,8 +127,26 @@ namespace WindowsFormsApp2
         private void Pd_PrintPage(object sender, PrintPageEventArgs e)
         {
             System.Drawing.Image img = System.Drawing.Image.FromFile(@"c:\temp\screenshot.png");
-            Point location = new Point(100,200);
+            Point location = new Point(100, 200);
             e.Graphics.DrawImage(img, location);  //e.MarginBounds for fullscreen (breaks if its a small form)
+        }
+
+        private void btnLabel_Click(object sender, EventArgs e)
+        {
+            label_test rpt = new label_test();
+            //PrinterSettings printer = new PrinterSettings;
+            //rpt.PrintOptions.PrinterName = @"\\192.168.0.217\ZDesigner GK420d";
+            // printer.PrinterName = @"\\192.168.0.217\ZDesigner GK420d";
+            //rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
+            string printerName = @"\\192.168.0.217\ZDesigner GK420d";
+            rpt.Load("label_test");
+            System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+            printerSettings.PrinterName = printerName;
+            rpt.PrintToPrinter(printerSettings, new PageSettings(), false);
+            
+
+
+
         }
     }
 }

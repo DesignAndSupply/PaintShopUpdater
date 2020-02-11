@@ -30,6 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_screenshot = new System.Windows.Forms.Button();
+            this.btnLabel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,12 +59,23 @@
             this.btn_screenshot.UseVisualStyleBackColor = true;
             this.btn_screenshot.Click += new System.EventHandler(this.btn_screenshot_Click);
             // 
+            // btnLabel
+            // 
+            this.btnLabel.Location = new System.Drawing.Point(264, 22);
+            this.btnLabel.Name = "btnLabel";
+            this.btnLabel.Size = new System.Drawing.Size(75, 23);
+            this.btnLabel.TabIndex = 2;
+            this.btnLabel.Text = "Print Labels";
+            this.btnLabel.UseVisualStyleBackColor = true;
+            this.btnLabel.Click += new System.EventHandler(this.btnLabel_Click);
+            // 
             // frmStores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(445, 78);
+            this.Controls.Add(this.btnLabel);
             this.Controls.Add(this.btn_screenshot);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -81,5 +93,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_screenshot;
+        private System.Windows.Forms.Button btnLabel;
     }
 }
