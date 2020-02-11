@@ -137,12 +137,15 @@ namespace WindowsFormsApp2
             //PrinterSettings printer = new PrinterSettings;
             //rpt.PrintOptions.PrinterName = @"\\192.168.0.217\ZDesigner GK420d";
             // printer.PrinterName = @"\\192.168.0.217\ZDesigner GK420d";
-            //rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
-            string printerName = @"\\192.168.0.217\ZDesigner GK420d";
-            rpt.Load("label_test");
-            System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
-            printerSettings.PrinterName = printerName;
-            rpt.PrintToPrinter(printerSettings, new PageSettings(), false);
+            rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
+
+
+
+            //string printerName = @"\\192.168.0.217\ZDesigner GK420d";
+            //rpt.Load("label_test");
+            //System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+            //printerSettings.PrinterName = printerName;
+            //rpt.PrintToPrinter(printerSettings, new PageSettings(), false);
             
 
 
