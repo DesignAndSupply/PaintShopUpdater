@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
-    <PublishUrl>\\designsvr1\apps\Design and Supply CSharp\ShopFloorApps\PaintShop\</PublishUrl>
+    <PublishUrl>M:\paintShop\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,9 +25,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <InstallUrl>\\designsvr1\dropbox\paintShop\</InstallUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>61</ApplicationRevision>
+    <ApplicationRevision>62</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
