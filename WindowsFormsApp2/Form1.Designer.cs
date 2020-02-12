@@ -102,13 +102,13 @@
             this.thisDoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.looseItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockTakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtQuantitySame = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chkIsProblem = new System.Windows.Forms.CheckBox();
             this.btn_ryucxd = new System.Windows.Forms.Button();
             this.lblStockTake = new System.Windows.Forms.Label();
-            this.storesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -782,6 +782,13 @@
             this.stockTakeToolStripMenuItem.Text = "Stock Take";
             this.stockTakeToolStripMenuItem.Click += new System.EventHandler(this.stockTakeToolStripMenuItem_Click);
             // 
+            // storesListToolStripMenuItem
+            // 
+            this.storesListToolStripMenuItem.Name = "storesListToolStripMenuItem";
+            this.storesListToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.storesListToolStripMenuItem.Text = "Paint Pot Labels";
+            this.storesListToolStripMenuItem.Click += new System.EventHandler(this.storesListToolStripMenuItem_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -841,13 +848,6 @@
             this.lblStockTake.TabIndex = 94;
             this.lblStockTake.Text = "WEEKLY STOCK TAKE NEEDS ATTENTION";
             this.lblStockTake.Visible = false;
-            // 
-            // storesListToolStripMenuItem
-            // 
-            this.storesListToolStripMenuItem.Name = "storesListToolStripMenuItem";
-            this.storesListToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.storesListToolStripMenuItem.Text = "Stores List";
-            this.storesListToolStripMenuItem.Click += new System.EventHandler(this.storesListToolStripMenuItem_Click);
             // 
             // Form1
             // 

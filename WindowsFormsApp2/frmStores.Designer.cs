@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_screenshot = new System.Windows.Forms.Button();
             this.btnLabel = new System.Windows.Forms.Button();
             this.hiddenDGV = new System.Windows.Forms.DataGridView();
             this.btnRePrint = new System.Windows.Forms.Button();
@@ -53,16 +52,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(427, 21);
             this.dataGridView1.TabIndex = 0;
             // 
-            // btn_screenshot
-            // 
-            this.btn_screenshot.Location = new System.Drawing.Point(364, 22);
-            this.btn_screenshot.Name = "btn_screenshot";
-            this.btn_screenshot.Size = new System.Drawing.Size(75, 23);
-            this.btn_screenshot.TabIndex = 1;
-            this.btn_screenshot.Text = "Print Screen";
-            this.btn_screenshot.UseVisualStyleBackColor = true;
-            this.btn_screenshot.Click += new System.EventHandler(this.btn_screenshot_Click);
-            // 
             // btnLabel
             // 
             this.btnLabel.Location = new System.Drawing.Point(12, 22);
@@ -80,7 +69,7 @@
             this.hiddenDGV.AllowUserToResizeColumns = false;
             this.hiddenDGV.AllowUserToResizeRows = false;
             this.hiddenDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.hiddenDGV.Location = new System.Drawing.Point(373, 35);
+            this.hiddenDGV.Location = new System.Drawing.Point(339, 32);
             this.hiddenDGV.Name = "hiddenDGV";
             this.hiddenDGV.RowHeadersVisible = false;
             this.hiddenDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -103,7 +92,7 @@
             this.btnDoorSearch.Name = "btnDoorSearch";
             this.btnDoorSearch.Size = new System.Drawing.Size(127, 23);
             this.btnDoorSearch.TabIndex = 5;
-            this.btnDoorSearch.Text = "Search Door Number";
+            this.btnDoorSearch.Text = "Paint Pot Labels";
             this.btnDoorSearch.UseVisualStyleBackColor = true;
             this.btnDoorSearch.Click += new System.EventHandler(this.btnDoorSearch_Click);
             // 
@@ -116,7 +105,6 @@
             this.Controls.Add(this.btnDoorSearch);
             this.Controls.Add(this.btnRePrint);
             this.Controls.Add(this.btnLabel);
-            this.Controls.Add(this.btn_screenshot);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.hiddenDGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -134,7 +122,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_screenshot;
         private System.Windows.Forms.Button btnLabel;
         private System.Windows.Forms.DataGridView hiddenDGV;
         private System.Windows.Forms.Button btnRePrint;

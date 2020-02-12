@@ -56,7 +56,7 @@ namespace WindowsFormsApp2
                 " OR a.customer_acc_ref LIKE '%STRONDOR%')" +
                 "GROUP BY b.description,c.finish,d.[NAME] " +
                 "ORDER BY qty DESC";
-            MessageBox.Show(sql);
+            //MessageBox.Show(sql);
             using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionString))
             {
                 using (SqlCommand CMD = new SqlCommand(sql, CONNECT))
@@ -113,17 +113,17 @@ namespace WindowsFormsApp2
 
         private void btn_screenshot_Click(object sender, EventArgs e)
         {
-            btn_screenshot.Enabled = false;
-            var frm = Form.ActiveForm;
-            using (var bmp = new Bitmap(frm.Width, frm.Height))
-            {
-                frm.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
-                bmp.Save(@"c:\temp\screenshot.png");
-            }
-            PrintDocument pd = new PrintDocument();
-            pd.PrintPage += Pd_PrintPage;
-            pd.Print();
-            this.Close();
+            //btn_screenshot.Enabled = false;
+            //var frm = Form.ActiveForm;
+            //using (var bmp = new Bitmap(frm.Width, frm.Height))
+            //{
+            //    frm.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+            //    bmp.Save(@"c:\temp\screenshot.png");
+            //}
+            //PrintDocument pd = new PrintDocument();
+            //pd.PrintPage += Pd_PrintPage;
+            //pd.Print();
+            //this.Close();
         }
 
         private void Pd_PrintPage(object sender, PrintPageEventArgs e)
@@ -203,7 +203,7 @@ namespace WindowsFormsApp2
                     rpt.SetParameterValue("DOORNUMBER", "Door Number: " + DOOR);
                     rpt.PrintToPrinter(1, false, 0, 0); //this works well for auto printing
                     insertINTO(DOOR);
-                    return;
+                    //return;
                 }
                 else
                     continue;
@@ -297,6 +297,9 @@ namespace WindowsFormsApp2
                 //get the DOOR ID from the lit up dgv
                 doorID = input;
 
+                if (input == "" || string.IsNullOrEmpty(input))
+                    return;
+
                 //test print i guess?
                 string sql = "select b.[description], a.id ,(d.[NAME]) as [supplier] , (c.finish) as [finish] from dbo.door a " +
                     " LEFT JOIN dbo.paint_to_door b ON a.id = b.door_id " +
@@ -331,7 +334,12 @@ namespace WindowsFormsApp2
                         }
                     }
                 }
-                //first we need to get the values that get printed :)
+                //now we have the correct values open a form and show the values so the user can confirm it is correct :)
+                frmCheckDoorSearched frmCDS = new frmCheckDoorSearched(RAL,doorID,SUPPLIER,FINISH);
+                frmCDS.ShowDialog();
+                if (frmCDS.yesNo == false)
+                    return;
+                //now print as normal i guess
                 label_test rpt = new label_test();
 
                 rpt.SetParameterValue("RALCOLOUR", RAL);
