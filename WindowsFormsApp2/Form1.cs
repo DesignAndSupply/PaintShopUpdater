@@ -479,6 +479,31 @@ namespace WindowsFormsApp2
                             break;
                         case "Powder Coat":
                             sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Powder Coat", finishType) / int.Parse(txtQuantitySame.Text), "pc", staff_no1, staff_no2, staff_no3);
+
+                            //if yes then wipe existing numbers
+                            DialogResult result = MessageBox.Show("Has this door changed Flight bar?", "Position", MessageBoxButtons.YesNo);
+                            if (result == DialogResult.Yes)
+                            {
+                                //wipe
+                                string sql = "update dbo.door2 set flight_bar_num = NULL where door_id = " + txtSearch.Text;
+                                using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
+                                {
+                                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                                    {
+                                        conn.Open();
+                                        MessageBox.Show(sql);//cmd.ExecuteNonQuery();
+                                        conn.Close();
+                                    }
+                                }
+                                //form
+                                frm_rail frmrail = new frm_rail(Int32.Parse(txtSearch.Text));
+                                frmrail.ShowDialog();
+                            }
+                            else if (result == DialogResult.No)
+                            {
+                                ;//do nothing 
+                            }
+
                             break;
                         case "Oven":
                             sqlUpdate.UpdateDoor(Int32.Parse(txtSearch.Text), op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), "Oven", finishType) / int.Parse(txtQuantitySame.Text), "oven", staff_no1, staff_no2, staff_no3);
