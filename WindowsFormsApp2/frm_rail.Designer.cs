@@ -49,6 +49,7 @@
             this.btn_add.TabIndex = 17;
             this.btn_add.Text = "Add numbers";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click_1);
             // 
             // listbox
             // 
@@ -72,6 +73,7 @@
             // 
             this.txt_string.Location = new System.Drawing.Point(127, 239);
             this.txt_string.Name = "txt_string";
+            this.txt_string.ReadOnly = true;
             this.txt_string.Size = new System.Drawing.Size(166, 20);
             this.txt_string.TabIndex = 14;
             // 
@@ -91,6 +93,7 @@
             this.txt_numbers.Name = "txt_numbers";
             this.txt_numbers.Size = new System.Drawing.Size(161, 20);
             this.txt_numbers.TabIndex = 12;
+            this.txt_numbers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_numbers_KeyPress_1);
             // 
             // label1
             // 
@@ -114,6 +117,7 @@
             this.btn_update.TabIndex = 20;
             this.btn_update.Text = "UPDATE";
             this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click_1);
             // 
             // label4
             // 
@@ -133,6 +137,7 @@
             this.btn_add_txtbox.TabIndex = 18;
             this.btn_add_txtbox.Text = "Add numbers";
             this.btn_add_txtbox.UseVisualStyleBackColor = true;
+            this.btn_add_txtbox.Click += new System.EventHandler(this.btn_add_txtbox_Click_1);
             // 
             // frm_rail
             // 
@@ -152,7 +157,7 @@
             this.Controls.Add(this.btn_add_txtbox);
             this.Name = "frm_rail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_rail";
+            this.Text = "Flight Bar";
             this.ResumeLayout(false);
             this.PerformLayout();
 

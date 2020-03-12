@@ -86,6 +86,7 @@ namespace WindowsFormsApp2
             //frm rail goes here
             frm_rail frm = new frm_rail(_doorID);
             frm.ShowDialog();
+            this.Close();
         }
     }
 }

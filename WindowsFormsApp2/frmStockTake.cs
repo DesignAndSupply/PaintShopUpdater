@@ -158,16 +158,16 @@ namespace WindowsFormsApp2
                         allocated_paint = (double)cmd.ExecuteScalar();
                         CONNECT.Close();
                         dgvPaint = Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value.ToString());
-                        MessageBox.Show("paint_id = " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " - has " + allocated_paint + " allocated to doors and the entered value = " + dataGridView1.Rows[i].Cells[3].Value.ToString());
-                        allocated_paint = allocated_paint + dgvPaint;
-                        MessageBox.Show("new value = " + allocated_paint.ToString());
+                        //MessageBox.Show("paint_id = " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " - has " + allocated_paint + " allocated to doors and the entered value = " + dataGridView1.Rows[i].Cells[3].Value.ToString());
+                        allocated_paint = dgvPaint - allocated_paint;
+                        //MessageBox.Show("new value = " + allocated_paint.ToString());
                     }
                     sql = "UPDATE dbo.stock SET amount_in_stock = " + allocated_paint.ToString() + " WHERE stock_code = " + dataGridView1.Rows[i].Cells[1].Value.ToString() ;
                     using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
                     {
                         //now we have the amount thats allocated we add this to the current value
                         CONNECT.Open();
-                        //cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
                         CONNECT.Close();
                     }
                     //also add to post because i forgot about that
@@ -175,7 +175,7 @@ namespace WindowsFormsApp2
                     using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
                     {
                         CONNECT.Open();
-                       // cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
                         CONNECT.Close();
                     }
                 }

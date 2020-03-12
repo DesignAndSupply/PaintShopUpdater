@@ -46,6 +46,11 @@ namespace WindowsFormsApp2
             txtSearch.Validating += new CancelEventHandler(txtSearch_Validating);
             cmdOp.Validating += new CancelEventHandler(cmdOp_Validating);
 
+            //get flightnum if it exists
+            using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
+            {
+                //cmd
+            }
 
         }
 
@@ -491,7 +496,8 @@ namespace WindowsFormsApp2
                                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                                     {
                                         conn.Open();
-                                        MessageBox.Show(sql);//cmd.ExecuteNonQuery();
+                                        //MessageBox.Show(sql);
+                                        cmd.ExecuteNonQuery();
                                         conn.Close();
                                     }
                                 }
@@ -1085,7 +1091,8 @@ namespace WindowsFormsApp2
 
         private void btn_ryucxd_Click(object sender, EventArgs e)
         {
-            
+            frm_rail frm = new frm_rail(Convert.ToInt32(txtSearch.Text));
+            frm.Show();
         }
 
         private void storesListToolStripMenuItem_Click(object sender, EventArgs e)
