@@ -875,13 +875,14 @@
             // 
             this.lblFinish.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFinish.AutoSize = true;
+            this.lblFinish.BackColor = System.Drawing.Color.Red;
             this.lblFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinish.ForeColor = System.Drawing.Color.Red;
+            this.lblFinish.ForeColor = System.Drawing.Color.White;
             this.lblFinish.Location = new System.Drawing.Point(12, 272);
             this.lblFinish.Name = "lblFinish";
-            this.lblFinish.Size = new System.Drawing.Size(266, 24);
+            this.lblFinish.Size = new System.Drawing.Size(356, 24);
             this.lblFinish.TabIndex = 97;
-            this.lblFinish.Text = "FINISH TYPE: C5 TWO TONE";
+            this.lblFinish.Text = "         FINISH TYPE: C5 TWO TONE         ";
             this.lblFinish.Visible = false;
             // 
             // Form1

@@ -642,14 +642,21 @@ namespace WindowsFormsApp2
                 //enable the label for finish here
                 using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
                 {
-                    using (SqlCommand cmd = new SqlCommand("select finish_description from dbo.door LEFT JOIN dbo.finish ON dbo.door.finish_id = dbo.finish.id where dbo.door.id = " + txtSearch.Text, conn))
+                    using (SqlCommand cmd = new SqlCommand("select finish_description from dbo.door LEFT JOIN dbo.finish ON dbo.door.finish_id = dbo.finish.id where dbo.door.id = " + txtSearch.Text  + " and highlight = -1", conn))
                     {
                         string text = "";
                         conn.Open();
                         text = Convert.ToString(cmd.ExecuteScalar());
                         conn.Close();
-                        lblFinish.Text = "FINISH TYPE: " + text.ToUpper();
-                        lblFinish.Visible = true;
+                        if (text.Length > 2)
+                        {
+                            lblFinish.Text = "        FINISH TYPE: " + text.ToUpper() + "        ";
+                            lblFinish.Visible = true;
+                        }
+                        else
+                        {
+                            lblFinish.Visible = false;
+                        }
 
                     }
 
