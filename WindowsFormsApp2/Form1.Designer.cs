@@ -33,15 +33,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sectionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staff1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staff2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staff3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCompleteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oporderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cviewpaintingsectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.order_databaseDataSet1 = new WindowsFormsApp2.order_databaseDataSet1();
             this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.cmdOp = new System.Windows.Forms.ComboBox();
@@ -52,16 +43,6 @@
             this.c_view_painting_staffTableAdapter = new WindowsFormsApp2.user_infoDataSetTableAdapters.c_view_painting_staffTableAdapter();
             this.btnStaffSetup = new System.Windows.Forms.Button();
             this.dgPaintToDoor = new System.Windows.Forms.DataGridView();
-            this.dooridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.powderkgsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.freeissueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.unallocatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.sideselectionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cviewpaintondoorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFinishID = new System.Windows.Forms.TextBox();
@@ -89,8 +70,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.c_view_painting_sectionsTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_painting_sectionsTableAdapter();
-            this.c_view_paint_on_doorTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_paint_on_doorTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staffSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -111,20 +90,42 @@
             this.lblStockTake = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtFlightBar = new System.Windows.Forms.TextBox();
+            this.dooridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.powderkgsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.freeissueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.unallocatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.sideselectionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cviewpaintondoorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.order_databaseDataSet1 = new WindowsFormsApp2.order_databaseDataSet1();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staff1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staff2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staff3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCompleteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oporderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cviewpaintingsectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.c_view_painting_sectionsTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_painting_sectionsTableAdapter();
+            this.c_view_paint_on_doorTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_paint_on_doorTableAdapter();
+            this.lblFinish = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet1)).BeginInit();
             this.fillByToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_infoDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_infoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingstaffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPaintToDoor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewpaintondoorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductionProgress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewpaintondoorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -185,58 +186,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(964, 279);
             this.dataGridView1.TabIndex = 59;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // sectionDataGridViewTextBoxColumn
-            // 
-            this.sectionDataGridViewTextBoxColumn.DataPropertyName = "Section";
-            this.sectionDataGridViewTextBoxColumn.HeaderText = "Section";
-            this.sectionDataGridViewTextBoxColumn.Name = "sectionDataGridViewTextBoxColumn";
-            // 
-            // staff1DataGridViewTextBoxColumn
-            // 
-            this.staff1DataGridViewTextBoxColumn.DataPropertyName = "Staff1";
-            this.staff1DataGridViewTextBoxColumn.HeaderText = "Staff1";
-            this.staff1DataGridViewTextBoxColumn.Name = "staff1DataGridViewTextBoxColumn";
-            // 
-            // staff2DataGridViewTextBoxColumn
-            // 
-            this.staff2DataGridViewTextBoxColumn.DataPropertyName = "Staff2";
-            this.staff2DataGridViewTextBoxColumn.HeaderText = "Staff2";
-            this.staff2DataGridViewTextBoxColumn.Name = "staff2DataGridViewTextBoxColumn";
-            // 
-            // staff3DataGridViewTextBoxColumn
-            // 
-            this.staff3DataGridViewTextBoxColumn.DataPropertyName = "Staff3";
-            this.staff3DataGridViewTextBoxColumn.HeaderText = "Staff3";
-            this.staff3DataGridViewTextBoxColumn.Name = "staff3DataGridViewTextBoxColumn";
-            // 
-            // dateCompleteDataGridViewTextBoxColumn
-            // 
-            this.dateCompleteDataGridViewTextBoxColumn.DataPropertyName = "dateComplete";
-            this.dateCompleteDataGridViewTextBoxColumn.HeaderText = "dateComplete";
-            this.dateCompleteDataGridViewTextBoxColumn.Name = "dateCompleteDataGridViewTextBoxColumn";
-            // 
-            // oporderDataGridViewTextBoxColumn
-            // 
-            this.oporderDataGridViewTextBoxColumn.DataPropertyName = "op_order";
-            this.oporderDataGridViewTextBoxColumn.HeaderText = "op_order";
-            this.oporderDataGridViewTextBoxColumn.Name = "oporderDataGridViewTextBoxColumn";
-            // 
-            // cviewpaintingsectionsBindingSource
-            // 
-            this.cviewpaintingsectionsBindingSource.DataMember = "c_view_painting_sections";
-            this.cviewpaintingsectionsBindingSource.DataSource = this.order_databaseDataSet1;
-            // 
-            // order_databaseDataSet1
-            // 
-            this.order_databaseDataSet1.DataSetName = "order_databaseDataSet1";
-            this.order_databaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fillByToolStrip
             // 
@@ -344,80 +293,6 @@
             this.dgPaintToDoor.ReadOnly = true;
             this.dgPaintToDoor.Size = new System.Drawing.Size(964, 90);
             this.dgPaintToDoor.TabIndex = 64;
-            // 
-            // dooridDataGridViewTextBoxColumn
-            // 
-            this.dooridDataGridViewTextBoxColumn.DataPropertyName = "door_id";
-            this.dooridDataGridViewTextBoxColumn.HeaderText = "door_id";
-            this.dooridDataGridViewTextBoxColumn.Name = "dooridDataGridViewTextBoxColumn";
-            this.dooridDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // finishDataGridViewTextBoxColumn
-            // 
-            this.finishDataGridViewTextBoxColumn.DataPropertyName = "finish";
-            this.finishDataGridViewTextBoxColumn.HeaderText = "finish";
-            this.finishDataGridViewTextBoxColumn.Name = "finishDataGridViewTextBoxColumn";
-            this.finishDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nAMEDataGridViewTextBoxColumn
-            // 
-            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
-            this.nAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // powderkgsDataGridViewTextBoxColumn
-            // 
-            this.powderkgsDataGridViewTextBoxColumn.DataPropertyName = "powder_kgs";
-            this.powderkgsDataGridViewTextBoxColumn.HeaderText = "powder_kgs";
-            this.powderkgsDataGridViewTextBoxColumn.Name = "powderkgsDataGridViewTextBoxColumn";
-            this.powderkgsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wetDataGridViewTextBoxColumn
-            // 
-            this.wetDataGridViewTextBoxColumn.DataPropertyName = "wet";
-            this.wetDataGridViewTextBoxColumn.HeaderText = "wet";
-            this.wetDataGridViewTextBoxColumn.Name = "wetDataGridViewTextBoxColumn";
-            this.wetDataGridViewTextBoxColumn.ReadOnly = true;
-            this.wetDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.wetDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // freeissueDataGridViewTextBoxColumn
-            // 
-            this.freeissueDataGridViewTextBoxColumn.DataPropertyName = "free_issue";
-            this.freeissueDataGridViewTextBoxColumn.HeaderText = "free_issue";
-            this.freeissueDataGridViewTextBoxColumn.Name = "freeissueDataGridViewTextBoxColumn";
-            this.freeissueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.freeissueDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.freeissueDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // unallocatedDataGridViewTextBoxColumn
-            // 
-            this.unallocatedDataGridViewTextBoxColumn.DataPropertyName = "unallocated";
-            this.unallocatedDataGridViewTextBoxColumn.HeaderText = "unallocated";
-            this.unallocatedDataGridViewTextBoxColumn.Name = "unallocatedDataGridViewTextBoxColumn";
-            this.unallocatedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.unallocatedDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.unallocatedDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // sideselectionDataGridViewTextBoxColumn
-            // 
-            this.sideselectionDataGridViewTextBoxColumn.DataPropertyName = "side_selection";
-            this.sideselectionDataGridViewTextBoxColumn.HeaderText = "side_selection";
-            this.sideselectionDataGridViewTextBoxColumn.Name = "sideselectionDataGridViewTextBoxColumn";
-            this.sideselectionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cviewpaintondoorBindingSource
-            // 
-            this.cviewpaintondoorBindingSource.DataMember = "c_view_paint_on_door";
-            this.cviewpaintondoorBindingSource.DataSource = this.order_databaseDataSet1;
             // 
             // label1
             // 
@@ -686,14 +561,6 @@
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // c_view_painting_sectionsTableAdapter
-            // 
-            this.c_view_painting_sectionsTableAdapter.ClearBeforeFill = true;
-            // 
-            // c_view_paint_on_doorTableAdapter
-            // 
-            this.c_view_paint_on_doorTableAdapter.ClearBeforeFill = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -835,6 +702,7 @@
             this.btn_ryucxd.TabIndex = 93;
             this.btn_ryucxd.Text = "ryucxd";
             this.btn_ryucxd.UseVisualStyleBackColor = true;
+            this.btn_ryucxd.Visible = false;
             this.btn_ryucxd.Click += new System.EventHandler(this.btn_ryucxd_Click);
             // 
             // lblStockTake
@@ -869,12 +737,160 @@
             this.txtFlightBar.Size = new System.Drawing.Size(146, 20);
             this.txtFlightBar.TabIndex = 95;
             // 
+            // dooridDataGridViewTextBoxColumn
+            // 
+            this.dooridDataGridViewTextBoxColumn.DataPropertyName = "door_id";
+            this.dooridDataGridViewTextBoxColumn.HeaderText = "door_id";
+            this.dooridDataGridViewTextBoxColumn.Name = "dooridDataGridViewTextBoxColumn";
+            this.dooridDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // finishDataGridViewTextBoxColumn
+            // 
+            this.finishDataGridViewTextBoxColumn.DataPropertyName = "finish";
+            this.finishDataGridViewTextBoxColumn.HeaderText = "finish";
+            this.finishDataGridViewTextBoxColumn.Name = "finishDataGridViewTextBoxColumn";
+            this.finishDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nAMEDataGridViewTextBoxColumn
+            // 
+            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
+            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
+            this.nAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // powderkgsDataGridViewTextBoxColumn
+            // 
+            this.powderkgsDataGridViewTextBoxColumn.DataPropertyName = "powder_kgs";
+            this.powderkgsDataGridViewTextBoxColumn.HeaderText = "powder_kgs";
+            this.powderkgsDataGridViewTextBoxColumn.Name = "powderkgsDataGridViewTextBoxColumn";
+            this.powderkgsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // wetDataGridViewTextBoxColumn
+            // 
+            this.wetDataGridViewTextBoxColumn.DataPropertyName = "wet";
+            this.wetDataGridViewTextBoxColumn.HeaderText = "wet";
+            this.wetDataGridViewTextBoxColumn.Name = "wetDataGridViewTextBoxColumn";
+            this.wetDataGridViewTextBoxColumn.ReadOnly = true;
+            this.wetDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.wetDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // freeissueDataGridViewTextBoxColumn
+            // 
+            this.freeissueDataGridViewTextBoxColumn.DataPropertyName = "free_issue";
+            this.freeissueDataGridViewTextBoxColumn.HeaderText = "free_issue";
+            this.freeissueDataGridViewTextBoxColumn.Name = "freeissueDataGridViewTextBoxColumn";
+            this.freeissueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.freeissueDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.freeissueDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // unallocatedDataGridViewTextBoxColumn
+            // 
+            this.unallocatedDataGridViewTextBoxColumn.DataPropertyName = "unallocated";
+            this.unallocatedDataGridViewTextBoxColumn.HeaderText = "unallocated";
+            this.unallocatedDataGridViewTextBoxColumn.Name = "unallocatedDataGridViewTextBoxColumn";
+            this.unallocatedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unallocatedDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.unallocatedDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // sideselectionDataGridViewTextBoxColumn
+            // 
+            this.sideselectionDataGridViewTextBoxColumn.DataPropertyName = "side_selection";
+            this.sideselectionDataGridViewTextBoxColumn.HeaderText = "side_selection";
+            this.sideselectionDataGridViewTextBoxColumn.Name = "sideselectionDataGridViewTextBoxColumn";
+            this.sideselectionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cviewpaintondoorBindingSource
+            // 
+            this.cviewpaintondoorBindingSource.DataMember = "c_view_paint_on_door";
+            this.cviewpaintondoorBindingSource.DataSource = this.order_databaseDataSet1;
+            // 
+            // order_databaseDataSet1
+            // 
+            this.order_databaseDataSet1.DataSetName = "order_databaseDataSet1";
+            this.order_databaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // sectionDataGridViewTextBoxColumn
+            // 
+            this.sectionDataGridViewTextBoxColumn.DataPropertyName = "Section";
+            this.sectionDataGridViewTextBoxColumn.HeaderText = "Section";
+            this.sectionDataGridViewTextBoxColumn.Name = "sectionDataGridViewTextBoxColumn";
+            // 
+            // staff1DataGridViewTextBoxColumn
+            // 
+            this.staff1DataGridViewTextBoxColumn.DataPropertyName = "Staff1";
+            this.staff1DataGridViewTextBoxColumn.HeaderText = "Staff1";
+            this.staff1DataGridViewTextBoxColumn.Name = "staff1DataGridViewTextBoxColumn";
+            // 
+            // staff2DataGridViewTextBoxColumn
+            // 
+            this.staff2DataGridViewTextBoxColumn.DataPropertyName = "Staff2";
+            this.staff2DataGridViewTextBoxColumn.HeaderText = "Staff2";
+            this.staff2DataGridViewTextBoxColumn.Name = "staff2DataGridViewTextBoxColumn";
+            // 
+            // staff3DataGridViewTextBoxColumn
+            // 
+            this.staff3DataGridViewTextBoxColumn.DataPropertyName = "Staff3";
+            this.staff3DataGridViewTextBoxColumn.HeaderText = "Staff3";
+            this.staff3DataGridViewTextBoxColumn.Name = "staff3DataGridViewTextBoxColumn";
+            // 
+            // dateCompleteDataGridViewTextBoxColumn
+            // 
+            this.dateCompleteDataGridViewTextBoxColumn.DataPropertyName = "dateComplete";
+            this.dateCompleteDataGridViewTextBoxColumn.HeaderText = "dateComplete";
+            this.dateCompleteDataGridViewTextBoxColumn.Name = "dateCompleteDataGridViewTextBoxColumn";
+            // 
+            // oporderDataGridViewTextBoxColumn
+            // 
+            this.oporderDataGridViewTextBoxColumn.DataPropertyName = "op_order";
+            this.oporderDataGridViewTextBoxColumn.HeaderText = "op_order";
+            this.oporderDataGridViewTextBoxColumn.Name = "oporderDataGridViewTextBoxColumn";
+            // 
+            // cviewpaintingsectionsBindingSource
+            // 
+            this.cviewpaintingsectionsBindingSource.DataMember = "c_view_painting_sections";
+            this.cviewpaintingsectionsBindingSource.DataSource = this.order_databaseDataSet1;
+            // 
+            // c_view_painting_sectionsTableAdapter
+            // 
+            this.c_view_painting_sectionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // c_view_paint_on_doorTableAdapter
+            // 
+            this.c_view_paint_on_doorTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblFinish
+            // 
+            this.lblFinish.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblFinish.AutoSize = true;
+            this.lblFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinish.ForeColor = System.Drawing.Color.Red;
+            this.lblFinish.Location = new System.Drawing.Point(12, 272);
+            this.lblFinish.Name = "lblFinish";
+            this.lblFinish.Size = new System.Drawing.Size(266, 24);
+            this.lblFinish.TabIndex = 97;
+            this.lblFinish.Text = "FINISH TYPE: C5 TWO TONE";
+            this.lblFinish.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(985, 782);
+            this.Controls.Add(this.lblFinish);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtFlightBar);
             this.Controls.Add(this.btn_ryucxd);
@@ -923,20 +939,20 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet1)).EndInit();
             this.fillByToolStrip.ResumeLayout(false);
             this.fillByToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_infoDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_infoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingstaffBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPaintToDoor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewpaintondoorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductionProgress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewpaintondoorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1025,6 +1041,7 @@
         private System.Windows.Forms.ToolStripMenuItem storesListToolStripMenuItem;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtFlightBar;
+        private System.Windows.Forms.Label lblFinish;
     }
 }
 

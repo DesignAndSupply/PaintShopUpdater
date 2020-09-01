@@ -101,6 +101,7 @@ namespace WindowsFormsApp2
                 catch (Exception)
                 {
                     MessageBox.Show("Please ensure you enter a valid door number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblFinish.Visible = false;
                 }
 
 
@@ -110,12 +111,15 @@ namespace WindowsFormsApp2
                 refreshCombo();
 
 
+
+
             }
             else
             {
                 MessageBox.Show("Door number is required before searching", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblFinish.Visible = false;
             }
-
+            
 
         }
 
@@ -634,10 +638,27 @@ namespace WindowsFormsApp2
                     chkIsProblem.Checked = false;
                 }
                 colourStatus();
+
+                //enable the label for finish here
+                using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("select finish_description from dbo.door LEFT JOIN dbo.finish ON dbo.door.finish_id = dbo.finish.id where dbo.door.id = " + txtSearch.Text, conn))
+                    {
+                        string text = "";
+                        conn.Open();
+                        text = Convert.ToString(cmd.ExecuteScalar());
+                        conn.Close();
+                        lblFinish.Text = "FINISH TYPE: " + text.ToUpper();
+                        lblFinish.Visible = true;
+
+                    }
+
+                }
             }
             catch
             {
                 MessageBox.Show("No door number found, please try again!", "No Matching ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblFinish.Visible = false;
             }
          }
 
@@ -1091,6 +1112,7 @@ namespace WindowsFormsApp2
 
         private void btn_ryucxd_Click(object sender, EventArgs e)
         {
+            //this button will be the palceholder
             frm_rail frm = new frm_rail(Convert.ToInt32(txtSearch.Text));
             frm.Show();
         }
