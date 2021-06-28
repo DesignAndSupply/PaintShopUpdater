@@ -15,17 +15,25 @@ namespace WindowsFormsApp2
         {
             int SplitTimes;
 
-            if (MessageBox.Show("Do you wish to allocate the time in " + op + " to a specific person?", "Time Split", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (op == "Powder Coat")
             {
                 SplitTimes = 1;
-                
                 return SplitTimes;
             }
             else
             {
-                SplitTimes = 0;
-                
-                return SplitTimes;
+                if (MessageBox.Show("Do you wish to allocate the time in " + op + " to a specific person?", "Time Split", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SplitTimes = 1;
+
+                    return SplitTimes;
+                }
+                else
+                {
+                    SplitTimes = 0;
+
+                    return SplitTimes;
+                }
             }
 
         }
@@ -104,5 +112,5 @@ namespace WindowsFormsApp2
 
     }
 
-    
+
 }
