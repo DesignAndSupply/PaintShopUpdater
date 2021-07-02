@@ -15,7 +15,7 @@ namespace WindowsFormsApp2
         {
             int SplitTimes;
 
-            if (op == "Powder Coat")
+            if (op == "Powder Coat" || op == "Oven" || op == "Oven 2" || op == "Powder Prime")
             {
                 SplitTimes = 1;
                 return SplitTimes;

@@ -263,11 +263,10 @@ namespace WindowsFormsApp2
             else
             {
                 //WORK OUT THE TIME SPLIT
-                if (oper != "Powder Coat")
+                if (oper != "Powder Coat" && oper != "Oven" && oper != "Oven 2" && oper != "Powder Prime")
                 {
                     TimeSplit ts = new TimeSplit();
                     int SplitTime = ts.GetTimeSplit(oper);
-
 
                     var allStaff = ts.GetAllInDept(oper);
 
@@ -320,7 +319,7 @@ namespace WindowsFormsApp2
                 else
                 {
                     //IT IS POWER COAT SO WE NEED TO SKIP THE NORMAL SHIT
-                    MessageBox.Show("Please select staff that completed powder coat","POWDER COAT",MessageBoxButtons.OK);
+                    MessageBox.Show("Please select staff that completed " + oper , oper,MessageBoxButtons.OK);
                     TimeSplit ts = new TimeSplit();
                     int SplitTime = ts.GetTimeSplit(oper);
 
@@ -417,7 +416,7 @@ namespace WindowsFormsApp2
                     //WORK OUT THE TIME SPLIT
                     TimeSplit ts = new TimeSplit();
                     int SplitTime = 0;
-                    if (cmdOp.Text == "Powder Coat")
+                    if (cmdOp.Text == "Powder Coat" || cmdOp.Text == "Oven" || cmdOp.Text == "Oven 2" || cmdOp.Text == "Powder Prime")
                         SplitTime = 1;
                     else
                         SplitTime = ts.GetTimeSplit(cmdOp.Text.ToString());

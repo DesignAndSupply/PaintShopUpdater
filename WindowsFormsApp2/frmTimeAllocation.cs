@@ -99,6 +99,11 @@ namespace WindowsFormsApp2
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             //get staff id from the combobox
+            if (string.IsNullOrWhiteSpace(cmbStaff.Text))
+            {
+                MessageBox.Show("Please select a staff member before continuing", "No Staff Selected");
+                return;
+            }
             string sql = "select id from [user_info].dbo.[user] where forename + ' ' + surname = '" + cmbStaff.Text + "'";
             int staff_id = 0;
             using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))

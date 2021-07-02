@@ -152,7 +152,7 @@ namespace WindowsFormsApp2
             // try
             //{
             SqlConnection myConnection = new SqlConnection(ConnectionString);
-            myConnection.Open();
+             myConnection.Open();
 
             //INSERTS NEW RECORDS INTO DBO DOOR PART COMPLETION LOG
 
