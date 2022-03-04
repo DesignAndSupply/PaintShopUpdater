@@ -4483,6 +4483,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnhighlight;
             
+            private global::System.Data.DataColumn columndel_comp_date;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public view_paint_nextDataTable() {
@@ -4678,6 +4680,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn del_comp_dateColumn {
+                get {
+                    return this.columndel_comp_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4733,7 +4743,8 @@ namespace WindowsFormsApp2 {
                         string paint_string, 
                         string add_string, 
                         string buff_staff_allocation, 
-                        short highlight) {
+                        short highlight, 
+                        System.DateTime del_comp_date) {
                 view_paint_nextRow rowview_paint_nextRow = ((view_paint_nextRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -4755,7 +4766,8 @@ namespace WindowsFormsApp2 {
                         paint_string,
                         add_string,
                         buff_staff_allocation,
-                        highlight};
+                        highlight,
+                        del_comp_date};
                 rowview_paint_nextRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowview_paint_nextRow);
                 return rowview_paint_nextRow;
@@ -4805,6 +4817,7 @@ namespace WindowsFormsApp2 {
                 this.columnadd_string = base.Columns["add_string"];
                 this.columnbuff_staff_allocation = base.Columns["buff_staff_allocation"];
                 this.columnhighlight = base.Columns["highlight"];
+                this.columndel_comp_date = base.Columns["del_comp_date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4850,6 +4863,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnbuff_staff_allocation);
                 this.columnhighlight = new global::System.Data.DataColumn("highlight", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhighlight);
+                this.columndel_comp_date = new global::System.Data.DataColumn("del_comp_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndel_comp_date);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -4867,6 +4882,7 @@ namespace WindowsFormsApp2 {
                 this.columnadd_string.ReadOnly = true;
                 this.columnadd_string.MaxLength = 2147483647;
                 this.columnbuff_staff_allocation.MaxLength = 50;
+                this.columndel_comp_date.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8165,6 +8181,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime del_comp_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableview_paint_next.del_comp_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'del_comp_date\' in table \'view_paint_next\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableview_paint_next.del_comp_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNAMENull() {
                 return this.IsNull(this.tableview_paint_next.NAMEColumn);
             }
@@ -8389,6 +8421,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SethighlightNull() {
                 this[this.tableview_paint_next.highlightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdel_comp_dateNull() {
+                return this.IsNull(this.tableview_paint_next.del_comp_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdel_comp_dateNull() {
+                this[this.tableview_paint_next.del_comp_dateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11095,6 +11139,7 @@ SELECT id, description, exposure_points_ph FROM vibration_tools WHERE (id = @id)
             tableMapping.ColumnMappings.Add("add_string", "add_string");
             tableMapping.ColumnMappings.Add("buff_staff_allocation", "buff_staff_allocation");
             tableMapping.ColumnMappings.Add("highlight", "highlight");
+            tableMapping.ColumnMappings.Add("del_comp_date", "del_comp_date");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11111,7 +11156,7 @@ SELECT id, description, exposure_points_ph FROM vibration_tools WHERE (id = @id)
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT id, NAME, door_type_description, date_paint, complete_paint, quantity_same, infill_description, date_completion, up_complete_date, comp_buff, complete_stores, status_id, test_identifier, painting_note, urgent, finish_description, paint_string, add_string, buff_staff_allocation, highlight FROM view_paint_next";
+            this._commandCollection[0].CommandText = @"SELECT id, NAME, door_type_description, date_paint, complete_paint, quantity_same, infill_description, date_completion, up_complete_date, comp_buff, complete_stores, status_id, test_identifier, painting_note, urgent, finish_description, paint_string, add_string, buff_staff_allocation, highlight,del_comp_date FROM view_paint_next";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

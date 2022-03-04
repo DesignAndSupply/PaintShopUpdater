@@ -81,7 +81,7 @@
               <Width>1.49458cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.28292cm</Width>
+              <Width>1.44167cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.21646cm</Width>
@@ -475,7 +475,7 @@ Stores</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Comp Date</Value>
+                              <Value>Del/Comp Date</Value>
                               <Style>
                                 <FontFamily>Calibri Light</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -960,14 +960,14 @@ Stores</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="date_completion">
+                    <Textbox Name="del_comp_date">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!date_completion.Value</Value>
+                              <Value>=Fields!del_comp_date.Value</Value>
                               <Style>
                                 <FontFamily>Calibri Light</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -980,7 +980,7 @@ Stores</Value>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>date_completion</rd:DefaultName>
+                      <rd:DefaultName>del_comp_date</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -993,6 +993,7 @@ Stores</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1240,7 +1241,7 @@ Stores</Value>
         <DataSetName>PaintNextDS</DataSetName>
         <Top>1.00859cm</Top>
         <Height>2.27625cm</Height>
-        <Width>25.28913cm</Width>
+        <Width>25.44788cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1322,7 +1323,7 @@ Stores</Value>
     <Height>3.59042cm</Height>
     <Style />
   </Body>
-  <Width>25.3685cm</Width>
+  <Width>25.44788cm</Width>
   <Page>
     <PageHeight>21cm</PageHeight>
     <PageWidth>29.7cm</PageWidth>
@@ -1429,6 +1430,10 @@ Stores</Value>
         <Field Name="highlight">
           <DataField>highlight</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="del_comp_date">
+          <DataField>del_comp_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
