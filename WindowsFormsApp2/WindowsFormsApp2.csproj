@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>82</ApplicationRevision>
+    <ApplicationRevision>85</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -181,11 +181,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAmendStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAmendStock.Designer.cs">
+      <DependentUpon>frmAmendStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCheckDoorSearched.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCheckDoorSearched.Designer.cs">
       <DependentUpon>frmCheckDoorSearched.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeductStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeductStock.Designer.cs">
+      <DependentUpon>frmDeductStock.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLooseItems.cs">
       <SubType>Form</SubType>
@@ -344,8 +356,14 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAmendStock.resx">
+      <DependentUpon>frmAmendStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCheckDoorSearched.resx">
       <DependentUpon>frmCheckDoorSearched.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeductStock.resx">
+      <DependentUpon>frmDeductStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLooseItems.resx">
       <DependentUpon>frmLooseItems.cs</DependentUpon>

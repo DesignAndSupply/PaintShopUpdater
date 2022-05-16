@@ -93,10 +93,8 @@ namespace WindowsFormsApp2
             RDC.Value = this.paintNextBS;
             this.reportViewer1.LocalReport.DataSources.Add(RDC);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp2.rptPaintNextList.rdlc";
+            
             this.reportViewer1.RefreshReport();
         }
-
-      
-
     }
 }

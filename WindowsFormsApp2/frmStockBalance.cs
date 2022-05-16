@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
 
         private void txtColour_TextChanged(object sender, EventArgs e)
         {
-          
+
         }
 
 
@@ -49,7 +49,7 @@ namespace WindowsFormsApp2
             sqlPaint.Connection = con;
             sqlPaint.CommandType = CommandType.Text;
             sqlPaint.CommandText = "Select * From c_view_paint_stock WHERE colour like @colour";
-            sqlPaint.Parameters.AddWithValue("@colour","%" + txtColour.Text + "%");
+            sqlPaint.Parameters.AddWithValue("@colour", "%" + txtColour.Text + "%");
             SqlDataAdapter sqlPaintListAdap = new SqlDataAdapter(sqlPaint);
 
             try
@@ -92,31 +92,50 @@ namespace WindowsFormsApp2
         private void dgvPaintList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            //
+            //if the quantity is 0 we need to prompt for an updated figure
 
-            if (dgvPaintList.SelectedCells.Count > 0)
+            if (Convert.ToDouble(dgvPaintList.Rows[e.RowIndex].Cells[4].Value) <= 0)
             {
-                int selectedrowindex = dgvPaintList.SelectedCells[0].RowIndex;
-
-                DataGridViewRow selectedRow = dgvPaintList.Rows[selectedrowindex];
-
-                sc = Convert.ToInt32(selectedRow.Cells["Stock Code"].Value);
-                desc = selectedRow.Cells["Colour"].Value + " " + selectedRow.Cells["Finish"].Value + " " + selectedRow.Cells["Supplier"].Value;
-
+                DialogResult result = MessageBox.Show("There is currently 0 Kgs of this paint. Is this correct?","0 Quantity",MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    frmAmendStock frm = new frmAmendStock(dgvPaintList.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    frm.ShowDialog();
+                }
+            }
+            else
+            {
+                frmDeductStock frm = new frmDeductStock(dgvPaintList.Rows[e.RowIndex].Cells[0].Value.ToString());
+                frm.ShowDialog();
             }
 
+            populatePaintList();
+            //toms shitty old code - taken out 21/04/2022
+            //if (dgvPaintList.SelectedCells.Count > 0)
+            //{
+            //    int selectedrowindex = dgvPaintList.SelectedCells[0].RowIndex;
+
+            //    DataGridViewRow selectedRow = dgvPaintList.Rows[selectedrowindex];
+
+            //    sc = Convert.ToInt32(selectedRow.Cells["Stock Code"].Value);
+            //    desc = selectedRow.Cells["Colour"].Value + " " + selectedRow.Cells["Finish"].Value + " " + selectedRow.Cells["Supplier"].Value;
+
+            //}
 
 
-            if (e.ColumnIndex == dgvPaintList.Columns["View Boxes"].Index)
-            {
-                frmPaintBoxes frmPB = new frmPaintBoxes(sc,desc);
-                frmPB.ShowDialog();
-                populatePaintList();
-            }
+
+            //if (e.ColumnIndex == dgvPaintList.Columns["View Boxes"].Index)
+            //{
+            //    frmPaintBoxes frmPB = new frmPaintBoxes(sc,desc);
+            //    frmPB.ShowDialog();
+            //    populatePaintList();
+            //}
         }
 
         private void btnSearchBox_Click(object sender, EventArgs e)
         {
-            
+
 
 
             SqlConnection sqlconn = new SqlConnection(SqlStatements.ConnectionString);
@@ -144,6 +163,14 @@ namespace WindowsFormsApp2
         private void dgvPaintList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtColour_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch.PerformClick();
+            }
         }
     }
 }

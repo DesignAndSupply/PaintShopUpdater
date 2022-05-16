@@ -993,7 +993,6 @@ Stores</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1221,14 +1220,6 @@ Stores</Value>
             </TablixMember>
             <TablixMember>
               <Group Name="Details" />
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!date_completion.Value</Value>
-                </SortExpression>
-                <SortExpression>
-                  <Value>=Fields!id.Value</Value>
-                </SortExpression>
-              </SortExpressions>
               <TablixMembers>
                 <TablixMember />
                 <TablixMember />
