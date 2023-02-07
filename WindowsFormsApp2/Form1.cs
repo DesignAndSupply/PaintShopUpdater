@@ -400,6 +400,33 @@ namespace WindowsFormsApp2
         {
             if (cmdOp.SelectedIndex > -1)
             {
+
+                //if its up AND not complete in welding then we need to cancel out
+
+                if (cmdOp.Text == "Up")
+                {
+                    //check if this door is comp in welding
+                    string sql = "select case when complete_weld = 1 then 1 when date_weld is null then 1 else 0 end from dbo.door where id = " + txtSearch.Text;
+                    using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            int comp_weld = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                            if (comp_weld == 1)
+                            { //nothing
+                            }
+                            else
+                            {
+                                MessageBox.Show("You cannot mark this door as UP until it is complete in welding.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
+                        conn.Close();
+                    }
+                }
+
+
                 Operations op = new Operations();
                 SqlStatements sqlUpdate = new SqlStatements();
 
