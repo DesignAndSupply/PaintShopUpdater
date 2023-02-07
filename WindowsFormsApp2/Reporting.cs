@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp2
 {
     public partial class Reporting : Form
     {
-        
+
 
         public Reporting()
         {
@@ -23,9 +24,9 @@ namespace WindowsFormsApp2
         private void Reporting_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'order_databaseDataSet1.c_view_late_painting' table. You can move, or remove it, as needed.
-          
-           order_databaseDataSet1.EnforceConstraints = false;
-           this.c_view_late_paintingTableAdapter.Fill(this.order_databaseDataSet1.c_view_late_painting);
+
+            order_databaseDataSet1.EnforceConstraints = false;
+            this.c_view_late_paintingTableAdapter.Fill(this.order_databaseDataSet1.c_view_late_painting);
 
             this.view_paint_nextTableAdapter1.Fill(this.order_databaseDataSet1.view_paint_next);
 
@@ -65,7 +66,7 @@ namespace WindowsFormsApp2
 
         private void updateReportViewer()
         {
-            
+
         }
 
         private void btnLates_Click(object sender, EventArgs e)
@@ -92,10 +93,8 @@ namespace WindowsFormsApp2
             RDC.Value = this.paintNextBS;
             this.reportViewer1.LocalReport.DataSources.Add(RDC);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp2.rptPaintNextList.rdlc";
+            
             this.reportViewer1.RefreshReport();
         }
-    
-
-       
     }
 }

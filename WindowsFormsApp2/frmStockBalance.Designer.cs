@@ -65,6 +65,7 @@
             this.txtColour.Size = new System.Drawing.Size(124, 20);
             this.txtColour.TabIndex = 6;
             this.txtColour.TextChanged += new System.EventHandler(this.txtColour_TextChanged);
+            this.txtColour.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtColour_KeyDown);
             // 
             // label1
             // 

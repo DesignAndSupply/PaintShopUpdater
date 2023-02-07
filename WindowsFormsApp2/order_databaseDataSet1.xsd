@@ -348,7 +348,7 @@ WHERE        (description LIKE '%@Colour%')</CommandText>
               <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.view_paint_next" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>select * from view_paint_next</CommandText>
+                    <CommandText>SELECT id, NAME, door_type_description, date_paint, complete_paint, quantity_same, infill_description, date_completion, up_complete_date, comp_buff, complete_stores, status_id, test_identifier, painting_note, urgent, finish_description, paint_string, add_string, buff_staff_allocation, highlight,del_comp_date FROM view_paint_next</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -374,6 +374,8 @@ WHERE        (description LIKE '%@Colour%')</CommandText>
               <Mapping SourceColumn="paint_string" DataSetColumn="paint_string" />
               <Mapping SourceColumn="add_string" DataSetColumn="add_string" />
               <Mapping SourceColumn="buff_staff_allocation" DataSetColumn="buff_staff_allocation" />
+              <Mapping SourceColumn="highlight" DataSetColumn="highlight" />
+              <Mapping SourceColumn="del_comp_date" DataSetColumn="del_comp_date" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -894,6 +896,8 @@ WHERE        (description LIKE '%@Colour%')</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="highlight" msprop:Generator_ColumnVarNameInTable="columnhighlight" msprop:Generator_ColumnPropNameInRow="highlight" msprop:Generator_ColumnPropNameInTable="highlightColumn" msprop:Generator_UserColumnName="highlight" type="xs:short" minOccurs="0" />
+              <xs:element name="del_comp_date" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndel_comp_date" msprop:Generator_ColumnPropNameInRow="del_comp_date" msprop:Generator_ColumnPropNameInTable="del_comp_dateColumn" msprop:Generator_UserColumnName="del_comp_date" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

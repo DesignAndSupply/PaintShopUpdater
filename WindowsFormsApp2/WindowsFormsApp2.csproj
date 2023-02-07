@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>61</ApplicationRevision>
+    <ApplicationRevision>85</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -69,6 +69,9 @@
     <ApplicationIcon>logo_4rq_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="GemBox.Document, Version=29.0.35.1000, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
       <HintPath>..\packages\GemBox.Document.29.0.0.1000\lib\net35\GemBox.Document.dll</HintPath>
     </Reference>
@@ -90,6 +93,7 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.VisualStudio.CoreUtility.15.6.27740\lib\net46\Microsoft.VisualStudio.CoreUtility.dll</HintPath>
     </Reference>
@@ -139,6 +143,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -176,6 +181,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAmendStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAmendStock.Designer.cs">
+      <DependentUpon>frmAmendStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCheckDoorSearched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckDoorSearched.Designer.cs">
+      <DependentUpon>frmCheckDoorSearched.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeductStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeductStock.Designer.cs">
+      <DependentUpon>frmDeductStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLooseItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +217,12 @@
     <Compile Include="frmPaintRequirement.Designer.cs">
       <DependentUpon>frmPaintRequirement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReprintSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReprintSearch.Designer.cs">
+      <DependentUpon>frmReprintSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelectUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +234,18 @@
     </Compile>
     <Compile Include="frmStockBalance.Designer.cs">
       <DependentUpon>frmStockBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockTake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockTake.Designer.cs">
+      <DependentUpon>frmStockTake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStores.Designer.cs">
+      <DependentUpon>frmStores.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTimeAllocation.cs">
       <SubType>Form</SubType>
@@ -224,11 +265,23 @@
     <Compile Include="frmUpdateBox.Designer.cs">
       <DependentUpon>frmUpdateBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_rail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_rail.Designer.cs">
+      <DependentUpon>frm_rail.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenerateBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenerateBox.Designer.cs">
       <DependentUpon>GenerateBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="label_test.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>label_test.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Logging.cs" />
     <Compile Include="NewRepaint.cs">
@@ -250,6 +303,19 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>order_databaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="order_databaseDataSet2.cs">
+      <DependentUpon>order_databaseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="order_databaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>order_databaseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="order_databaseDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>order_databaseDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -290,6 +356,15 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAmendStock.resx">
+      <DependentUpon>frmAmendStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckDoorSearched.resx">
+      <DependentUpon>frmCheckDoorSearched.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeductStock.resx">
+      <DependentUpon>frmDeductStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLooseItems.resx">
       <DependentUpon>frmLooseItems.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -301,11 +376,20 @@
     <EmbeddedResource Include="frmPaintRequirement.resx">
       <DependentUpon>frmPaintRequirement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReprintSearch.resx">
+      <DependentUpon>frmReprintSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSelectUser.resx">
       <DependentUpon>frmSelectUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockBalance.resx">
       <DependentUpon>frmStockBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockTake.resx">
+      <DependentUpon>frmStockTake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStores.resx">
+      <DependentUpon>frmStores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimeAllocation.resx">
       <DependentUpon>frmTimeAllocation.cs</DependentUpon>
@@ -316,8 +400,15 @@
     <EmbeddedResource Include="frmUpdateBox.resx">
       <DependentUpon>frmUpdateBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_rail.resx">
+      <DependentUpon>frm_rail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenerateBox.resx">
       <DependentUpon>GenerateBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="label_test.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>label_test.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadPainting.rdlc" />
     <EmbeddedResource Include="NewRepaint.resx">
@@ -378,6 +469,28 @@
     </None>
     <None Include="order_databaseDataSet1.xss">
       <DependentUpon>order_databaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="order_databaseDataSet2.xsc">
+      <DependentUpon>order_databaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="order_databaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>order_databaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="order_databaseDataSet2.xss">
+      <DependentUpon>order_databaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="order_databaseDataSet3.xsc">
+      <DependentUpon>order_databaseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="order_databaseDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>order_databaseDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="order_databaseDataSet3.xss">
+      <DependentUpon>order_databaseDataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -680,6 +793,9 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.VisualStudio.Threading.Analyzers.15.6.46\build\Microsoft.VisualStudio.Threading.Analyzers.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Threading.Analyzers.15.6.46\build\Microsoft.VisualStudio.Threading.Analyzers.targets')" />

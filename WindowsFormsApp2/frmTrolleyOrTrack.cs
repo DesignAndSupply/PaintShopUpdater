@@ -83,7 +83,10 @@ namespace WindowsFormsApp2
         private void btnTrack_Click(object sender, EventArgs e)
         {
             updatePackingNote("track");
-           
+            //frm rail goes here
+            frm_rail frm = new frm_rail(_doorID);
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }
