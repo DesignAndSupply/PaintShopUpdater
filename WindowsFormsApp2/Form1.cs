@@ -22,13 +22,39 @@ namespace WindowsFormsApp2
             string sql = "SELECT TOP 1 [committed] FROM dbo.paint_rolling_stock_take ORDER BY stock_take_number DESC";
             using (SqlConnection CONNECT = new SqlConnection(SqlStatements.ConnectionString))
             {
+                CONNECT.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, CONNECT))
                 {
-                    CONNECT.Open();
                     int truefalse = Convert.ToInt32(cmd.ExecuteScalar());
                     if (truefalse == 0)
                         lblStockTake.Visible = true;
                 }
+
+                //while we are also here - check if there are any outstanding doors (2 days) marked for up
+                sql = "select count(id) as [count] from dbo.door " +
+                    "where up_complete_date is not null AND date_paint is not null AND " +
+                    "(complete_paint is null or complete_paint  = 0)  and  " +
+                    "(status_id = 1 or status_id = 2 or status_id = 3) and up_complete_date >= '20230101' and " +
+                    "cast(up_complete_date as date) <=  dbo.func_work_days(CAST(GETDATE() as date),1)";
+                
+                using (SqlCommand cmd = new SqlCommand(sql,CONNECT))
+                {
+                    int showButton = 0;
+                    var temp = cmd.ExecuteScalar();
+                    if (temp == null)
+                        showButton = 0;
+                    else if (Convert.ToInt32(temp) > 0)
+                        showButton = -1;
+                    else
+                        showButton = 0;
+
+                    if (showButton == 0)
+                        btnUpRequired.Visible = false;
+                    else
+                        btnUpRequired.Visible = true;
+
+                }
+                CONNECT.Close();
             }
         }
 
@@ -1180,12 +1206,7 @@ namespace WindowsFormsApp2
             ST.Show();
         }
 
-        private void btn_ryucxd_Click(object sender, EventArgs e)
-        {
-            //this button will be the palceholder
-            frm_rail frm = new frm_rail(Convert.ToInt32(txtSearch.Text));
-            frm.Show();
-        }
+
 
         private void storesListToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1204,6 +1225,15 @@ namespace WindowsFormsApp2
             {
                 btnSearch.PerformClick();
             }
+        }
+
+        private void btnUpRequired_Click(object sender, EventArgs e)
+        {
+            frmOutstandingUp frm = new frmOutstandingUp();
+            frm.ShowDialog();
+
+            
+
         }
     }
 }

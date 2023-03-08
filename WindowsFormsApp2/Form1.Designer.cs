@@ -105,13 +105,13 @@
             this.txtQuantitySame = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chkIsProblem = new System.Windows.Forms.CheckBox();
-            this.btn_ryucxd = new System.Windows.Forms.Button();
             this.lblStockTake = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtFlightBar = new System.Windows.Forms.TextBox();
             this.c_view_painting_sectionsTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_painting_sectionsTableAdapter();
             this.c_view_paint_on_doorTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_paint_on_doorTableAdapter();
             this.lblFinish = new System.Windows.Forms.Label();
+            this.btnUpRequired = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -711,7 +711,7 @@
             this.palletizerToolStripMenuItem,
             this.requiredPaintsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // staffSetupToolStripMenuItem
@@ -761,7 +761,7 @@
             this.thisDoorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.looseItemsToolStripMenuItem});
             this.thisDoorToolStripMenuItem.Name = "thisDoorToolStripMenuItem";
-            this.thisDoorToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.thisDoorToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.thisDoorToolStripMenuItem.Text = "This Door";
             // 
             // looseItemsToolStripMenuItem
@@ -774,7 +774,7 @@
             // stockTakeToolStripMenuItem
             // 
             this.stockTakeToolStripMenuItem.Name = "stockTakeToolStripMenuItem";
-            this.stockTakeToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.stockTakeToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.stockTakeToolStripMenuItem.Text = "Stock Take";
             this.stockTakeToolStripMenuItem.Click += new System.EventHandler(this.stockTakeToolStripMenuItem_Click);
             // 
@@ -820,17 +820,6 @@
             this.chkIsProblem.TabIndex = 92;
             this.chkIsProblem.Text = "Flag note as problem";
             this.chkIsProblem.UseVisualStyleBackColor = true;
-            // 
-            // btn_ryucxd
-            // 
-            this.btn_ryucxd.Location = new System.Drawing.Point(495, 201);
-            this.btn_ryucxd.Name = "btn_ryucxd";
-            this.btn_ryucxd.Size = new System.Drawing.Size(75, 23);
-            this.btn_ryucxd.TabIndex = 93;
-            this.btn_ryucxd.Text = "ryucxd";
-            this.btn_ryucxd.UseVisualStyleBackColor = true;
-            this.btn_ryucxd.Visible = false;
-            this.btn_ryucxd.Click += new System.EventHandler(this.btn_ryucxd_Click);
             // 
             // lblStockTake
             // 
@@ -886,16 +875,28 @@
             this.lblFinish.Text = "         FINISH TYPE: C5 TWO TONE         ";
             this.lblFinish.Visible = false;
             // 
+            // btnUpRequired
+            // 
+            this.btnUpRequired.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.btnUpRequired.ForeColor = System.Drawing.Color.Red;
+            this.btnUpRequired.Location = new System.Drawing.Point(419, 167);
+            this.btnUpRequired.Name = "btnUpRequired";
+            this.btnUpRequired.Size = new System.Drawing.Size(257, 90);
+            this.btnUpRequired.TabIndex = 98;
+            this.btnUpRequired.Text = "DOORS MARKED FOR UP OVER 2 DAYS AGO REQUIRE ATTENTION";
+            this.btnUpRequired.UseVisualStyleBackColor = true;
+            this.btnUpRequired.Click += new System.EventHandler(this.btnUpRequired_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(985, 782);
+            this.Controls.Add(this.btnUpRequired);
             this.Controls.Add(this.lblFinish);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtFlightBar);
-            this.Controls.Add(this.btn_ryucxd);
             this.Controls.Add(this.chkIsProblem);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtQuantitySame);
@@ -1038,12 +1039,12 @@
         private System.Windows.Forms.CheckBox chkIsProblem;
         private System.Windows.Forms.ToolStripMenuItem requiredPaintsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockTakeToolStripMenuItem;
-        private System.Windows.Forms.Button btn_ryucxd;
         private System.Windows.Forms.Label lblStockTake;
         private System.Windows.Forms.ToolStripMenuItem storesListToolStripMenuItem;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtFlightBar;
         private System.Windows.Forms.Label lblFinish;
+        private System.Windows.Forms.Button btnUpRequired;
     }
 }
 
