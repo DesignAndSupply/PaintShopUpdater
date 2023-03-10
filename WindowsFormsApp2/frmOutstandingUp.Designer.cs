@@ -39,6 +39,9 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 46);
             this.dataGridView1.Name = "dataGridView1";
@@ -50,10 +53,10 @@
             // 
             this.llbTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.llbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.llbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.llbTitle.Location = new System.Drawing.Point(12, 9);
             this.llbTitle.Name = "llbTitle";
-            this.llbTitle.Size = new System.Drawing.Size(981, 23);
+            this.llbTitle.Size = new System.Drawing.Size(981, 34);
             this.llbTitle.TabIndex = 1;
             this.llbTitle.Text = "The following doors have been completed in UP over 2 days ago";
             this.llbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -65,7 +68,9 @@
             this.ClientSize = new System.Drawing.Size(1005, 513);
             this.Controls.Add(this.llbTitle);
             this.Controls.Add(this.dataGridView1);
+            this.MinimizeBox = false;
             this.Name = "frmOutstandingUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Outstanding Up Doors";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

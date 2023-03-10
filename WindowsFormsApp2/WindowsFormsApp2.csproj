@@ -280,6 +280,12 @@
     <Compile Include="frmPaintBoxes.Designer.cs">
       <DependentUpon>frmPaintBoxes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPaintingNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaintingNote.Designer.cs">
+      <DependentUpon>frmPaintingNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPaintRequirement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,12 @@
     </Compile>
     <Compile Include="frmUpdateBox.Designer.cs">
       <DependentUpon>frmUpdateBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWetPaintDoors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWetPaintDoors.Designer.cs">
+      <DependentUpon>frmWetPaintDoors.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_rail.cs">
       <SubType>Form</SubType>
@@ -444,6 +456,9 @@
       <DependentUpon>frmPaintBoxes.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPaintingNote.resx">
+      <DependentUpon>frmPaintingNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPaintRequirement.resx">
       <DependentUpon>frmPaintRequirement.cs</DependentUpon>
     </EmbeddedResource>
@@ -470,6 +485,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdateBox.resx">
       <DependentUpon>frmUpdateBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWetPaintDoors.resx">
+      <DependentUpon>frmWetPaintDoors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_rail.resx">
       <DependentUpon>frm_rail.cs</DependentUpon>

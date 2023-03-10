@@ -112,6 +112,7 @@
             this.c_view_paint_on_doorTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_paint_on_doorTableAdapter();
             this.lblFinish = new System.Windows.Forms.Label();
             this.btnUpRequired = new System.Windows.Forms.Button();
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -694,7 +695,8 @@
             this.toolsToolStripMenuItem,
             this.thisDoorToolStripMenuItem,
             this.stockTakeToolStripMenuItem,
-            this.storesListToolStripMenuItem});
+            this.storesListToolStripMenuItem,
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(985, 24);
@@ -887,6 +889,13 @@
             this.btnUpRequired.UseVisualStyleBackColor = true;
             this.btnUpRequired.Click += new System.EventHandler(this.btnUpRequired_Click);
             // 
+            // uPCOMINGWETPAINTDOORSToolStripMenuItem
+            // 
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Name = "uPCOMINGWETPAINTDOORSToolStripMenuItem";
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Size = new System.Drawing.Size(185, 20);
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Text = "UPCOMING WET PAINT DOORS";
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Click += new System.EventHandler(this.uPCOMINGWETPAINTDOORSToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1045,6 +1054,7 @@
         private System.Windows.Forms.TextBox txtFlightBar;
         private System.Windows.Forms.Label lblFinish;
         private System.Windows.Forms.Button btnUpRequired;
+        private System.Windows.Forms.ToolStripMenuItem uPCOMINGWETPAINTDOORSToolStripMenuItem;
     }
 }
 

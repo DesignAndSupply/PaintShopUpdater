@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.c_view_late_paintingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.order_databaseDataSet1 = new WindowsFormsApp2.order_databaseDataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -66,9 +66,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource3.Name = "LoadPainting";
-            reportDataSource3.Value = this.c_view_late_paintingBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource2.Name = "LoadPainting";
+            reportDataSource2.Value = this.c_view_late_paintingBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp2.LoadPainting.rdlc";
             this.reportViewer1.LocalReport.ReportPath = "";
             this.reportViewer1.Location = new System.Drawing.Point(12, 48);

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Collections;
 using System.Diagnostics;
+using System.Runtime.Remoting.Contexts;
 
 namespace WindowsFormsApp2
 {
@@ -147,6 +148,41 @@ namespace WindowsFormsApp2
             }
 
 
+            //check if there is outstanding up jobs
+            outstanding_up();
+        }
+
+        private void outstanding_up()
+        {
+            using (SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString))
+            {
+                conn.Open();
+                string sql = "select count(id) as [count] from dbo.door " +
+                  "where up_complete_date is not null AND date_paint is not null AND " +
+                  "(complete_paint is null or complete_paint  = 0)  and  " +
+                  "(status_id = 1 or status_id = 2 or status_id = 3) and up_complete_date >= '20230101' and " +
+                  "cast(up_complete_date as date) <=  dbo.func_work_days(CAST(GETDATE() as date),1)";
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    int showButton = 0;
+                    var temp = cmd.ExecuteScalar();
+                    if (temp == null)
+                        showButton = 0;
+                    else if (Convert.ToInt32(temp) > 0)
+                        showButton = -1;
+                    else
+                        showButton = 0;
+
+                    if (showButton == 0)
+                        btnUpRequired.Visible = false;
+                    else
+                        btnUpRequired.Visible = true;
+
+                }
+
+                conn.Close();
+            }
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -1234,6 +1270,12 @@ namespace WindowsFormsApp2
 
             
 
+        }
+
+        private void uPCOMINGWETPAINTDOORSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmWetPaintDoors frm = new frmWetPaintDoors();
+            frm.ShowDialog();
         }
     }
 }

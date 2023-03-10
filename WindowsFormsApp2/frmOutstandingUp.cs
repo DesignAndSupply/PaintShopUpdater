@@ -23,7 +23,7 @@ namespace WindowsFormsApp2
             {
                 conn.Open();
 
-                string sql = "select d.id,dt.door_type_description,s.[NAME],up_complete_date,date_paint from dbo.door d " +
+                string sql = "select d.id as [Door ID],dt.door_type_description as [Door Type],s.[NAME] as [Customer],up_complete_date as [Up Date],date_paint as [Paint Date] from dbo.door d " +
                     "left join dbo.door_type dt on d.door_type_id = dt.id " +
                     "left join dbo.SALES_LEDGER s on d.customer_acc_ref = s.ACCOUNT_REF " +
                     "where up_complete_date is not null AND date_paint is not null " +

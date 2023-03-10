@@ -96,5 +96,10 @@ namespace WindowsFormsApp2
             
             this.reportViewer1.RefreshReport();
         }
+
+        private void btnWetPaint_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
