@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepaintsList));
             this.dgRepaintList = new System.Windows.Forms.DataGridView();
             this.repaintIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateLoggedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,8 @@
             this.order_databaseDataSet1 = new WindowsFormsApp2.order_databaseDataSet1();
             this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNewRepaint = new System.Windows.Forms.Button();
             this.orderdatabaseDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -184,7 +187,9 @@
             // fillBy2ToolStrip
             // 
             this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillBy2ToolStripButton});
+            this.fillBy2ToolStripButton,
+            this.toolStripButton1,
+            this.toolStripLabel1});
             this.fillBy2ToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
             this.fillBy2ToolStrip.Size = new System.Drawing.Size(1276, 25);
@@ -199,12 +204,27 @@
             this.fillBy2ToolStripButton.Text = "FillBy2";
             this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel1.Text = "toolStripLabel1";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.ImageLocation = "S:\\tom\\Company Logo\\logo files\\logo.jpg";
-            this.pictureBox1.Location = new System.Drawing.Point(553, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(495, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(286, 111);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -279,5 +299,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn loggedFromDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Complete;
         private System.Windows.Forms.DataGridViewTextBoxColumn door_id;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

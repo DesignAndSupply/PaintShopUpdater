@@ -105,28 +105,6 @@ namespace WindowsFormsApp2
         private void dgLooseItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (MessageBox.Show("Are you sure you wish to delete this loose item?", "Sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                var senderGrid = (DataGridView)sender;
-                int looseItemId;
-                int selectedrowindex = dgLooseItems.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgLooseItems.Rows[selectedrowindex];
-                looseItemId = Int32.Parse(selectedRow.Cells["id"].Value.ToString());
-
-                SqlConnection delConn = new SqlConnection(SqlStatements.ConnectionString);
-                delConn.Open();
-                SqlCommand del = new SqlCommand();
-                del.Connection = delConn;
-                del.CommandType = CommandType.Text;
-                del.CommandText = "DELETE  FROM dbo.paint_loose_item_to_door WHERE id = @id";
-                del.Parameters.AddWithValue("@id", looseItemId);
-
-                del.ExecuteNonQuery();
-
-                FillData();
-
-            }
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

@@ -81,10 +81,8 @@ namespace WindowsFormsApp2
             NewRepaint nr = new NewRepaint();
             paintID = nr.get_paint_id(Int32.Parse(selectedRow.Cells[12].Value.ToString()));
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&  e.RowIndex >= 0)
             {
-
                 if (loggedFrom != "Packing")
                 {
                     SqlConnection conn = new SqlConnection(SqlStatements.ConnectionString);

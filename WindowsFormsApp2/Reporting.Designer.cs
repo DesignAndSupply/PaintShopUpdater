@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.c_view_late_paintingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.order_databaseDataSet1 = new WindowsFormsApp2.order_databaseDataSet1();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDailyRepaints = new System.Windows.Forms.Button();
             this.btnLates = new System.Windows.Forms.Button();
             this.btnPaintNext = new System.Windows.Forms.Button();
+            this.c_view_late_paintingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.order_databaseDataSet1 = new WindowsFormsApp2.order_databaseDataSet1();
             this.c_view_daily_repaintsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.c_view_repaints_outstandingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.c_view_repaint_listBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,21 +54,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.paintNextBS)).BeginInit();
             this.SuspendLayout();
             // 
-            // c_view_late_paintingBindingSource
-            // 
-            this.c_view_late_paintingBindingSource.DataMember = "c_view_late_painting";
-            this.c_view_late_paintingBindingSource.DataSource = this.order_databaseDataSet1;
-            // 
-            // order_databaseDataSet1
-            // 
-            this.order_databaseDataSet1.DataSetName = "order_databaseDataSet1";
-            this.order_databaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "LoadPainting";
-            reportDataSource2.Value = this.c_view_late_paintingBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "LoadPainting";
+            reportDataSource1.Value = this.c_view_late_paintingBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp2.LoadPainting.rdlc";
             this.reportViewer1.LocalReport.ReportPath = "";
             this.reportViewer1.Location = new System.Drawing.Point(12, 48);
@@ -119,6 +109,17 @@
             this.btnPaintNext.UseVisualStyleBackColor = true;
             this.btnPaintNext.Click += new System.EventHandler(this.btnPaintNext_Click);
             // 
+            // c_view_late_paintingBindingSource
+            // 
+            this.c_view_late_paintingBindingSource.DataMember = "c_view_late_painting";
+            this.c_view_late_paintingBindingSource.DataSource = this.order_databaseDataSet1;
+            this.c_view_late_paintingBindingSource.CurrentChanged += new System.EventHandler(this.c_view_late_paintingBindingSource_CurrentChanged);
+            // 
+            // order_databaseDataSet1
+            // 
+            this.order_databaseDataSet1.DataSetName = "order_databaseDataSet1";
+            this.order_databaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // c_view_daily_repaintsBindingSource
             // 
             this.c_view_daily_repaintsBindingSource.DataMember = "c_view_daily_repaints";
@@ -133,6 +134,7 @@
             // 
             this.c_view_repaint_listBindingSource.DataMember = "c_view_repaint_list";
             this.c_view_repaint_listBindingSource.DataSource = this.order_databaseDataSet1;
+            this.c_view_repaint_listBindingSource.CurrentChanged += new System.EventHandler(this.c_view_repaint_listBindingSource_CurrentChanged);
             // 
             // c_view_repaint_listTableAdapter
             // 

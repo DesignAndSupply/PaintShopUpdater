@@ -64,7 +64,7 @@ namespace WindowsFormsApp2
             // TODO: This line of code loads data into the 'order_databaseDataSet1.c_view_paint_on_door' table. You can move, or remove it, as needed.
             //this.c_view_paint_on_doorTableAdapter.Fill(this.order_databaseDataSet1.c_view_paint_on_door);
             // TODO: This line of code loads data into the 'user_infoDataSet.c_view_painting_staff' table. You can move, or remove it, as needed.
-            this.c_view_painting_staffTableAdapter.Fill(this.user_infoDataSet.c_view_painting_staff);
+            //this.c_view_painting_staffTableAdapter.Fill(this.user_infoDataSet.c_view_painting_staff);
             // TODO: This line of code loads data into the 'user_infoDataSet.user' table. You can move, or remove it, as needed.
             //this.userTableAdapter.Fill(this.user_infoDataSet.user);
 
@@ -374,7 +374,7 @@ namespace WindowsFormsApp2
                                 break;
                         }
 
-                        sqlUpdate.InsertPartCompletion(Int32.Parse(txtSearch.Text), oper, op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), oper, finishType, menIn), staffDynamic, i);
+                        sqlUpdate.InsertPartCompletion(Int32.Parse(txtSearch.Text), oper, op.CalcTimeRemaining(Int32.Parse(txtSearch.Text), oper, finishType, menIn), staff_no1);
 
                     }
                 }
@@ -1276,6 +1276,11 @@ namespace WindowsFormsApp2
         {
             frmWetPaintDoors frm = new frmWetPaintDoors();
             frm.ShowDialog();
+        }
+
+        private void chkIsProblem_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

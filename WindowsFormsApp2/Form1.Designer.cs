@@ -101,6 +101,7 @@
             this.looseItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockTakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.storesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtQuantitySame = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -112,7 +113,6 @@
             this.c_view_paint_on_doorTableAdapter = new WindowsFormsApp2.order_databaseDataSet1TableAdapters.c_view_paint_on_doorTableAdapter();
             this.lblFinish = new System.Windows.Forms.Label();
             this.btnUpRequired = new System.Windows.Forms.Button();
-            this.uPCOMINGWETPAINTDOORSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpaintingsectionsBindingSource)).BeginInit();
@@ -787,6 +787,13 @@
             this.storesListToolStripMenuItem.Text = "Paint Pot Labels";
             this.storesListToolStripMenuItem.Click += new System.EventHandler(this.storesListToolStripMenuItem_Click);
             // 
+            // uPCOMINGWETPAINTDOORSToolStripMenuItem
+            // 
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Name = "uPCOMINGWETPAINTDOORSToolStripMenuItem";
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Size = new System.Drawing.Size(185, 20);
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Text = "UPCOMING WET PAINT DOORS";
+            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Click += new System.EventHandler(this.uPCOMINGWETPAINTDOORSToolStripMenuItem_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -822,6 +829,7 @@
             this.chkIsProblem.TabIndex = 92;
             this.chkIsProblem.Text = "Flag note as problem";
             this.chkIsProblem.UseVisualStyleBackColor = true;
+            this.chkIsProblem.CheckedChanged += new System.EventHandler(this.chkIsProblem_CheckedChanged);
             // 
             // lblStockTake
             // 
@@ -888,13 +896,6 @@
             this.btnUpRequired.Text = "DOORS MARKED FOR UP OVER 2 DAYS AGO REQUIRE ATTENTION";
             this.btnUpRequired.UseVisualStyleBackColor = true;
             this.btnUpRequired.Click += new System.EventHandler(this.btnUpRequired_Click);
-            // 
-            // uPCOMINGWETPAINTDOORSToolStripMenuItem
-            // 
-            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Name = "uPCOMINGWETPAINTDOORSToolStripMenuItem";
-            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Size = new System.Drawing.Size(185, 20);
-            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Text = "UPCOMING WET PAINT DOORS";
-            this.uPCOMINGWETPAINTDOORSToolStripMenuItem.Click += new System.EventHandler(this.uPCOMINGWETPAINTDOORSToolStripMenuItem_Click);
             // 
             // Form1
             // 

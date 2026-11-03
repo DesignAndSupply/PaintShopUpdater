@@ -18,6 +18,7 @@ namespace WindowsFormsApp2
     {
 
         public int id_index { get; set; }
+        public int qty_same_index { get; set; }
         public int date_paint_index { get; set; }
         public int customer_index { get; set; }
         public int door_type_index { get; set; }
@@ -34,7 +35,7 @@ namespace WindowsFormsApp2
 
         private void load_data()
         {
-            string sql = "select d.id,d.date_paint,rtrim(s.[NAME]) as customer,dt.door_type_description, pc.[paint_description],d.painting_note from dbo.door d " +
+            string sql = "select d.id,d.date_paint,rtrim(s.[NAME]) as customer,d.quantity_same,dt.door_type_description, pc.[paint_description],d.painting_note from dbo.door d " +
                 "left join dbo.door_type dt on d.door_type_id = dt.id " +
                 "left join dbo.SALES_LEDGER s on d.customer_acc_ref = s.ACCOUNT_REF " +
                 "left join dbo.paint_to_door p on d.id = p.door_id " +
@@ -88,6 +89,7 @@ namespace WindowsFormsApp2
             id_index = dataGridView1.Columns["id"].Index;
             date_paint_index = dataGridView1.Columns["date_paint"].Index;
             customer_index = dataGridView1.Columns["customer"].Index;
+            qty_same_index = dataGridView1.Columns["quantity_same"].Index;
             door_type_index = dataGridView1.Columns["door_type_description"].Index;
             paint_description_index = dataGridView1.Columns["paint_description"].Index;
             painting_note_index = dataGridView1.Columns["painting_note"].Index;
@@ -107,6 +109,7 @@ namespace WindowsFormsApp2
             dataGridView1.Columns[id_index].HeaderText = "Door ID";
             dataGridView1.Columns[date_paint_index].HeaderText = "Painting Date";
             dataGridView1.Columns[customer_index].HeaderText = "Customer";
+            dataGridView1.Columns[qty_same_index].HeaderText = "Quantity Same";
             dataGridView1.Columns[door_type_index].HeaderText = "Door Type";
             dataGridView1.Columns[paint_description_index].HeaderText = "Paint Required";
             dataGridView1.Columns[painting_note_index].HeaderText = "Note";

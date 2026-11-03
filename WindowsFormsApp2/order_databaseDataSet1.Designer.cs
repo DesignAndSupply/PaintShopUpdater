@@ -11156,7 +11156,7 @@ SELECT id, description, exposure_points_ph FROM vibration_tools WHERE (id = @id)
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT id, NAME, door_type_description, date_paint, complete_paint, quantity_same, infill_description, date_completion, up_complete_date, comp_buff, complete_stores, status_id, test_identifier, painting_note, urgent, finish_description, paint_string, add_string, buff_staff_allocation, highlight,del_comp_date FROM view_paint_next";
+            this._commandCollection[0].CommandText = @"SELECT id, NAME, door_type_description, date_paint, complete_paint, quantity_same, infill_description, date_completion, up_complete_date, comp_buff, complete_stores, status_id, test_identifier, painting_note, urgent, finish_description, paint_string, add_string, buff_staff_allocation, highlight,del_comp_date FROM view_paint_next order by del_comp_date";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

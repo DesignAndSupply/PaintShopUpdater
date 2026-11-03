@@ -101,5 +101,15 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void c_view_repaint_listBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void c_view_late_paintingBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
